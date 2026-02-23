@@ -1,0 +1,93 @@
+% FAQ: Entropy Has No Direction — live Q&A
+% Prepared by Ting Peng (t.peng@ieee.org)
+%
+% About:
+% @misc{peng2026entropydirectionmirrorstateparadox,
+%       title={Entropy Has No Direction: A Mirror-State Paradox Against Universal Monotonic Entropy Increase and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$},
+%       author={Ting Peng},
+%       year={2026},
+%       eprint={2602.15369},
+%       archivePrefix={arXiv},
+%       primaryClass={cond-mat.stat-mech},
+%       url={https://arxiv.org/abs/2602.15369},
+% }
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\emergencystretch=1em
+
+\title{Frequently Asked Questions\\
+\large Entropy Has No Direction: Mirror-State Paradox and Constraint-Reshaped Distributions}
+\author{Ting Peng\\
+  \texttt{t.peng@ieee.org}\\
+  Key Laboratory for Special Area Highway Engineering of Ministry of Education,\\
+  Chang'an University, Xi'an 710064, China}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent
+This FAQ accompanies the paper:
+
+\medskip
+\noindent
+T.~Peng, \emph{Entropy Has No Direction: A Mirror-State Paradox Against Universal Monotonic Entropy Increase and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$}, arXiv:2602.15369 [cond-mat.stat-mech] (2026).\\
+\url{https://arxiv.org/abs/2602.15369}
+
+\medskip
+\noindent
+The \LaTeX\ source of the manuscript and this FAQ are available at \url{https://github.com/tpeng1977/entropy}. For the full argument, proofs, and references, see the manuscript \texttt{entropy.tex} / \texttt{entropy.pdf}.
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{What is the mirror-state paradox?}
+
+For any microstate $A$ at time $t_0$, define the \emph{mirror state} $B = \mathcal{T}A$ (time reversal: same positions, reversed momenta). Under time-reversal invariant dynamics, the forward evolution of $B$ is the time-reversed past of $A$. If a \emph{universal} law said ``entropy does not decrease'' for every microstate and every time, then applied to both $A$ and $B$ it would imply $S_A(t_0+\delta t) \ge S_A(t_0)$ and $S_A(t_0-\delta t) \ge S_A(t_0)$ for small $\delta t > 0$. So $t_0$ is a two-sided local minimum of $S_A(t)$. Since $t_0$ is arbitrary, every time is a local minimum; with minimal regularity (e.g.\ continuity of $S$ along trajectories), entropy must be constant on every trajectory. So a universal monotonicity claim is logically incompatible with time-reversal symmetry and would remove any entropic arrow of time.
+
+\item \textbf{Does this disprove the Second Law of Thermodynamics?}
+
+It shows that the Second Law \emph{cannot} be a \emph{universal} fundamental law in the form ``entropy does not decrease'' (either strict trajectory-wise or as a universal statistical principle) when microscopic dynamics are time-reversal invariant. The paper does not deny that in many practical settings entropy tends to increase; it denies that this follows as a universal, state-by-state consequence of the underlying physics. Any one-way statement about $\Delta S$ must rely on additional structure: special initial conditions, coarse-graining, or constraints/boundaries.
+
+\item \textbf{What replaces ``entropy has a direction''?}
+
+The consistent view: \textbf{entropy has no direction; it is described by a probability distribution} $P(S)$. The shape of this distribution depends on constraints and boundary conditions (encoded as $\lambda$). Long-time behavior is captured by $P_{\infty}(S;\lambda)$, the entropy distribution induced by the invariant measure under those constraints.
+
+\item \textbf{What is $P_{\infty}(S;\lambda)$?}
+
+$P_{\infty}(S;\lambda)$ is the \emph{long-time} entropy distribution: the probability distribution of (coarse-grained) entropy $S$ in the limit of long times, under constraint parameters $\lambda$ (geometry, boundaries, fields, etc.). It is determined by the invariant measure (e.g.\ microcanonical on the energy shell or canonical with a heat bath). The paper proves from first principles that changing $\lambda$ (Hamiltonian and/or accessible phase space) changes this distribution.
+
+\item \textbf{How do constraints reshape the entropy distribution?}
+
+Constraints enter via the Hamiltonian $H(\Gamma;\lambda) = H_0(\Gamma) + V_{\mathrm{c}}(\Gamma;\lambda)$ and/or the accessible set $\mathcal{A}(\lambda)$. They change the invariant measure (e.g.\ uniform on the energy shell in the microcanonical case) and hence the macrostate probabilities $\pi_m^{(E)}(\lambda) = W_m^{(E)}(\lambda)/\Omega(E;\lambda)$. So the induced distribution over entropy values $P_{\infty}^{(E)}(S;\lambda)$ changes when the accessible macrostate volumes $W_m^{(E)}(\lambda)$ change with $\lambda$.
+
+\item \textbf{When does $P_{\infty}^{(E)}(S;\lambda)$ stay the same (up to translation)?}
+
+Only in one case: when the multiset of accessible macrostate volumes $\{W_m^{(E)}(\lambda)\}$ is scaled by a common factor $c > 0$ (up to permutation). Then $P_{\infty}^{(E)}(S;\lambda_2)$ is just $P_{\infty}^{(E)}(S - k_B\ln c;\lambda_1)$. Otherwise the distribution changes \emph{structurally}, not merely by shifting the entropy axis.
+
+\item \textbf{What does the Qiao--Wang experiment show?}
+
+Qiao and Wang showed that in charged small nanopores (effective pore size $d_e \approx 1\,\mathrm{nm}$, ion size $d_i \approx 0.7\,\mathrm{nm}$, so $d_i < d_e < 2d_i$) the steady-state ion distribution is intrinsically out of equilibrium: the potential difference can be nearly an order of magnitude larger than the heat-engine upper bound from the traditional Second Law. The system can produce useful work in an isothermal cycle by absorbing heat from a single thermal reservoir. This is interpreted as the asymmetric constraint (nanopore geometry) reshaping $P_{\infty}(S;\lambda)$, making spontaneous low-entropy transitions accessible without requiring compensating entropy increase elsewhere.
+
+\item \textbf{Does this mean a perpetual motion machine of the second kind is possible?}
+
+The paper argues that the traditional \emph{fundamental} impossibility of a second-kind perpetual motion machine (extracting work from a single heat reservoir in a cycle) is not a universal consequence of time-reversal invariant physics. In the corrected framework, that ``impossibility'' is model- and limit-dependent. Together with the Qiao--Wang result, both theoretical and experimental barriers are argued to be overcome, so that practical devices based on constraint-reshaped entropy distributions are in principle feasible. Engineering and scaling remain open.
+
+\item \textbf{What about heat death?}
+
+If entropy does not have a universal direction and constraints can reshape $P_{\infty}(S;\lambda)$, then a \emph{universal} heat death of the universe is not a necessary consequence of the same first principles. The paper does not make detailed cosmological claims but notes implications for long-term sustainability and the possibility of sustained non-equilibrium phenomena under suitable constraints.
+
+\item \textbf{Which definition of entropy is used?}
+
+Boltzmann (coarse-grained) entropy: a time-reversal symmetric partition of phase space into macrostates $\{C_m\}$, with $S_m^{(E)} = k_B\ln(W_m^{(E)}/W_0)$ on the energy shell. The conclusions depend on this choice only in that the coarse-graining is assumed time-reversal symmetric, $S(\mathcal{T}\Gamma)=S(\Gamma)$.
+
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+\textit{Prepared by Ting Peng (\href{mailto:t.peng@ieee.org}{t.peng@ieee.org}). For updates or further questions, contact the author.}
+
+\end{document}
