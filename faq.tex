@@ -23,6 +23,7 @@
 \large Entropy Has No Direction: Mirror-State Paradox and Constraint-Reshaped Distributions}
 \author{Ting Peng\\
   \texttt{t.peng@ieee.org}\\
+  ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
   Key Laboratory for Special Area Highway Engineering of Ministry of Education,\\
   Chang'an University, Xi'an 710064, China}
 \date{\today}
@@ -139,6 +140,26 @@ It means that under the chosen constraint parameters $\lambda$ (geometry, bounda
 \item \textbf{Why can't we learn the underlying dynamics by studying entropy?}
 
 Entropy is essentially a \emph{projection} of high-dimensional state onto a low-dimensional quantity; studying it does not reveal the underlying laws of motion. Analogously: knowing how many times per week on average someone goes to the supermarket does not tell you whether they are at work today or who they are having dinner with tonight---the average is a reduced description that discards the very information needed for the latter questions. The underlying driver is still the \emph{laws of motion}; the probability distribution of entropy $P(S)$ or $P_{\infty}(S;\lambda)$ is only an \emph{approximate probabilistic description} of the consequences of those laws under the given coarse-graining and constraints. So to understand or exploit the system, one must study the motion and the constraints, not entropy itself.
+
+\item \textbf{Can entropy change discontinuously (``jump'') in real systems?}
+
+Entropy is only a \emph{statistical quantity} of the system; the system evolves according to its \emph{own laws of motion}. Whether entropy can jump in time depends on those dynamics and on the \emph{coarse-graining}: if trajectories and the coarse-graining are smooth, entropy along a trajectory may be continuous; if the dynamics or the partition into macrostates allows discrete jumps (e.g.\ collisions, discrete macrostates), entropy can change discontinuously. So there is no universal answer---only by referring to the \emph{concrete system's dynamics and coarse-graining} can one decide whether entropy will exhibit jumps or not.
+
+\item \textbf{Are there easily observable entropy-decrease phenomena in the macroscopic world?}
+
+Yes. Everyday examples include sedimentation and phase separation. For instance, leave a cup of muddy water to stand for several hours: under gravity and the system's dynamics, clear water and sediment separate---the mixture becomes more ordered (less mixed). Under a coarse-graining that measures ``degree of mixing,'' this corresponds to a decrease in entropy. The evolution is governed by the laws of motion (gravity, particle interactions, diffusion); the outcome is a statistical result of that dynamics, not a violation of any universal law. The paper is consistent with this: entropy has no universal direction; it can increase or decrease depending on the system and conditions; spontaneous low-entropy transitions and ordering are possible (e.g.\ constraint-reshaped distributions, or here, gravity-driven separation). So easily observable ``entropy decrease'' (ordering) in the macroscopic world aligns with the corrected view that entropy is described by a distribution and that one-way behavior depends on dynamics and context, not on a universal ``entropy never decreases'' law.
+
+\item \textbf{What is the most promising technical route for a second-kind perpetual motion machine at present?}
+
+A leading route is to use \emph{asymmetric nanopores} in an \emph{electrolyte solution}. Under the asymmetric constraint, positive and negative ions spontaneously concentrate locally (non-equilibrium ion distribution). This process does work against the electric field and gives rise to an electromotive force, so the system can supply power externally. What is consumed is the kinetic energy of thermal motion (heat from the reservoir); the output is electrical energy. This is consistent with the paper's view: the asymmetric constraint (nanopore geometry) reshapes the accessible phase space $\mathcal{A}(\lambda)$ and hence the long-time entropy distribution $P_{\infty}(S;\lambda)$, enabling spontaneous low-entropy transitions (ion enrichment) without requiring compensating entropy increase elsewhere; the system produces useful work in an isothermal setting by absorbing heat from a single thermal reservoir (paper Sec.~Experimental validation, Qiao--Wang experiment). The paper does not prescribe a single implementation, but the mechanism you describe---constraint-driven ion separation, EMF, heat-to-electricity---is exactly the kind of device the framework supports.
+
+\item \textbf{What is the practical use of studying entropy?}
+
+Here entropy is a statistic that reflects particle aggregation or dispersion; it can indicate whether matter has separated, whether mixing is sufficient, and so on. It is therefore useful for \emph{checking whether desired technical outcomes have been achieved} (e.g.\ separation efficiency, degree of mixing). But entropy is \emph{not} the driving force or the law of system change---it is only a \emph{one-dimensional projection} of the system's full information. To understand how the system actually changes, a more reliable approach is to study the \emph{system's concrete laws of motion} directly (e.g.\ how constraints affect the evolution), rather than focusing on entropy. Entropy can serve as a verification index; the underlying dynamics and constraints are what one should rely on for understanding and design.
+
+\item \textbf{Does the paper address quantum mechanics, fluctuation theorems, Shannon entropy, or related topics?}
+
+The paper works in the \emph{classical} statistical mechanics framework and derives its results from time-reversal symmetry and coarse-grained (Boltzmann) entropy. It does \emph{not} address quantum mechanics, fluctuation theorems (e.g.\ Crooks, Jarzynski), Shannon or information-theoretic entropy, or other advanced topics---these are outside the scope of the present work. If readers are interested in such extensions, they are welcome to pursue them; the author is very willing to learn and to exchange ideas.
 
 \end{enumerate}
 
