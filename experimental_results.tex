@@ -1,0 +1,220 @@
+% Experimental results: ten cases satisfying spontaneous order/separation
+% Phenomena, references, and interpretation via entropy.tex theory
+% Companion to: Entropy Has No Direction (entropy.tex)
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\emergencystretch=1em
+
+\title{Experimental Results: Cases of Spontaneous Order and Separation\\
+\large Phenomena, References, and Interpretation via Constraint-Reshaped $P_{\infty}(S;\lambda)$}
+\author{Ting Peng\\
+  \texttt{t.peng@ieee.org}\\
+  \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
+  Key Laboratory for Special Area Highway Engineering of Ministry of Education,\\
+  Chang'an University, Xi'an 710064, China}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent
+This document lists representative cases that satisfy spontaneous order or separation, with brief descriptions of the \emph{experimentally} observed phenomena, standard references, and an interpretation in the theoretical framework of the companion paper \emph{Entropy Has No Direction} (entropy.tex): entropy has no intrinsic direction and is described by a probability distribution $P(S)$; constraints and boundary conditions reshape the long-time entropy distribution $P_{\infty}(S;\lambda)$; spontaneous low-entropy transitions are possible when the accessible phase space $\mathcal{A}(\lambda)$ and the macrostate volumes $W_m^{(E)}(\lambda)$ are altered by $\lambda$. Only actual experiments (or well-known macroscopic phenomena) are cited; simulation work is excluded. Experiments from multiple institutions are included (e.g.\ Qiao--Wang; Siwy and coworkers; Ramirez, Mafe et al.; Experton, Wu, Martin; Powell, Vlassiouk, Siwy; Tsutsui et al.).
+
+\section{Cases}
+
+\subsection{Quasi-one-dimensional ion lineups in nanopores}
+
+\textbf{Constraint.} Geometry: effective pore size $d_e$ close to effective ion size $d_i$ ($d_i < d_e < 2d_i$).
+
+\textbf{Phenomenon.} Ions inside the pores form quasi-one-dimensional lineups; collisions are suppressed and the system cannot fully relax to thermodynamic equilibrium.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}: nanoporous carbon electrodes in dilute aqueous cesium pivalate (CsPiv); when $d_e \approx 1$\,nm and $d_i \approx 0.7$\,nm, confined ions exhibit quasi-1D ordering.
+
+\textbf{Interpretation.} The geometric constraint $\lambda$ (nanopore size and shape) restricts the accessible phase space $\mathcal{A}(\lambda)$ and changes the accessible macrostate volumes $W_m^{(E)}(\lambda)$. The long-time distribution $P_{\infty}^{(E)}(S;\lambda)$ is structurally different from the unconstrained case (sharp criterion in entropy.tex); the system spends substantial probability in lower-entropy (more ordered) configurations.
+
+\subsection{Voltage exceeding the second-law limit (asymmetric nanopores)}
+
+\textbf{Constraint.} Charged small nanopores with asymmetric geometry.
+
+\textbf{Phenomenon.} The measured potential difference $|\delta V|$ is nearly one order of magnitude larger than the heat-engine upper bound predicted by the traditional second law.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}: steady-state potential in charged small nanopores under isothermal conditions far exceeds the conventional thermodynamic limit.
+
+\textbf{Interpretation.} Asymmetric constraint reshapes $P_{\infty}(S;\lambda)$ so that the steady state is intrinsically out of equilibrium. The observable (voltage) reflects a long-time distribution concentrated in lower-entropy regimes, without requiring a universal ``entropy does not decrease'' law.
+
+\subsection{Spontaneous non-equilibrium domain (SND)}
+
+\textbf{Constraint.} Local asymmetric energy barriers produced by the nanopore walls.
+
+\textbf{Phenomenon.} The system spontaneously enters a ``spontaneous non-equilibrium domain'' (SND), where entropy $S$ remains below the global maximum $S_{\text{eq}}$; the system attains a local maximum entropy $S_{\text{ne}} < S_{\text{eq}}$ under the constraint.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}: locally nonchaotic energy barriers prevent relaxation to global equilibrium; the steady state is a non-equilibrium steady state (NESS).
+
+\textbf{Interpretation.} The constraint defines an effective invariant measure on a restricted set of states; $P_{\infty}(S;\lambda)$ has significant weight at $S < S_{\text{eq}}$. There is no need for ``compensating entropy increase'' elsewhere; the distribution is reshaped by $\lambda$.
+
+\subsection{Non-Boltzmann surface ion enrichment}
+
+\textbf{Constraint.} Geometry reshapes the accessible phase space $\mathcal{A}(\lambda)$.
+
+\textbf{Phenomenon.} Surface ion density $\sigma^{\pm}$ does not follow the Boltzmann factor $e^{\mp \beta z e_0 V/2}$; charge accumulates spontaneously in an anomalous way.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}: steady-state ion distribution in charged small nanopores deviates from Boltzmann; confinement and asymmetry yield intrinsic nonequilibrium distribution.
+
+\textbf{Interpretation.} Under the constraint $\lambda$, the invariant measure (and hence $P_{\infty}(S;\lambda)$) is not that of the unconstrained Boltzmann equilibrium. The observed enrichment is a consequence of the reshaped distribution, not a violation of the underlying dynamics.
+
+\subsection{Useful work from a single heat reservoir in an isothermal cycle}
+
+\textbf{Constraint.} Asymmetric constraint that reshapes the entropy distribution.
+
+\textbf{Phenomenon.} The system performs useful work in an isothermal cycle by absorbing heat from a single thermal reservoir, with no other net effect.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}: supercapacitive cells with potential differences exceeding the traditional second-law bound allow extraction of work from a single reservoir in a cycle.
+
+\textbf{Interpretation.} In the corrected view, ``no work from a single reservoir'' is not a universal law but a statement that depends on the long-time entropy distribution. When $\lambda$ reshapes $P_{\infty}(S;\lambda)$ so that low-entropy states are more accessible, spontaneous transitions can be harnessed to do work; the Qiao--Wang experiment is a direct experimental validation.
+
+\subsection{Geometric rectification in nanofluidic structures}
+
+\textbf{Constraint.} Asymmetric geometry in nanopores or nanofluidic channels.
+
+\textbf{Phenomenon.} Ion current rectification (diode-like behaviour): ionic current is larger for one voltage polarity than for the opposite, so ions migrate preferentially in one direction under an applied field; in some setups, spontaneous directional transport or EMF arises from asymmetry without external bias.
+
+\textbf{References.} Experimental observation: Siwy~\cite{siwy2006ioncurrentrectification} (ion-current rectification in nanopores and nanotubes with broken symmetry; asymmetric $I$--$V$ curves in conical and pyramidal pores). EOF rectification and AC-driven pump: Experton, Wu, and Martin~\cite{experton2017ioncurrenttoEOF} (ion current and electroosmotic flow rectification in asymmetric nanopore membranes; AC-driven electroosmotic pump). Review of mechanisms and experiments: Zhou et al.~\cite{zhou2020ioniccurrentrectification} (ionic current rectification in asymmetric nanofluidic devices).
+
+\textbf{Interpretation.} Asymmetric $\lambda$ changes the invariant measure and the induced entropy distribution $P_{\infty}(S;\lambda)$. Rectification is a kinetic consequence of the same constraint-induced reshaping; the dynamics under $\lambda$ favour one direction, consistent with a distribution that weights certain (lower-entropy) configurations more than in the unconstrained case.
+
+\subsection{Electroosmotic flow rectification and AC-driven pump}
+
+\textbf{Constraint.} Asymmetric pore shape (conical or pyramidal) and permselectivity in nanopore membranes.
+
+\textbf{Phenomenon.} Not only ion current but also electroosmotic flow (EOF) is rectified: flow rate depends on the direction of the applied field. An AC voltage with zero time-average can drive a net (time-averaged) fluid flow, enabling an AC-driven electroosmotic pump.
+
+\textbf{Reference.} Experton, Wu, and Martin~\cite{experton2017ioncurrenttoEOF}: asymmetric nanopore membranes (conical pores in polymer, pyramidal in mica); concentration polarization and inverse relation between field and salt concentration in the pore yield EOF rectification; application to AC-driven pumps.
+
+\textbf{Interpretation.} The same asymmetric constraint $\lambda$ that reshapes $P_{\infty}(S;\lambda)$ for ion transport also biases the long-time distribution of flow states. Symmetric drive (AC) is converted into directional flow because the invariant measure under $\lambda$ weights one flow direction more than the other.
+
+\subsection{Energy conversion from fluctuating signals (zero-mean noise to net current)}
+
+\textbf{Constraint.} Asymmetric conical nanopores in polymer membranes; rectification of ion current.
+
+\textbf{Phenomenon.} An external electrical signal with zero time average (e.g.\ white noise) is applied across the membrane; the asymmetric pore rectifies it so that a \emph{net} ionic current flows and an external capacitor can be charged to about 1\,V within minutes.
+
+\textbf{Reference.} Ramirez et al.~\cite{ramirez2015energyconversionfluctuating} (Nano Energy): energy conversion from fluctuating signals using asymmetric nanopores; single-nanopore and multipore membranes; capacitor charging to $\sim$1\,V. Gomez et al.~\cite{gomez2015chargingcapacitor} (Sci.\ Rep.): charging a capacitor from an external fluctuating potential using a single conical nanopore.
+
+\textbf{Interpretation.} The constraint $\lambda$ makes the system's response to positive and negative biases statistically different; the long-time distribution of charge transfer is no longer symmetric under sign flip of the drive. Zero-mean input is converted into net directed transport—a form of ``fish gathering'' where fluctuations are harvested by the asymmetric $\lambda$.
+
+\subsection{Osmotic power (blue energy) from salinity gradients}
+
+\textbf{Constraint.} Charged asymmetric or structured nanopore membranes separating solutions of different salinity (e.g.\ seawater vs.\ freshwater).
+
+\textbf{Phenomenon.} A salt concentration gradient across the membrane drives spontaneous ion selectivity and net ion flux, generating a potential difference and usable electrical power (``blue energy''). Power densities on the order of 0.1--1\,W/m$^2$ have been reported; scaling to multipore membranes and coupling between channels are studied.
+
+\textbf{Reference.} Tsutsui et al.~\cite{tsutsui2024scalabilityosmotic} (Osaka Univ., Univ.\ Tokyo, AIST): scalability of nanopore osmotic energy conversion; role of electrostatic inter-channel coupling in multi-nanopore membranes.
+
+\textbf{Interpretation.} Boundary conditions (salinity gradient) and pore geometry/charge form the constraint $\lambda$. The steady state is a non-equilibrium state with persistent current and voltage; $P_{\infty}(S;\lambda)$ has substantial weight in configurations corresponding to directed ion flow and separation, consistent with constraint-reshaped entropy distributions.
+
+\subsection{Nonequilibrium 1/f noise in rectifying nanopores}
+
+\textbf{Constraint.} Conical (asymmetric) nanopores with rectifying $I$--$V$ behaviour.
+
+\textbf{Phenomenon.} Ion current fluctuations show voltage-dependent 1/f noise. Reversing the voltage polarity switches the system between a regime with equilibrium-like noise and one with strong nonequilibrium 1/f noise; the nonequilibrium branch (high-conductance state) shows exponential dependence of the normalized power spectrum on voltage. Ohmic (symmetric) pores do not show this asymmetry.
+
+\textbf{Reference.} Powell, Vlassiouk, Martens, and Siwy~\cite{powell2009nonequilibrium1f} (Oak Ridge, UC Irvine): single conical rectifying nanopore; equilibrium vs.\ nonequilibrium 1/f noise controlled by voltage polarity.
+
+\textbf{Interpretation.} Under one polarity the system samples a region of phase space where the invariant measure gives equilibrium-like fluctuations; under the other, the constraint $\lambda$ places the long-time state in a regime with distinctly non-equilibrium fluctuations. The same pore thus exhibits two different effective $P_{\infty}(S;\lambda)$-like behaviours depending on the applied field, illustrating how constraints and boundary conditions shape not only the mean current but the fluctuation spectrum.
+
+\subsection{Muddy water: spontaneous sedimentation}
+
+\textbf{Constraint.} Gravity and container walls (force field and geometry).
+
+\textbf{Phenomenon.} A well-mixed suspension of mud and water spontaneously separates into clear water and settled sediment over time.
+
+\textbf{Reference.} Standard example of sedimentation; see e.g.\ Callen~\cite{callen} (thermodynamics and entropy); Pathria and Beale~\cite{pathria} (statistical mechanics).
+
+\textbf{Interpretation.} Under the given constraints (gravity, boundaries), the long-time distribution $P_{\infty}(S;\lambda)$ assigns substantial weight to configurations that are more ordered (less mixed) in the coarse-grained sense. Entropy can decrease along typical trajectories; there is no universal ``entropy does not decrease'' law—only a constraint-dependent distribution.
+
+\subsection{Spontaneous phase separation}
+
+\textbf{Constraint.} Intermolecular interactions and dynamical boundary conditions.
+
+\textbf{Phenomenon.} A uniform mixture (e.g.\ oil and water) spontaneously evolves into two distinct phases; local order increases.
+
+\textbf{Reference.} Standard equilibrium and non-equilibrium statistical mechanics; e.g.\ Callen~\cite{callen}, Pathria and Beale~\cite{pathria}.
+
+\textbf{Interpretation.} The constraints $\lambda$ (interactions, boundaries) define the accessible phase space and the invariant measure. $P_{\infty}(S;\lambda)$ can have most of its weight in macrostates corresponding to phase-separated (lower mixing entropy) configurations. Spontaneous demixing is consistent with entropy as a stochastic variable whose distribution is reshaped by $\lambda$.
+
+\subsection{Asymmetric nanopore electrolyte cell: EMF without applied voltage}
+
+\textbf{Constraint.} Asymmetric geometry changes ion transit rates and equilibrium distribution.
+
+\textbf{Phenomenon.} In the absence of an applied voltage, cations and anions spontaneously form a concentration gradient and an electromotive force (EMF) is generated.
+
+\textbf{Reference.} Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge} (concentration gradient and potential in charged small nanopores). Related mechanisms: diffusio-osmosis and asymmetry-driven ion transport in nanopores.
+
+\textbf{Interpretation.} The asymmetric constraint $\lambda$ reshapes $\mathcal{A}(\lambda)$ and hence $P_{\infty}(S;\lambda)$. The steady state is a non-equilibrium steady state with a persistent concentration gradient and EMF; the system spontaneously occupies lower-entropy (more ordered) configurations compatible with $\lambda$, without requiring compensating entropy increase elsewhere.
+
+\subsection{``Fish gathering'': harvesting from low-entropy fluctuations}
+
+\textbf{Constraint.} Design of constraints (methods/design) to manipulate the long-time distribution.
+
+\textbf{Phenomenon.} By choosing $\lambda$ so that $P_{\infty}(S;\lambda)$ has high weight in a low-entropy region, one can ``harvest'' energy or matter when the system fluctuates into that region (``fish gather'').
+
+\textbf{Reference.} Conceptual within the framework of entropy.tex and the FAQ (fish metaphor); no single experiment—rather the design principle implied by constraint-reshaped $P_{\infty}(S;\lambda)$.
+
+\textbf{Interpretation.} Entropy is a stochastic variable; we do not impose a law that it must increase. By prearranged intervention (choice of $\lambda$), we can make the long-time distribution concentrate in favourable (e.g.\ low-entropy) ranges and exploit fluctuations for energy conversion or separation. The preceding cases are concrete realisations from multiple research groups; ``fish gathering'' is the general strategy of using constraint design to steer $P_{\infty}(S;\lambda)$ for practical use.
+
+\begin{thebibliography}{99}
+\bibitem{callen}
+H.~B.~Callen,
+\textit{Thermodynamics and an Introduction to Thermostatistics}
+(Wiley, 2nd ed., 1985).
+
+\bibitem{pathria}
+R.~K.~Pathria and P.~D.~Beale,
+\textit{Statistical Mechanics} (Elsevier, 3rd ed., 2011).
+
+\bibitem{qiao2025intrinsicnonequilibriumdistributionlarge}
+Y.~Qiao and M.~Wang,
+``Breaking the boundaries of the second law of thermodynamics: Intrinsic nonequilibrium
+distribution of large ions in charged small nanopores,''
+arXiv:2407.04599 [cond-mat.soft] (2025).
+
+\bibitem{siwy2006ioncurrentrectification}
+Z.~S.~Siwy,
+``Ion-current rectification in nanopores and nanotubes with broken symmetry,''
+\textit{Adv.\ Funct.\ Mater.} \textbf{16}(6), 735--746 (2006).
+
+\bibitem{experton2017ioncurrenttoEOF}
+J.~Experton, X.~Wu, and C.~R.~Martin,
+``From ion current to electroosmotic flow rectification in asymmetric nanopore membranes,''
+\textit{Nanomaterials} \textbf{7}(12), 445 (2017).
+
+\bibitem{ramirez2015energyconversionfluctuating}
+P.~Ramirez, P.~Gomez, J.~Cervera, S.~Nasir, M.~Ali, W.~Ensinger, and S.~Mafe,
+``Energy conversion from external fluctuating signals based on asymmetric nanopores,''
+\textit{Nano Energy} \textbf{16}, 375--382 (2015).
+
+\bibitem{gomez2015chargingcapacitor}
+V.~Gomez, P.~Ramirez, J.~Cervera, S.~Nasir, M.~Ali, W.~Ensinger, and S.~Mafe,
+``Charging a capacitor from an external fluctuating potential using a single conical nanopore,''
+\textit{Sci.\ Rep.} \textbf{5}, 9501 (2015).
+
+\bibitem{tsutsui2024scalabilityosmotic}
+M.~Tsutsui, W.-L.~Hsu, K.~Yokota, I.~W.~Leong, H.~Daiguji, and T.~Kawai,
+``Scalability of nanopore osmotic energy conversion,''
+\textit{Exploration} \textbf{4}(2), 20220110 (2024).
+
+\bibitem{powell2009nonequilibrium1f}
+M.~R.~Powell, I.~Vlassiouk, C.~Martens, and Z.~S.~Siwy,
+``Nonequilibrium 1/f noise in rectifying nanopores,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{103}, 248104 (2009).
+
+\bibitem{zhou2020ioniccurrentrectification}
+Y.~Zhou, X.~Liao, J.~Han, T.~Chen, and C.~Wang,
+``Ionic current rectification in asymmetric nanofluidic devices,''
+\textit{Chinese Chem.\ Lett.} \textbf{31}(9), 2414--2422 (2020).
+\end{thebibliography}
+
+\end{document}
