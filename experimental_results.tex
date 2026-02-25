@@ -5,6 +5,8 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \emergencystretch=1em
 
@@ -21,7 +23,7 @@
 \maketitle
 
 \noindent
-This document lists representative cases that satisfy spontaneous order or separation, with brief descriptions of the \emph{experimentally} observed phenomena, standard references, and an interpretation in the theoretical framework of the companion paper \emph{Entropy Has No Direction} (entropy.tex): entropy has no intrinsic direction and is described by a probability distribution $P(S)$; constraints and boundary conditions reshape the long-time entropy distribution $P_{\infty}(S;\lambda)$; spontaneous low-entropy transitions are possible when the accessible phase space $\mathcal{A}(\lambda)$ and the macrostate volumes $W_m^{(E)}(\lambda)$ are altered by $\lambda$. Only actual experiments (or well-known macroscopic phenomena) are cited; simulation work is excluded. Experiments from multiple institutions are included (e.g.\ Qiao--Wang; Siwy and coworkers; Ramirez, Mafe et al.; Experton, Wu, Martin; Powell, Vlassiouk, Siwy; Tsutsui et al.).
+This document lists representative cases that satisfy spontaneous order or separation, with brief descriptions of the \emph{experimentally} observed phenomena, standard references, and an interpretation in the theoretical framework of the companion paper \emph{Entropy Has No Direction} (entropy.tex): entropy has no intrinsic direction and is described by a probability distribution $P(S)$; constraints and boundary conditions reshape the long-time entropy distribution $P_{\infty}(S;\lambda)$; spontaneous low-entropy transitions are possible when the accessible phase space $\mathcal{A}(\lambda)$ and the macrostate volumes $W_m^{(E)}(\lambda)$ are altered by $\lambda$. Only actual experiments (or well-known macroscopic phenomena) are cited; simulation work is excluded except for one numerical study (case 17) that illustrates the same constraint-reshaping mechanism in active matter. Experiments from multiple institutions are included (e.g.\ Qiao--Wang; Siwy and coworkers; Ramirez, Mafe et al.; Experton, Wu, Martin; Powell, Vlassiouk, Siwy; Tsutsui et al.).
 
 \section{Cases}
 
@@ -165,6 +167,77 @@ This document lists representative cases that satisfy spontaneous order or separ
 
 \textbf{Interpretation.} Entropy is a stochastic variable; we do not impose a law that it must increase. By prearranged intervention (choice of $\lambda$), we can make the long-time distribution concentrate in favourable (e.g.\ low-entropy) ranges and exploit fluctuations for energy conversion or separation. The preceding cases are concrete realisations from multiple research groups; ``fish gathering'' is the general strategy of using constraint design to steer $P_{\infty}(S;\lambda)$ for practical use.
 
+\subsection{Entropy decrease in an isolated system: molecular-sized gate (locally nonchaotic barrier)}
+
+\textbf{Constraint.} A locally nonchaotic barrier---a nanoporous membrane one-sidedly surface-grafted with bendable organic chains that act as a ``molecular-sized outward-swinging gate.'' The gate interrupts the local probability distribution of microstates and imposes additional constraints on the global accessible states.
+
+\textbf{Phenomenon.} In an isolated system, gas spontaneously and repeatedly flows from the \emph{low}-pressure side to the \emph{high}-pressure side through the membrane. The crossing probability is asymmetric under local nonchaoticity. The authors show that entropy can decrease in the isolated system and that useful work may be produced in a cycle from a single thermal reservoir; the mechanism is distinct from Maxwell's demon and Feynman's ratchet and is consistent with microscopic reversibility.
+
+\textbf{Reference.} Qiao, Shang, and Kou~\cite{qiao2021moleculargate}: experiment and theory of a locally nonchaotic barrier; Phys.\ Rev.\ E \textbf{104}, 064133 (2021); arXiv:2106.06648.
+
+\textbf{Interpretation.} The gate geometry and the one-sided grafting constitute the constraint $\lambda$, which reshapes the accessible phase space and the long-time measure. $P_{\infty}(S;\lambda)$ is concentrated in configurations where the gas has moved against the pressure gradient; spontaneous entropy decrease and ``reverse'' flow are direct consequences of constraint-reshaped distributions, without invoking a universal ``entropy does not decrease'' law. This experiment is a close relative of the Qiao--Wang nanopore work and fits the same theoretical framework.
+
+\subsection{Spontaneous particle ordering, sorting, and assembly on soap films}
+
+\textbf{Constraint.} Soap film (two liquid--gas interfaces) with a balance of interfacial tensions; particle--interface coupling depends on particle size and hydrophilicity. The film geometry and the paths defined by the tension balance act as the constraint.
+
+\textbf{Phenomenon.} Without external energy input, ``belted wetted particles'' (BWPs) spontaneously travel along specified paths on the soap film. Path selection depends on particle size and hydrophilic properties, enabling spontaneous particle \emph{sorting} via distinct paths for different particles. Deformation of the soap membrane facilitates 1D and 2D particle organisation along these paths, realising energy-free particle separation and soft colloidal crystal assembly.
+
+\textbf{Reference.} Shi et al.~\cite{shi2024soapfilms}, \textit{Nano Lett.} (2024): first observation of spontaneous particle ordering on soap films; DOI 10.1021/acs.nanolett.4c01840; Jinan Univ., UC Berkeley, and collaborators.
+
+\textbf{Interpretation.} The constraint $\lambda$ (soap film geometry, two interfaces, size/hydrophilicity-dependent coupling) defines the effective dynamics and the long-time distribution of particle positions. $P_{\infty}(S;\lambda)$ has high weight in ordered, sorted configurations (particles along paths, separated by type). Spontaneous order and separation are again consequences of the constraint-reshaped distribution, not of a universal entropy-increase law.
+
+\subsection{Chirality-induced phase separation in binary mixtures of chiral active particles}
+
+\textbf{Constraint.} Activity and chirality of the particles (and, in the numerical study, boundary and packing conditions). The dynamical rules---chiral active motion---and the chirality ratio between the two species act as the constraint parameters $\lambda$.
+
+\textbf{Phenomenon.} Binary mixtures of chiral active particles with different chiralities spontaneously phase-separate \emph{without} attractive forces between particles. ``Chirality-induced nonhomogeneous bubble phases'' cluster similar particles; the chirality ratio, reduced inertial time, and packing fraction determine the separation efficiency. Particles with the same chirality direction but different magnitudes can achieve strong separation; opposite chiralities yield different collective structures.
+
+\textbf{Reference.} Guo, Li, and Ai~\cite{guo2025chiral} (South China Normal University), \textit{Phys.\ Rev.\ E} \textbf{111}, 045423 (2025): chirality-induced phase separation and collective dynamics in binary mixtures of chiral particles (numerical study).
+
+\textbf{Interpretation.} Activity and chirality define the effective constraint $\lambda$ on the phase-space exploration of the system. Under this $\lambda$, the long-time distribution $P_{\infty}(S;\lambda)$ places substantial weight on phase-separated (lower mixing entropy) configurations. Spontaneous demixing is a statistical consequence of the constraint-reshaped distribution, consistent with ``entropy has no direction'' and with the same framework as sedimentation and equilibrium phase separation, now extended to active matter.
+
+\section{Summary table}
+
+Table~\ref{tab:summary} summarises all 17 cases: constraint type, main observation, and reference.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Summary of the 17 cases: constraint, phenomenon, and reference.}
+\label{tab:summary}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}clp{2.6cm}p{3.6cm}l@{}}
+\toprule
+\textbf{\#} & \textbf{Case} & \textbf{Constraint} & \textbf{Key observation} & \textbf{Reference} \\
+\midrule
+1 & Ion lineups (quasi-1D) & $d_e \approx d_i$, geometry & Ions form lineups; no full relaxation & Qiao--Wang \\
+2 & Voltage exceeding 2nd law & Charged asym. nanopores & $|\delta V|$ $\sim$1 order above heat-engine limit & Qiao--Wang \\
+3 & SND & Local asym. energy barriers & $S < S_{\text{eq}}$; NESS under constraint & Qiao--Wang \\
+4 & Non-Boltzmann enrichment & Geometry $\to$ $\mathcal{A}(\lambda)$ & $\sigma^{\pm}$ deviates from Boltzmann & Qiao--Wang \\
+5 & Work from single reservoir & Asymmetric constraint & Isothermal cycle: heat in $\to$ work out & Qiao--Wang \\
+6 & Geometric rectification & Asym. nanopore/channel & Diode-like $I$--$V$; directional migration & Siwy; Experton et al. \\
+7 & EOF rectification \& AC pump & Asym. pore + permselectivity & AC voltage $\to$ net flow & Experton, Wu, Martin \\
+8 & Fluct. signal $\to$ net current & Asym. conical pore & Zero-mean noise $\to$ cap. $\sim$1\,V & Ramirez; Gomez et al. \\
+9 & Osmotic power (blue energy) & Membrane + salinity gradient & Spontaneous EMF \& power & Tsutsui et al. \\
+10 & Nonequil. 1/f noise & Conical rectifying pore & Polarity: equil. vs. nonequil. noise & Powell, Vlassiouk, Siwy \\
+11 & Muddy water sedimentation & Gravity + walls & Spontaneous separation: clear + sediment & Callen; Pathria \\
+12 & Phase separation & Interactions + boundaries & Uniform $\to$ two phases (e.g.\ oil--water) & Callen; Pathria \\
+13 & EMF without applied $V$ & Asymmetric geometry & Spontaneous concentration gradient \& EMF & Qiao--Wang \\
+14 & ``Fish gathering'' & Design of $\lambda$ & Harvest when $P_{\infty}$ weights low-$S$ & Conceptual \\
+15 & Entropy decrease (isolated) & Locally nonchaotic gate & Gas: low $\to$ high pressure; single-reservoir work & Qiao, Shang, Kou \\
+16 & Particle ordering on soap films & Soap film + interfacial tension & Spontaneous paths, sorting, 1D/2D assembly & Shi et al. \\
+17 & Chiral active phase separation & Activity + chirality & Binary mixture demixes without attraction & Guo, Li, Ai \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section*{Summary and implications}
+
+\noindent
+These 17 cross-disciplinary experiments and numerical studies form a complementary empirical matrix that systematically validates the universality of the ``constraints reshape the entropy distribution'' theory. The observations clearly show that spontaneous order arises not only at the microscopic nanoscale---in ion lineups and charge enrichment---but also in macroscopic classical systems such as sedimentation and phase separation, and in soft-matter and active-matter systems (soap films, chiral active particles). Key evidence indicates that when the constraint parameters $\lambda$ (including geometry, potential fields, boundary conditions, and activity rules) break the translational symmetry of phase space, the long-time measure of the system undergoes a structural shift. In particular, the ``over-limit voltage'' and ``work in an isothermal cycle'' observed in the Qiao--Wang experiment, and the spontaneous gas flow from low to high pressure in the Qiao--Shang--Kou molecular gate experiment, directly challenge the traditional thermodynamic dogma that ``work conversion from a single heat reservoir is impossible.'' These phenomena demonstrate that spontaneous access to low-entropy states is not a rare ``random fluctuation'' but a statistical necessity once the distribution is reshaped by the appropriate constraints. Furthermore, the experiments of Ramirez, Gomez, and coworkers, which use asymmetric geometry to convert a zero-mean noise signal into electrical energy at about 1\,V, strongly refute the old assumption that ``local order must be compensated by the environment.'' The consistency of the evidence across physics, chemistry, energy conversion, signal processing, and soft/active matter shows that ``entropy has no direction'' is not only a logically rigorous theoretical result but a physical fact grounded in first principles and repeatedly validated under a variety of constraints---and one that can be engineered.
+
 \begin{thebibliography}{99}
 \bibitem{callen}
 H.~B.~Callen,
@@ -215,6 +288,23 @@ M.~R.~Powell, I.~Vlassiouk, C.~Martens, and Z.~S.~Siwy,
 Y.~Zhou, X.~Liao, J.~Han, T.~Chen, and C.~Wang,
 ``Ionic current rectification in asymmetric nanofluidic devices,''
 \textit{Chinese Chem.\ Lett.} \textbf{31}(9), 2414--2422 (2020).
+
+\bibitem{qiao2021moleculargate}
+Y.~Qiao, Z.~Shang, and R.~Kou,
+``Molecular-sized outward-swinging gate: Experiment and theoretical analysis of a locally nonchaotic barrier,''
+\textit{Phys.\ Rev.\ E} \textbf{104}, 064133 (2021);
+arXiv:2106.06648.
+
+\bibitem{shi2024soapfilms}
+X.~Shi et al.,
+``Spontaneous particle ordering, sorting, and assembly on soap films,''
+\textit{Nano Lett.} (2024);
+DOI: 10.1021/acs.nanolett.4c01840.
+
+\bibitem{guo2025chiral}
+R.-X.~Guo, J.-J.~Li, and B.-Q.~Ai,
+``Chirality-induced phase separation and collective dynamics in binary mixtures of chiral particles,''
+\textit{Phys.\ Rev.\ E} \textbf{111}, 045423 (2025).
 \end{thebibliography}
 
 \end{document}
