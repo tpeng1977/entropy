@@ -5,6 +5,7 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \emergencystretch=1em
 
@@ -21,7 +22,7 @@ and a First-Principles Proof that Constraints Reshape the Entropy Distribution $
 \begin{document}
 \maketitle
 
-\noindent\footnotesize The \LaTeX\ source of this manuscript, together with a live FAQ and an up-to-date list of experimental results, is available at \url{https://github.com/tpeng1977/entropy}.
+\noindent\footnotesize The \LaTeX\ source of this manuscript, together with a live FAQ, is available at \url{https://github.com/tpeng1977/entropy}.
 
 \begin{abstract}
 We present a purely theoretical, self-contained argument that the Second Law of
@@ -181,6 +182,22 @@ minimum must be constant. Therefore the universal strict Second Law implies that
 entropy is constant on every trajectory, which contradicts the empirical fact that
 macroscopic systems exhibit entropy increase and eliminates any entropic arrow of
 time. \hfill $\square$
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_mirror_paradox.pdf}
+\caption{The mirror-state paradox.
+\textbf{(a)}~For any trajectory $S_A(t)$ (solid blue) and its time-reversed
+partner $S_B(t)=S_A(2t_0-t)$ (dashed red), universal monotonicity would require
+both $\Delta S_A\ge 0$ and $\Delta S_B\ge 0$ forward from $t_0$.
+Because $S_B(t_0+\delta t)=S_A(t_0-\delta t)$, the second condition forces
+$S_A$ to be non-decreasing \emph{backward} as well, making $t_0$ a two-sided
+local minimum.
+\textbf{(b)}~Since $t_0$ is arbitrary, every point must be a local minimum;
+for a continuous function this implies $S(t)=\mathrm{const}$, contradicting
+observed entropy changes.}
+\label{fig:mirror}
+\end{figure}
 
 \subsection{Extension: the statistical Second Law cannot be universal}
 \label{sec:stat}
@@ -376,6 +393,23 @@ Conversely, if $P_{\infty}^{(E)}(S;\lambda_2)$ were a translate of $P_{\infty}^{
 $\Delta$, then $X_{\lambda_2}=W_0 e^{S/k_B}$ would be distributed as $e^{\Delta/k_B}X_{\lambda_1}$,
 which implies $\mathcal{V}(\lambda_2)=e^{\Delta/k_B}\mathcal{V}(\lambda_1)$ (up to permutation).
 \hfill $\square$
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_distribution_change.pdf}
+\caption{How constraints reshape the long-time entropy distribution
+$P_{\infty}^{(E)}(S;\lambda)$. Here $P_\infty$ is the \emph{distribution} of
+entropy over long time; the system keeps fluctuating and there is no single
+equilibrium state. \textbf{(a)}~When all macrostate volumes scale by a common
+factor~$c$, the distribution translates along the $S$-axis by $k_B\ln c$
+without changing shape (the only degenerate case in the sharp criterion).
+\textbf{(b)}~Unconstrained case: entropy is almost entirely concentrated
+near the \emph{maximum} $S_{\max}$ (narrow peak at high $S$). Under a
+generic constraint the distribution reshapes: significant probability
+mass moves to lower $S$, making lower-entropy
+macrostates statistically accessible.}
+\label{fig:Pinf}
+\end{figure}
 
 \paragraph{Canonical as an exact energy mixture.}
 The canonical energy density is
