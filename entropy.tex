@@ -67,12 +67,12 @@ physics. We show that such universal monotonicity claims are logically incompati
 with time-reversal symmetry. The consistent replacement is not to end thermodynamics,
 but to replace ``entropy has a direction'' with: \textbf{entropy has no direction;
 it is described by a probability distribution}. Moreover, \textbf{constraints and
-boundary conditions reshape this distribution}. The present theoretical exploration was motivated by the author's earlier
-simulation work, which showed that geometry can challenge
-conventional entropy regimes and induce regime-dependent rectification in
-nanofluidic cascades~\cite{peng2026geometrychallengesentropyregimedependentrectification}.
-We then prove from first principles that constraints reshape the long-time entropy
-distribution, and we discuss recent experimental work that validates this framework.
+boundary conditions reshape this distribution}. We prove from first principles that
+constraints reshape the long-time entropy distribution
+$P_{\infty}(S;\lambda)$---motivated in part by the author's earlier simulation work
+showing that geometry can challenge conventional entropy regimes in nanofluidic
+cascades~\cite{peng2026geometrychallengesentropyregimedependentrectification}---and
+we discuss recent experimental work that validates this framework.
 
 \section{Preliminaries and assumptions}
 \label{sec:prelim}
@@ -252,22 +252,13 @@ value, nor must the formal ``maximum entropy'' compatible with constraints coinc
 with the most probable coarse-grained macrostate once dynamical restrictions are
 taken seriously.
 
-The deepest logical point is therefore that entropy is an emergent summary of how
-particles explore phase space under given constraints, not a primitive law that
-dictates their motion. What fundamentally decides whether a system mixes,
-separates, or self-organises into ordered patterns is the constraint-dependent
-microscopic dynamics and the resulting invariant measures. Studying how different
-geometries, boundaries, and couplings reshape those dynamics---and hence the
-probability landscape over macrostates---is both conceptually sound and practically
-useful, especially for engineering targets such as separation, rectification and
-controlled pattern formation. Conversely, ``laws'' or regularity statements that
-take entropy itself as the primary driver or governing quantity lack fundamental
-logical support; at best they are empirical summaries valid within restricted
-regimes, not primitive axioms of microscopic physics. In the same spirit, all
-results in this paper concerning entropy distributions and their evolution should
-be read as probabilistic, ensemble-level characterisations of typical behaviour
-under specified constraints, rather than as per-trajectory guarantees for every
-single realisation of a physical system.
+What fundamentally decides whether a system mixes, separates, or self-organises
+into ordered patterns is therefore the constraint-dependent microscopic dynamics
+and the resulting invariant measures---not an entropy ``law'' acting as a causal
+agent. Accordingly, all results in this paper concerning entropy distributions and
+their evolution should be read as probabilistic, ensemble-level characterisations
+of typical behaviour under specified constraints, rather than as per-trajectory
+guarantees for every single realisation of a physical system.
 
 The remainder of this paper proves the second core claim---\textbf{constraints and
 boundaries can change the long-time entropy distribution
@@ -423,64 +414,27 @@ states, without requiring entropy increase elsewhere in the system.
 
 \subsection{The Qiao--Wang experiment}
 
-Qiao and Wang investigated nanoporous carbon electrodes immersed in dilute aqueous
-cesium pivalate (CsPiv) solutions. The critical feature is that the effective nanopore
-size ($d_e \approx 1$ nm) is only slightly larger than the effective ion size
-($d_i \approx 0.7$ nm), satisfying $d_i < d_e < 2d_i$. Under this condition, the
-confined ions form quasi-one-dimensional lineups within the nanopores.
+Qiao and Wang investigated nanoporous carbon electrodes in dilute aqueous CsPiv
+solutions where the effective nanopore size ($d_e \approx 1$\,nm) only slightly
+exceeds the ion size ($d_i \approx 0.7$\,nm), satisfying $d_i < d_e < 2d_i$.
+The steady-state ion distribution is intrinsically non-equilibrium: the measured
+$|\delta V|$ is nearly an order of magnitude above the upper limit set by the
+heat-engine statement of the second law, and the system produces useful work in
+an isothermal cycle by absorbing heat from a single thermal reservoir.
 
-The experiment revealed that the steady-state distribution of large ions in the charged
-small nanopores is intrinsically out of equilibrium. Specifically, the measured potential
-difference $|\delta V|$ is nearly one order of magnitude larger than the upper limit
-predicted by the heat-engine statement of the second law of thermodynamics. This
-non-equilibrium distribution allows the system to produce useful work in an isothermal
-cycle by absorbing heat from a single thermal reservoir, without any other effect.
+\subsection{Interpretation: constraint-reshaped $P_{\infty}(S;\lambda)$}
 
-\subsection{Interpretation through constraint-reshaped entropy distribution}
-
-The Qiao--Wang result can be understood precisely through the framework developed in
-this paper. The asymmetric constraint---the nanopore walls that confine ions to
-quasi-one-dimensional motion---acts as the constraint parameter $\lambda$ that reshapes
-the accessible phase space $\mathcal{A}(\lambda)$.
-
-When $d_i < d_e < 2d_i$, the nanopore geometry creates an asymmetric constraint that
-fundamentally alters the accessible macrostate volumes $W_m^{(E)}(\lambda)$. The
-quasi-one-dimensional confinement means that ion trajectories are no longer fully
-chaotic; particle-particle collisions become sparse, and the system cannot relax to
-thermodynamic equilibrium. This corresponds to a structural change in
-$P_{\infty}^{(E)}(S;\lambda)$ according to the sharp criterion in
-Sec.~\ref{sec:constraint_to_P}.
-
-The non-Boltzmannian ion distribution observed by Qiao and Wang---where the surface ion
-density $\sigma^{\pm}$ does not follow the Boltzmann factor $e^{\mp \beta z e_0 V/2}$---is
-a direct manifestation of the constraint-reshaped entropy distribution. The nanopore
-walls create a locally nonchaotic energy barrier (the ``spontaneous-nonequilibrium domain''
-or SND in their terminology) that prevents the system from reaching the global maximum
-entropy $S_{\text{eq}}$. Instead, the system reaches a local maximum entropy
-$S_{\text{ne}} < S_{\text{eq}}$ under the constraint, corresponding to the non-equilibrium
-steady state.
-
-\subsection{Spontaneous low-entropy transitions without compensating entropy increase}
-
-A crucial aspect of the Qiao--Wang experiment is that the spontaneous transition toward
-lower entropy (the non-equilibrium ion distribution) does not require entropy increase
-elsewhere in the system. This is consistent with our theoretical framework: the
-constraint reshapes $P_{\infty}(S;\lambda)$ by altering the accessible phase space
-structure, not by transferring entropy to another subsystem.
-
-In the traditional view, any local entropy decrease must be compensated by entropy
-increase elsewhere (the ``compensating entropy increase'' requirement). However, when
-constraints reshape the entropy distribution $P_{\infty}(S;\lambda)$, the system can
-spontaneously access lower-entropy macrostates that were previously inaccessible or
-statistically suppressed. This is not a violation of energy conservation (the First Law)
-but rather a consequence of the constraint-dependent nature of the entropy distribution
-itself.
-
-The Qiao--Wang experiment demonstrates this explicitly: the non-equilibrium ion
-distribution in the nanopores is maintained without requiring entropy increase in the
-bulk liquid phase or the thermal bath. The constraint (the nanopore geometry) has
-reshaped the entropy landscape, making lower-entropy states more accessible than they
-would be in an unconstrained system.
+In our framework the nanopore walls act as the constraint parameter $\lambda$
+that reshapes $\mathcal{A}(\lambda)$. The quasi-one-dimensional confinement
+fundamentally alters $W_m^{(E)}(\lambda)$: ion trajectories lose full
+chaoticity, collisions become sparse, and the system cannot relax to global
+equilibrium---a structural change in $P_{\infty}^{(E)}(S;\lambda)$ per the
+sharp criterion of Sec.~\ref{sec:constraint_to_P}. The observed
+non-Boltzmannian surface-ion density $\sigma^{\pm}$ is a direct manifestation:
+the constraint prevents the system from reaching $S_{\text{eq}}$ and instead
+pins it at $S_{\text{ne}} < S_{\text{eq}}$, without requiring compensating
+entropy increase elsewhere. It is the entropy landscape itself that has been
+reshaped, not the entropy balance between subsystems.
 
 \section{Conclusion}
 
@@ -493,6 +447,22 @@ and boundary conditions. We proved from first principles that constraints reshap
 the long-time entropy distribution $P_{\infty}(S;\lambda)$ by altering accessible
 macrostate volumes and/or statistical weights, with a sharp microcanonical criterion
 that isolates the only degenerate case of mere translation.
+
+A concise way to summarise the conceptual stance of this work is: \emph{constraints
+set the landscape} (they fix the accessible phase space and the Hamiltonian, and thus
+which macrostates are possible); \emph{dynamics set the rules} (time-reversal invariant
+microscopic evolution governs how particles move, independent of entropy);
+\emph{stochasticity---or in quantum mechanics, intrinsic indeterminacy---determines
+which of the accessible states is realised}; and \emph{entropy is only a reading}, a
+coarse-grained statistic of the current macrostate, not a driver of the dynamics. In
+that picture, the future is not predetermined by a single entropic fate: under different
+constraints, different futures---mixing, separation, or self-organization---become
+possible, and each regime remains open to design. Every day is new.
+
+This pattern---constraints reshaping the entropy landscape and enabling spontaneous
+formation of structure---is familiar from star and planet formation, crystal and
+snowflake growth, mineral veins, and arguably the emergence of life: all instances of
+constraint-induced local entropy decrease, consistent with the present framework.
 
 In this corrected framework, the traditional ``impossibility'' intuition behind a
 perpetual motion machine of the second kind is no longer a fundamental axiom but a
@@ -508,16 +478,19 @@ cycle by absorbing heat from a single thermal reservoir. With this experimental
 confirmation, both the theoretical and experimental barriers to a perpetual motion machine
 of the second kind have been overcome.
 
-The path forward is clear: through iterative enhancement, engineering optimization, and
-scaling of constraint-based entropy reshaping technologies, practical devices can be
-developed. The implications extend far beyond energy generation. With this technology,
-humanity can maintain civilization even through extended ice ages, ensuring the
-perpetual flourishing and development of human culture. The macroscopic world will not
-end in heat death; rather, it will continuously and perpetually manifest various
-wonderful phenomena, sustained by the fundamental principle that constraints reshape
-entropy distributions and enable spontaneous order generation.
+The path forward is clear: through iterative enhancement, engineering optimisation,
+and scaling of constraint-based entropy reshaping, practical devices can be
+developed. The implications extend far beyond energy generation. Because
+constraints can perpetually reshape entropy distributions and enable spontaneous
+order, the macroscopic world need not tend toward a featureless equilibrium:
+universal heat death is not a foregone conclusion but an artefact of the
+unconstrained limit. With this principle at hand, humanity can sustain civilisation
+even through extended ice ages, ensuring the perpetual flourishing and development
+of human culture. The macroscopic world will not end in silence; it will
+continuously manifest various wonderful phenomena, sustained by the ever-present
+possibility of constraint-induced order generation.
 
-The era of thermodynamic fatalism is over; the age of perpetual complexity has begun.
+The era of thermodynamic fatalism is over; the age of thermodynamic design has begun.
 
 %\section*{References (background)}
 \begin{thebibliography}{9}
