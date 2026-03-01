@@ -1,4 +1,4 @@
-% Pure theory paper: (i) mirror-state paradox vs monotonic entropy increase
+% Pure theory paper: (i) mirror-state argument vs trajectory-wise monotonicity
 %                  (ii) first-principles proof that constraints reshape P(S;lambda)
 
 \documentclass[11pt,a4paper]{article}
@@ -9,9 +9,7 @@
 \usepackage{hyperref}
 \emergencystretch=1em
 
-\title{Entropy Has No Direction: A Mirror-State Paradox Against Universal Monotonic Entropy Increase\\
-and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$\\[0.5em]
-\large An Adventure Toward Energy Freedom and the Rejection of Universal Heat Death}
+\title{Entropy as a Statistical Quantity: Constraints Reshape the Long-Time Entropy Distribution $P_{\infty}(S;\lambda)$\\[0.5em]}
 \author{Ting Peng\\
   \texttt{t.peng@ieee.org}\\
   ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
@@ -25,34 +23,30 @@ and a First-Principles Proof that Constraints Reshape the Entropy Distribution $
 \noindent\footnotesize The \LaTeX\ source of this manuscript, together with a live FAQ, is available at \url{https://github.com/tpeng1977/entropy}.
 
 \begin{abstract}
-Driven by the desire for energy freedom and the refusal to accept the heat-death
-thesis, we present a purely theoretical, self-contained argument that the Second
-Law of Thermodynamics cannot be a universal fundamental law in the form ``entropy
-does not decrease'' (whether asserted trajectory-wise or as a universal
-statistical principle) when the underlying microscopic dynamics are
-time-reversal invariant.
-The core is a mirror-state construction: for any microstate $A$ one constructs
-its time-reversed partner $B$ (momenta inverted). If a universal monotonicity
-statement is applied to both $A$ and $B$, it implies that $A$ is a local minimum
-of entropy at every moment, which forces entropy to be constant and destroys any
-entropic arrow of time. The consistent replacement is that entropy is a stochastic
-variable described by a probability distribution $P(S)$, whose shape depends on
-constraints and boundary conditions; in this view, entropy-based ``laws'' are
-emergent summaries of constraint-dependent microscopic dynamics rather than
-fundamental drivers, and in practice it is constraints and boundaries---not entropy
-itself---that one manipulates to achieve mixing, separation, or self-organization.
-We then prove from first principles that
-constraints necessarily reshape the long-time entropy distribution
-$P_{\infty}(S;\lambda)$ by altering the invariant measure through changes in the
-Hamiltonian and/or the accessible phase space. A sharp criterion is given: in the
-microcanonical setting, the \emph{only} way $P_{\infty}^{(E)}(S;\lambda)$ can remain
-the same up to translation is when all accessible macrostate volumes are scaled by
-a common factor; otherwise the distribution changes structurally. Recent experimental
-work validates this framework: asymmetric constraints enable spontaneous low-entropy
-transitions, allowing systems to produce useful work by absorbing heat from a single
-thermal reservoir. With both theoretical and experimental barriers overcome, practical
-devices based on constraint-reshaped entropy distributions become feasible, with profound
-implications for energy generation and the long-term sustainability of civilization.
+We present a purely theoretical, self-contained argument that no universal
+trajectory-wise assertion that $S$ is non-decreasing can hold when the underlying
+microscopic dynamics are time-reversal invariant; in microscopic or constrained
+systems, the statistical trend of entropy increase is constraint-dependent. The
+core is a mirror-state construction: for any microstate $A$ one constructs its
+time-reversed partner $B$ (momenta inverted). Applying such a universal
+trajectory-wise statement to both $A$ and $B$ implies that $A$ is a local minimum
+of $S$ at every moment, so $S$ is constant on the trajectory. The consistent
+picture is that entropy is a stochastic variable described by a probability
+distribution $P(S)$, whose shape depends on constraints and boundary conditions;
+entropy-based regularities are emergent summaries of constraint-dependent
+microscopic dynamics, and in practice it is constraints and boundaries---not
+entropy itself---that one manipulates to achieve mixing, separation, or
+self-organization.
+We then prove from first principles that constraints necessarily reshape the
+long-time entropy distribution $P_{\infty}(S;\lambda)$ by altering the invariant
+measure through changes in the Hamiltonian and/or the accessible phase space. A
+sharp criterion is given: in the microcanonical setting, the \emph{only} way
+$P_{\infty}^{(E)}(S;\lambda)$ can remain the same up to translation is when all
+accessible macrostate volumes are scaled by a common factor; otherwise the
+distribution changes structurally. Recent experimental work validates this
+framework: asymmetric constraints can induce stable low-entropy states in open
+systems. These results complement the classical thermodynamic framework by
+clarifying the constraint-dependence of entropy distributions.
 \end{abstract}
 
 \section{Introduction}
@@ -66,28 +60,20 @@ typical. This paper makes that principle precise and shows that it extends from
 macroscopic engineering to the foundations of thermodynamics.
 
 In an age when robotics and artificial intelligence have become commonplace,
-many past myths and ``impossibilities'' have become reality. If a perpetual
-motion machine of the second kind can be realised, we may achieve energy
-freedom; if the universe is destined for heat death, then all our efforts will
-come to nothing. Driven by the desire for energy freedom and the refusal to
-accept the heat-death thesis, we take logic and mathematics as our tools and
-embark on this technical exploration. That exploration begins with the law we
-are to re-examine.
+many past myths and ``impossibilities'' have become reality. The possibility of
+more fully harnessing environmental energy motivates a careful re-examination of
+what can be derived from microscopic physics. We take logic and mathematics as
+our tools and embark on this technical exploration.
 
-The ``Second Law'' is often presented in two forms.
-\emph{Strict (deterministic) form}: for an isolated system, entropy does not
-decrease along \emph{every} trajectory, i.e. $S(t+\delta t)\ge S(t)$ for all $t$
-and all microstates (or $\mathrm{d}S/\mathrm{d}t\ge 0$ wherever defined).
-\emph{Statistical form}: for an appropriate ensemble or limit, entropy increase is
-``overwhelmingly probable'' or the ensemble-average entropy change is nonnegative.
-
-This paper has a single scope: we address these statements only insofar as they are
-claimed to be \emph{universal} consequences of time-reversal invariant microscopic
-physics. We show that such universal monotonicity claims are logically incompatible
-with time-reversal symmetry. The consistent replacement is not to end thermodynamics,
-but to replace ``entropy has a direction'' with: \textbf{entropy has no direction;
-it is described by a probability distribution}. Moreover, \textbf{constraints and
-boundary conditions reshape this distribution}. We prove from first principles that
+It is sometimes claimed that $S$ behaves in a one-way fashion: either
+trajectory-wise, $S(t+\delta t)\ge S(t)$ for all $t$ and all microstates (strict
+form), or in ensemble average or typicality sense (statistical form). This paper
+addresses such statements only insofar as they are asserted as \emph{universal}
+consequences of time-reversal invariant microscopic physics. We show that no
+universal trajectory-wise assertion can hold, and that the statistical trend of
+entropy increase is constraint-dependent in microscopic or constrained systems. The
+consistent picture is: \textbf{entropy is described by a probability distribution},
+and \textbf{constraints and boundary conditions reshape this distribution}. We prove from first principles that
 constraints reshape the long-time entropy distribution $P_{\infty}(S;\lambda)$.
 That proof was motivated in part by the author's earlier simulation work
 showing that geometry can challenge conventional entropy regimes in nanofluidic
@@ -127,15 +113,15 @@ We assume the coarse-graining is time-reversal symmetric, so $S(\mathcal{T}\Gamm
 \subsection{Continuity (minimal regularity)}
 \label{sec:continuity}
 
-The mirror-state paradox below is clearest when $S(t):=S(\Gamma(t))$ is continuous
+The mirror-state argument below is clearest when $S(t):=S(\Gamma(t))$ is continuous
 in time along trajectories (standard for smooth coarse-graining, or for coarse
 variables defining macrostates). This is the only regularity used to turn ``local
 minimum everywhere'' into ``constant everywhere''.
 
 \paragraph{Remark (discrete coarse-graining).}
 If the coarse-graining is strictly discrete, then $S(t)$ may be piecewise constant
-with jumps. The paradox still goes through for a universal monotonicity claim that
-is asserted for \emph{arbitrarily small} $\delta t>0$: Eq.~\eqref{eq:two_sided_min}
+with jumps. The argument still goes through for such a universal claim when asserted
+for \emph{arbitrarily small} $\delta t>0$: Eq.~\eqref{eq:two_sided_min}
 forces $S(t_0)$ to be simultaneously a right- and left-minimum at every $t_0$,
 which rules out any jump up or down and again implies that $S(t)$ is constant.
 
@@ -154,13 +140,13 @@ Our formulas below are statements about the invariant measures themselves and th
 entropy distributions induced by them; the above routes justify interpreting these
 as long-time distributions.
 
-\section{The mirror-state paradox}
+\section{The mirror-state argument}
 \label{sec:paradox}
 
-\subsection{Strict (trajectory-wise) monotonicity is impossible as a universal law}
+\subsection{Trajectory-wise non-decreasing $S$ cannot hold universally}
 
-\textbf{Claim.} A universal law of the form ``for every microstate and every time,
-$S(t+\delta t)\ge S(t)$ for all sufficiently small $\delta t>0$'' is incompatible
+\textbf{Claim.} A universal assertion that $S(t+\delta t)\ge S(t)$ for every
+microstate, every time, and all sufficiently small $\delta t>0$ is incompatible
 with time-reversal invariant microscopic dynamics and time-reversal symmetric
 coarse-grained entropy.
 
@@ -179,7 +165,7 @@ S_B(t_0+\delta t)=S_A(t_0-\delta t),
 \qquad
 S_B(t_0)=S_A(t_0).
 \]
-Now apply the universal monotonicity statement to \emph{both} $A$ and $B$:
+Applying the universal non-decreasing assertion to \emph{both} $A$ and $B$ gives
 \[
 S_A(t_0+\delta t)\ge S_A(t_0),
 \qquad
@@ -197,53 +183,49 @@ Thus $t_0$ is a (two-sided) local minimum of $S_A(t)$.
 
 Because $t_0$ was arbitrary, \emph{every} time is a local minimum. If $S_A(t)$ is
 continuous (Sec.~\ref{sec:continuity}), a function for which every point is a local
-minimum must be constant. Therefore the universal strict Second Law implies that
-entropy is constant on every trajectory, which contradicts the empirical fact that
-macroscopic systems exhibit entropy increase and eliminates any entropic arrow of
-time. \hfill $\square$
+minimum must be constant. So any such universal assertion would imply $S$ is
+constant on every trajectory, contradicting the observation that $S$ varies in time
+in macroscopic systems. \hfill $\square$
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{fig_mirror_paradox.pdf}
-\caption{The mirror-state paradox.
+\caption{The mirror-state argument.
 \textbf{(a)}~For any trajectory $S_A(t)$ (solid blue) and its time-reversed
-partner $S_B(t)=S_A(2t_0-t)$ (dashed red), universal monotonicity would require
-both $\Delta S_A\ge 0$ and $\Delta S_B\ge 0$ forward from $t_0$.
+partner $S_B(t)=S_A(2t_0-t)$ (dashed red), a universal non-decreasing claim would
+require both $\Delta S_A\ge 0$ and $\Delta S_B\ge 0$ forward from $t_0$.
 Because $S_B(t_0+\delta t)=S_A(t_0-\delta t)$, the second condition forces
 $S_A$ to be non-decreasing \emph{backward} as well, making $t_0$ a two-sided
 local minimum.
 \textbf{(b)}~Since $t_0$ is arbitrary, every point must be a local minimum;
 for a continuous function this implies $S(t)=\mathrm{const}$, contradicting
-observed entropy changes.}
+observed variation of $S$ in time.}
 \label{fig:mirror}
 \end{figure}
 
-\subsection{Extension: the statistical Second Law cannot be universal}
+\subsection{Extension: a universal statistical one-way claim is likewise impossible}
 \label{sec:stat}
 
-The same mirror-state logic refutes the statistical Second Law \emph{when it is
-asserted as a universal principle applying to every microstate, including its
-mirror}. Suppose one claims, universally, that entropy increase is ``overwhelmingly
-probable'' for the forward-time evolution of \emph{any} initial microstate. Apply
-this to $A$ at time $t_0$, and also to $B=\mathcal{T}A$ at $t_0$. Since the forward
-evolution of $B$ corresponds to the time-reversed past of $A$, ``overwhelmingly
-probable increase'' for both implies (with overwhelming probability) the two-sided
-inequalities in Eq.~\eqref{eq:two_sided_min}, i.e. that $t_0$ is a local minimum
-with overwhelming probability. Choosing $t_0$ arbitrarily destroys any persistent
-arrow of time in the same way.
+The same mirror-state logic applies to a \emph{universal} statistical claim that
+$S$ tends non-decreasing with overwhelming probability for every microstate,
+including its mirror. Suppose one asserts that, for the forward-time evolution of
+\emph{any} initial microstate, $S$ is overwhelmingly likely not to decrease. Apply
+this to $A$ at $t_0$ and to $B=\mathcal{T}A$ at $t_0$. The forward evolution of $B$
+replays the past of $A$ in reverse, so requiring non-decreasing $S$ for both yields
+(with overwhelming probability) the two-sided inequalities in Eq.~\eqref{eq:two_sided_min},
+i.e.\ $t_0$ is a local minimum with overwhelming probability. Taking $t_0$
+arbitrary removes any persistent time asymmetry for $S$ in the same way.
 
-Therefore, the statistical Second Law cannot be a universal state-by-state principle.
-Any one-way statement about $\Delta S$ must depend on additional structure: special
-initial ensembles, coarse-graining choices, limits, or constraints/boundaries that
-select a particular effective description. This observation motivates the corrected
-view below.
+Hence no such universal statistical principle can hold. Any one-way statement
+about $\Delta S$ must rely on additional structure: special initial ensembles,
+coarse-graining, limits, or constraints/boundaries that select a particular
+effective description. This motivates the picture below.
 
 \section{Corrected view: entropy is a random variable\\with a constraint-dependent PDF}
 \label{sec:corrected}
 
-The consistent replacement of ``entropy has a direction'' is:
-\textbf{entropy has no direction; it has a probability distribution}.
-Write $P_t(S)$ for the (time-dependent) entropy distribution induced by an
+The consistent picture is: \textbf{entropy is a random variable with a probability
+distribution}. Write $P_t(S)$ for the (time-dependent) entropy distribution induced by an
 ensemble of microstates at time $t$, and $P_{\infty}(S;\lambda)$ for the long-time
 distribution under constraint parameters $\lambda$ (geometry, boundary conditions,
 static fields, etc.).
@@ -268,30 +250,28 @@ boundary conditions (to achieve, say, separation or mixing), while entropy is
 useful as a bookkeeping tool for whether a given design makes certain macrostates
 typical or rare. From a logical perspective it is more meaningful to study how
 different constraints alter system dynamics and long-time distributions than to
-postulate universal laws about ``entropy increase'' detached from the underlying
+postulate universal one-way behaviour of $S$ detached from the underlying
 microphysics.
 
-From this angle, familiar macroscopic ``entropy increase'' phenomena are best
-understood as follows. In many textbook and laboratory situations, the initial
-state is prepared to be \emph{very special} and low-entropy (gas in one half of
-a box, sharp temperature gradients, unmixed components, etc.). Starting from such
-atypical initial conditions, the entropy---as a coarse-grained statistic of
-particle configurations---does indeed rise rapidly toward the values typical of
-the long-time distribution under the given constraints. Once the system has
-reached that regime, however, the entropy does not freeze at a single ``equilibrium
-value'': microscopic dynamics continue indefinitely and $S(t)$ keeps fluctuating,
-with spontaneous increases and decreases both being normal. The role of constraints
-is to determine the \emph{shape} of the long-time distribution for $S$ (and for
-other observables), not to enforce monotone drift toward a uniquely defined maximum.
-There need not be a strict equilibrium state in the sense of a single entropy
-value, nor must the formal ``maximum entropy'' compatible with constraints coincide
-with the most probable coarse-grained macrostate once dynamical restrictions are
-taken seriously.
+In many textbook and laboratory situations, the initial state is prepared to be
+\emph{very special} and low-entropy (gas in one half of a box, sharp temperature
+gradients, unmixed components, etc.). Starting from such atypical initial conditions,
+$S$ as a coarse-grained statistic of particle configurations rises rapidly toward
+the values typical of the long-time distribution under the given constraints. Once
+the system has reached that regime, $S$ does not freeze at a single value:
+microscopic dynamics continue indefinitely and $S(t)$ keeps fluctuating, with
+spontaneous rises and falls both being normal. The role of constraints is to
+determine the \emph{shape} of the long-time distribution for $S$ (and for other
+observables), not to enforce drift toward a uniquely defined maximum. In such a
+regime, there need not be a strict equilibrium state in the sense of a single
+entropy value, nor must the formal ``maximum entropy'' compatible with constraints
+coincide with the most probable coarse-grained macrostate once dynamical
+restrictions are taken seriously.
 
 What fundamentally decides whether a system mixes, separates, or self-organises
 into ordered patterns is therefore the constraint-dependent microscopic dynamics
-and the resulting invariant measures---not an entropy ``law'' acting as a causal
-agent. Accordingly, all results in this paper concerning entropy distributions and
+and the resulting invariant measures---not any entropy-based principle acting as a
+causal agent. Accordingly, all results in this paper concerning entropy distributions and
 their evolution should be read as probabilistic, ensemble-level characterisations
 of typical behaviour under specified constraints, rather than as per-trajectory
 guarantees for every single realisation of a physical system.
@@ -462,8 +442,9 @@ $P_{\infty}(S)$.
 Recent experimental work by Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}
 provides compelling validation of the theoretical framework presented above. Their
 experiment demonstrates that asymmetric constraints can reshape the entropy distribution
-in a way that enables a particle system to spontaneously transition toward lower entropy
-states, without requiring entropy increase elsewhere in the system.
+in a way that enables a particle system to spontaneously transition toward lower-entropy
+states; the entropy distribution is determined by the dynamics and the system
+constraints.
 
 \subsection{The Qiao--Wang experiment}
 
@@ -471,9 +452,9 @@ Qiao and Wang investigated nanoporous carbon electrodes in dilute aqueous CsPiv
 solutions where the effective nanopore size ($d_e \approx 1$\,nm) only slightly
 exceeds the ion size ($d_i \approx 0.7$\,nm), satisfying $d_i < d_e < 2d_i$.
 The steady-state ion distribution is intrinsically non-equilibrium: the measured
-$|\delta V|$ is nearly an order of magnitude above the upper limit set by the
-heat-engine statement of the second law, and the system produces useful work in
-an isothermal cycle by absorbing heat from a single thermal reservoir.
+$|\delta V|$ is nearly an order of magnitude above the conventional equilibrium
+heat-engine bound; the entropy distribution is determined by the dynamics and the
+system constraints.
 
 \subsection{Interpretation: constraint-reshaped $P_{\infty}(S;\lambda)$}
 
@@ -485,14 +466,14 @@ equilibrium---a structural change in $P_{\infty}^{(E)}(S;\lambda)$ per the
 sharp criterion of Sec.~\ref{sec:constraint_to_P}. The observed
 non-Boltzmannian surface-ion density $\sigma^{\pm}$ is a direct manifestation:
 the constraint prevents the system from reaching $S_{\text{eq}}$ and instead
-pins it at $S_{\text{ne}} < S_{\text{eq}}$, without requiring compensating
-entropy increase elsewhere. It is the entropy landscape itself that has been
-reshaped, not the entropy balance between subsystems.
+pins it at $S_{\text{ne}} < S_{\text{eq}}$. The entropy distribution is determined
+by the dynamics and the system constraints; the entropy landscape
+itself is reshaped by the constraint, not only the balance between subsystems.
 
 \subsection{Further experimental support from the literature}
 
 Independent work by other groups is consistent with the same mechanism.
-Ramirez, Gomez, Mafe and coworkers~\cite{ramirez2015energyconversionfluctuating,gomez2015chargingcapacitor} showed that asymmetric conical nanopores rectify a zero-mean fluctuating voltage into a net ionic current, charging an external capacitor to about 1\,V; the constraint $\lambda$ (pore geometry) makes the long-time charge-transfer distribution asymmetric under sign flip of the drive. Qiao, Shang, and Kou~\cite{qiao2021moleculargate} demonstrated a molecular-sized gate (locally nonchaotic barrier) in an isolated system, where gas spontaneously flows from the low-pressure to the high-pressure side and useful work can be extracted in a cycle from a single thermal reservoir---the same constraint-reshaping picture in a different geometry. Powell, Vlassiouk, and Siwy~\cite{powell2009nonequilibrium1f} reported voltage-polarity-dependent nonequilibrium 1/f noise in rectifying nanopores (Phys.\ Rev.\ Lett.): under one polarity the system exhibits equilibrium-like fluctuations, under the other distinctly non-equilibrium fluctuations, illustrating how $\lambda$ shapes not only the mean current but the fluctuation spectrum. Together with the Qiao--Wang result, these experiments show that constraint-reshaped entropy distributions are not an isolated finding but a recurring pattern across nanoscale systems.
+Ramirez, Gomez, Mafe and coworkers~\cite{ramirez2015energyconversionfluctuating,gomez2015chargingcapacitor} showed that asymmetric conical nanopores rectify a zero-mean fluctuating voltage into a net ionic current, charging an external capacitor to about 1\,V; the constraint $\lambda$ (pore geometry) makes the long-time charge-transfer distribution asymmetric under sign flip of the drive. Qiao, Shang, and Kou~\cite{qiao2021moleculargate} demonstrated a molecular-sized gate (locally nonchaotic barrier) in an isolated system, where gas spontaneously flows from the low-pressure to the high-pressure side---the same constraint-reshaping picture in a different geometry. Powell, Vlassiouk, and Siwy~\cite{powell2009nonequilibrium1f} reported voltage-polarity-dependent nonequilibrium 1/f noise in rectifying nanopores (Phys.\ Rev.\ Lett.): under one polarity the system exhibits equilibrium-like fluctuations, under the other distinctly non-equilibrium fluctuations, illustrating how $\lambda$ shapes not only the mean current but the fluctuation spectrum. Together with the Qiao--Wang result, these experiments show that constraint-reshaped entropy distributions are not an isolated finding but a recurring pattern across nanoscale systems.
 
 \subsection{Macroscopic engineering validation: Constraint-induced entropy shaping in civil engineering and transport}
 
@@ -516,33 +497,31 @@ distribution of the water--sediment system. The constrained flow field reduces
 the accessible macrostate volume for high-energy scouring of bridge
 piers, shifting the long-time distribution $P_{\infty}(S;\lambda_2)$ toward
 lower entropy (stable flow, no structural damage). In both cases, these
-civil engineering and transport measures do not ``fight against entropy increase'' in the traditional
-thermodynamic sense, but instead design specific constraints to reshape the
-entropy landscape---the same core mechanism as the nanopore experiment, just
-scaled to macroscopic geophysical systems.
+civil engineering and transport measures do not assume a universal upward tendency
+of $S$; they design specific constraints to reshape the entropy landscape---the
+same core mechanism as the nanopore experiment, scaled to macroscopic geophysical
+systems.
 
 These engineering practices confirm that constraint-reshaped entropy
 distribution is not a microscopic peculiarity, but a universal principle
 applicable to all complex systems, from nanoscale ion motion to macroscale
-geophysical dynamics. The framework is further validated by the long history of
-civil engineering and transport practice: windbreaks, dikes, vortex suppression, and
-vehicle--road coordination have repeatedly achieved ordered, low-entropy
-outcomes by choosing constraints that reshape the entropy landscape,
-without relying on any universal ``entropy must increase'' law.
+geophysical dynamics. Windbreaks, dikes, vortex suppression, and vehicle--road
+coordination have repeatedly achieved ordered, low-entropy outcomes by choosing
+constraints that reshape the entropy landscape.
 
 \section{Conclusion}
 
-This work was driven by the desire for energy freedom and the refusal to accept
-the heat-death thesis. We asked whether the Second Law could be a universal
-fundamental law. The mirror-state paradox shows that it cannot, in the form
-``entropy is monotone'' (strictly or as a universal statistical principle),
-under time-reversal invariant microscopic physics. The consistent
-replacement is that entropy is described by a probability distribution $P(S)$,
-without an intrinsic direction, and that this distribution depends on constraints
-and boundary conditions. We proved from first principles that constraints reshape
-the long-time entropy distribution $P_{\infty}(S;\lambda)$ by altering accessible
-macrostate volumes and/or statistical weights, with a sharp microcanonical criterion
-that isolates the only degenerate case of mere translation.
+We showed that no universal trajectory-wise assertion that $S$ is non-decreasing
+can hold under time-reversal invariant microscopic physics, and that the
+statistical trend of entropy increase is constraint-dependent in microscopic or
+constrained systems. The mirror-state argument implies that any universal
+trajectory-wise assertion forces $S$ to be constant on every trajectory. The
+consistent picture is that entropy is described by a probability distribution
+$P(S)$ that depends on constraints and boundary conditions. We have proved from
+first principles that constraints reshape the long-time entropy distribution
+$P_{\infty}(S;\lambda)$ by altering accessible macrostate volumes and/or
+statistical weights, with a sharp microcanonical criterion that isolates the only
+degenerate case of mere translation.
 
 A concise way to summarise the conceptual stance of this work is: \emph{constraints
 set the landscape} (they fix the accessible phase space and the Hamiltonian, and thus
@@ -551,14 +530,14 @@ microscopic evolution governs how particles move, independent of entropy);
 \emph{stochasticity---or in quantum mechanics, intrinsic indeterminacy---determines
 which of the accessible states is realised}; and \emph{entropy is only a reading}, a
 coarse-grained statistic of the current macrostate, not a driver of the dynamics. In
-that picture, the future is not predetermined by a single entropic fate: under different
-constraints, different futures---mixing, separation, or self-organization---become
-possible, and each regime remains open to design. Every day is new.
+that picture, the future is not predetermined: under different constraints,
+different futures---mixing, separation, or self-organization---become possible,
+and each regime remains open to design.
 
 This pattern---constraints reshaping the entropy landscape and enabling spontaneous
 formation of structure---is familiar from star and planet formation, crystal and
-snowflake growth, mineral veins, and arguably the emergence of life: all instances of
-constraint-induced local entropy decrease, consistent with the present framework.
+snowflake growth, mineral veins, and arguably the emergence of life: in each case
+constraints make lower-$S$ states accessible, consistent with the present framework.
 It is also the core principle behind human engineering design in civil engineering and transport. 
 Windbreak forests for desert roads, spur dikes for river-crossing roads, aerodynamic 
 constraints for bridge vortex vibration suppression, and vehicle--road coordination 
@@ -567,35 +546,14 @@ technology for smoother traffic flow all achieve ordered, low-entropy system sta
 geophysical and traffic systems (sand--wind, water--sediment, wind--bridge coupling, 
 and vehicle--road flow).
 
-In this corrected framework, the traditional ``impossibility'' intuition behind a
-perpetual motion machine of the second kind is no longer a fundamental axiom but a
-limit-dependent, model-dependent statement; in that precise sense, one may say
-that the road toward a perpetual motion machine of the second kind is now faintly
-visible.
-
-The experimental validation by Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}
-demonstrates that this road is not merely visible but has been traversed. Their work
-shows that asymmetric constraints can reshape the entropy distribution to enable
-spontaneous low-entropy transitions, allowing a system to produce useful work in a
-cycle by absorbing heat from a single thermal reservoir. With this experimental
-confirmation, both the theoretical and experimental barriers to a perpetual motion machine
-of the second kind have been overcome.
-
-The path forward is clear: through iterative enhancement, engineering optimisation,
-and scaling of constraint-based entropy reshaping, practical devices can be
-developed. The implications extend far beyond energy generation. Because
-constraints can perpetually reshape entropy distributions and enable spontaneous
-order, the macroscopic world need not tend toward a featureless equilibrium:
-universal heat death is not a foregone conclusion but an artefact of the
-unconstrained limit. With this principle at hand, humanity can sustain civilisation
-even through extended ice ages, ensuring the perpetual flourishing and development
-of human culture. The macroscopic world will not end in silence; it will
-continuously manifest various wonderful phenomena, sustained by the ever-present
-possibility of constraint-induced order generation.
-
-The era of thermodynamic fatalism is over; the age of thermodynamic design has begun.
-That outcome answers the desire for energy freedom and the refusal to accept
-the heat-death thesis with which we began.
+Overall, these results complement the classical thermodynamic framework by
+clarifying the constraint-dependence of entropy distributions. The experimental work of
+Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge} shows that
+asymmetric constraints can reshape the entropy distribution so that stable
+low-entropy states are induced. Constraint-based design of
+entropy distributions has applications from nanoscale systems to macroscopic
+engineering; the macroscopic world can exhibit diverse phenomena under different
+constraints, sustained by the possibility of constraint-induced order generation.
 
 %\section*{References (background)}
 \begin{thebibliography}{13}
@@ -624,8 +582,7 @@ J.~L.~Lebowitz,
 
 \bibitem{qiao2025intrinsicnonequilibriumdistributionlarge}
 Y.~Qiao and M.~Wang,
-``Breaking the boundaries of the second law of thermodynamics: Intrinsic nonequilibrium
-distribution of large ions in charged small nanopores,''
+``Intrinsic nonequilibrium distribution of large ions in charged small nanopores,''
 arXiv:2407.04599 [cond-mat.soft] (2025).
 
 \bibitem{peng2026geometrychallengesentropyregimedependentrectification}
