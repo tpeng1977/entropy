@@ -9,9 +9,7 @@
 \usepackage{hyperref}
 \emergencystretch=1em
 
-\title{Entropy Has No Direction: A Mirror-State Paradox Against Universal Monotonic Entropy Increase\\
-and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$\\[0.5em]
-\large An Adventure Toward Energy Freedom and the Rejection of Universal Heat Death}
+\title{Entropy Has No Direction: Constraint Engineering Reshapes Entropy Distributions and Paves the Way for Energy Freedom}
 \author{Ting Peng\\
   \texttt{t.peng@ieee.org}\\
   ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
@@ -25,34 +23,25 @@ and a First-Principles Proof that Constraints Reshape the Entropy Distribution $
 \noindent\footnotesize The \LaTeX\ source of this manuscript, together with a live FAQ, is available at \url{https://github.com/tpeng1977/entropy}.
 
 \begin{abstract}
-Driven by the desire for energy freedom and the refusal to accept the heat-death
-thesis, we present a purely theoretical, self-contained argument that the Second
-Law of Thermodynamics cannot be a universal fundamental law in the form ``entropy
-does not decrease'' (whether asserted trajectory-wise or as a universal
-statistical principle) when the underlying microscopic dynamics are
-time-reversal invariant.
-The core is a mirror-state construction: for any microstate $A$ one constructs
-its time-reversed partner $B$ (momenta inverted). If a universal monotonicity
-statement is applied to both $A$ and $B$, it implies that $A$ is a local minimum
-of entropy at every moment, which forces entropy to be constant and destroys any
-entropic arrow of time. The consistent replacement is that entropy is a stochastic
-variable described by a probability distribution $P(S)$, whose shape depends on
-constraints and boundary conditions; in this view, entropy-based ``laws'' are
-emergent summaries of constraint-dependent microscopic dynamics rather than
-fundamental drivers, and in practice it is constraints and boundaries---not entropy
-itself---that one manipulates to achieve mixing, separation, or self-organization.
-We then prove from first principles that
-constraints necessarily reshape the long-time entropy distribution
-$P_{\infty}(S;\lambda)$ by altering the invariant measure through changes in the
-Hamiltonian and/or the accessible phase space. A sharp criterion is given: in the
-microcanonical setting, the \emph{only} way $P_{\infty}^{(E)}(S;\lambda)$ can remain
-the same up to translation is when all accessible macrostate volumes are scaled by
-a common factor; otherwise the distribution changes structurally. Recent experimental
-work validates this framework: asymmetric constraints enable spontaneous low-entropy
-transitions, allowing systems to produce useful work by absorbing heat from a single
-thermal reservoir. With both theoretical and experimental barriers overcome, practical
-devices based on constraint-reshaped entropy distributions become feasible, with profound
-implications for energy generation and the long-term sustainability of civilization.
+This work reconstructs the core cognition of entropy evolution from the perspective
+of engineering constraint design, based on four axioms of classical mechanics and
+statistical mechanics (Hamiltonian dynamics, time-reversal invariance, Boltzmann
+coarse-grained entropy, phase-space and invariant measure), and proves that entropy has no intrinsic direction. From these axioms we derive
+two results. First, a mirror-state construction: for any microstate $A$ one
+constructs its time-reversed partner $B$ (Axiom~2). Any universal statement that
+entropy does not decrease forward in time, applied to both $A$ and $B$, implies
+that entropy is constant on every trajectory; universal monotonicity is therefore
+incompatible with Axioms~1--3. Second, from Axiom~4 we prove that constraints
+necessarily reshape the long-time entropy distribution
+$P_{\infty}(S;\lambda)$ by altering the invariant measure through the Hamiltonian
+and/or the accessible phase space. Constraints, as the core variable of engineering
+design, thus relax the long-standing limit of entropy increase and pave a
+brand-new path for human energy freedom. A sharp microcanonical criterion is
+given; recent experimental work validates the framework. The energy crisis has
+become a core bottleneck restricting the sustainable development of human
+civilisation. This research challenges traditional thermodynamic fatalism and
+opens the era of thermodynamic design, with profound
+significance for the long-term survival and development of humanity.
 \end{abstract}
 
 \section{Introduction}
@@ -62,117 +51,122 @@ environmental obstacles, spanned natural chasms, and turned the impossible into
 the possible---building highways, railways, and airports on a vast scale. These
 achievements stand as a cornerstone of civilisation. They rest on a single
 principle: constraints reshape what is accessible, and thus what becomes
-typical. This paper makes that principle precise and shows that it extends from
-macroscopic engineering to the foundations of thermodynamics.
+typical. This paper reconstructs the core cognition of entropy evolution from
+this perspective of engineering constraint design and shows that the same
+principle extends from macroscopic engineering to the foundations of
+thermodynamics.
 
-In an age when robotics and artificial intelligence have become commonplace,
-many past myths and ``impossibilities'' have become reality. If a perpetual
-motion machine of the second kind can be realised, we may achieve energy
-freedom; if the universe is destined for heat death, then all our efforts will
-come to nothing. Driven by the desire for energy freedom and the refusal to
-accept the heat-death thesis, we take logic and mathematics as our tools and
-embark on this technical exploration. That exploration begins with the law we
-are to re-examine.
+The energy crisis has become a core bottleneck restricting the sustainable
+development of human civilisation. Abundant thermal energy surrounds us; if it
+can be harnessed and put to fuller use, we may achieve energy freedom; if the
+universe is destined for heat death, that possibility is foreclosed. Driven by
+the desire to make fuller use of thermal energy and the refusal to accept the
+heat-death thesis, we take
+logic and mathematics as our tools and embark on this technical exploration. We
+take as our sole basis four axioms (Sec.~\ref{sec:prelim}): Hamiltonian
+dynamics (Axiom~1), time-reversal invariance (Axiom~2), Boltzmann coarse-grained
+entropy (Axiom~3), and phase-space and invariant measure (Axiom~4). No other laws
+or postulates are invoked.
 
-The ``Second Law'' is often presented in two forms.
-\emph{Strict (deterministic) form}: for an isolated system, entropy does not
-decrease along \emph{every} trajectory, i.e. $S(t+\delta t)\ge S(t)$ for all $t$
-and all microstates (or $\mathrm{d}S/\mathrm{d}t\ge 0$ wherever defined).
-\emph{Statistical form}: for an appropriate ensemble or limit, entropy increase is
-``overwhelmingly probable'' or the ensemble-average entropy change is nonnegative.
+From these four axioms we derive two results and prove that entropy has no
+intrinsic direction. (i)~\textbf{Entropy has no direction.} A
+mirror-state construction (Axioms~1--3) shows that any universal statement of the
+form ``entropy does not decrease forward in time'' (trajectory-wise or as a
+universal statistical principle) is incompatible with the axioms; the derived picture is that entropy is described by a
+probability distribution $P(S)$, without an intrinsic direction. (ii)~\textbf{Constraints
+and boundary conditions reshape this distribution.} From Axiom~4 we prove that
+constraints reshape the long-time entropy distribution
+$P_{\infty}(S;\lambda)$. Constraints, as the core variable of engineering
+design, thus relax the long-standing limit of entropy increase and pave a
+brand-new path for human energy freedom. The proof of (ii) was motivated in part by the author's
+earlier simulation work showing that geometry can alter entropy regimes in
+nanofluidic cascades~\cite{peng2026geometrychallengesentropyregimedependentrectification}.
+We then discuss recent experimental work that validates this framework. This research challenges traditional thermodynamic fatalism and opens the era of
+thermodynamic design, which is of profound significance to the long-term
+survival and development of human beings.
 
-This paper has a single scope: we address these statements only insofar as they are
-claimed to be \emph{universal} consequences of time-reversal invariant microscopic
-physics. We show that such universal monotonicity claims are logically incompatible
-with time-reversal symmetry. The consistent replacement is not to end thermodynamics,
-but to replace ``entropy has a direction'' with: \textbf{entropy has no direction;
-it is described by a probability distribution}. Moreover, \textbf{constraints and
-boundary conditions reshape this distribution}. We prove from first principles that
-constraints reshape the long-time entropy distribution $P_{\infty}(S;\lambda)$.
-That proof was motivated in part by the author's earlier simulation work
-showing that geometry can challenge conventional entropy regimes in nanofluidic
-cascades~\cite{peng2026geometrychallengesentropyregimedependentrectification}.
-We then discuss recent experimental work that validates this framework.
-
-\section{Preliminaries and assumptions}
+\section{Axioms}
 \label{sec:prelim}
 
-\subsection{Microscopic dynamics and time reversal}
+The entire paper relies only on the following four axioms of classical mechanics
+and statistical mechanics. No other laws or postulates are used.
 
-Let $\Gamma(t)$ denote the phase-space microstate of an isolated system evolving
-under time-reversal invariant microscopic dynamics (Hamiltonian dynamics being the
-canonical example). Let $\mathcal{T}$ denote time reversal, which (for classical
-mechanics) acts by reversing momenta while leaving positions unchanged.
+\paragraph{Axiom 1 (Hamiltonian dynamics).}
+The microscopic evolution of an isolated system obeys classical Hamiltonian dynamics.
+The phase-space microstate $\Gamma(t)$ satisfies Hamilton's equations
+$\dot{\Gamma}=\{H,\Gamma\}$, where $H$ is the system Hamiltonian and
+$\{\cdot,\cdot\}$ denotes the Poisson bracket.
 
-Time-reversal invariance means: if $\Gamma_A(t)$ is a solution, then
-$\Gamma_B(t):=\mathcal{T}\Gamma_A(2t_0-t)$ is also a solution. In particular, the
-forward-time evolution of the mirror state $\Gamma_B(t_0)=\mathcal{T}\Gamma_A(t_0)$
-replays the past of $\Gamma_A$ in reverse.
+\paragraph{Axiom 2 (Time-reversal invariance).}
+There exists a time-reversal operator $\mathcal{T}$ (for classical mechanics:
+reverse all momenta, leave positions unchanged). If $\Gamma_A(t)$ is a solution of
+Hamilton's equations, then the mirror state
+$\Gamma_B(t):=\mathcal{T}\Gamma_A(2t_0-t)$ is also a solution of the same
+Hamilton's equations for any fixed $t_0$. In particular, the forward-time
+evolution of $\Gamma_B(t_0)=\mathcal{T}\Gamma_A(t_0)$ replays the past of
+$\Gamma_A$ in reverse.
 
-\subsection{Entropy as a coarse-grained state function}
+\paragraph{Axiom 3 (Boltzmann coarse-grained entropy).}
+Phase space is partitioned by a time-reversal symmetric coarse-graining
+$\{C_m\}_{m\in\mathcal{M}}$ (i.e.\ $\mathcal{T}C_m=C_m$ for each macrostate
+$C_m$). The Boltzmann entropy of macrostate $C_m$ is
+$S_m=k_B\ln(W_m/W_0)$, where $W_m$ is the phase-space volume of $C_m$ and
+$W_0>0$ is an arbitrary reference volume (shifting by a constant does not affect
+any conclusions). The instantaneous entropy of the system is
+$S(\Gamma)=S_m$ if and only if $\Gamma\in C_m$; equivalently,
+$S(\mathcal{T}\Gamma)=S(\Gamma)$.
 
-We use Boltzmann (coarse-grained) entropy: fix a time-reversal symmetric
-coarse-graining (partition) of phase space into macrostates (cells) $\{C_m\}$.
-Assign to any $\Gamma\in C_m$ an instantaneous entropy $S(\Gamma)=S_m$.
+For the derivation of $P_{\infty}(S;\lambda)$ we use the energy-shell form: at
+fixed energy $E$, $W_m^{(E)}$ is the accessible volume of $C_m$ on the energy
+shell, and $S_m^{(E)}=k_B\ln(W_m^{(E)}/W_0)$.
 
-For mathematical cleanliness (finite volumes), we adopt the energy-shell form used
-in statistical mechanics: at fixed energy $E$ define the accessible macrostate
-volume $W_m^{(E)}$ on the energy shell and set $S_m^{(E)}=k_B\ln(W_m^{(E)}/W_0)$,
-with an arbitrary reference volume $W_0$ (shifting entropy by a constant does not
-affect any conclusions). This is the same entropy notion used below to derive
-$P_{\infty}(S;\lambda)$.
+\paragraph{Axiom 4 (Phase space and invariant measure).}
+Phase-space evolution satisfies Liouville's theorem (measure is conserved). The
+long-time invariant measure is determined solely by the Hamiltonian and the
+accessible phase space: for an isolated system at fixed energy $E$, the invariant
+measure is microcanonical (uniform on the accessible energy shell); for a system
+coupled to a heat bath at temperature $T$, the invariant measure is canonical
+(Gibbs with that Hamiltonian and $\beta=1/(k_B T)$).
 
-We assume the coarse-graining is time-reversal symmetric, so $S(\mathcal{T}\Gamma)=S(\Gamma)$.
-
-\subsection{Continuity (minimal regularity)}
+\paragraph{Remark (continuous or discrete).}
 \label{sec:continuity}
+The mirror-state argument below holds \emph{whether $S(t):=S(\Gamma(t))$ is
+continuous along trajectories or not}. If it is continuous (smooth
+coarse-graining), then ``every time is a local minimum'' implies $S(t)$ is
+constant. If it is piecewise constant with jumps (discrete coarse-graining),
+Eq.~\eqref{eq:two_sided_min} still forces $S(t_0)$ to be a two-sided minimum at
+every $t_0$, ruling out any jump up or down, so again $S(t)$ is constant. The
+conclusion is the same in both cases.
 
-The mirror-state paradox below is clearest when $S(t):=S(\Gamma(t))$ is continuous
-in time along trajectories (standard for smooth coarse-graining, or for coarse
-variables defining macrostates). This is the only regularity used to turn ``local
-minimum everywhere'' into ``constant everywhere''.
-
-\paragraph{Remark (discrete coarse-graining).}
-If the coarse-graining is strictly discrete, then $S(t)$ may be piecewise constant
-with jumps. The paradox still goes through for a universal monotonicity claim that
-is asserted for \emph{arbitrarily small} $\delta t>0$: Eq.~\eqref{eq:two_sided_min}
-forces $S(t_0)$ to be simultaneously a right- and left-minimum at every $t_0$,
-which rules out any jump up or down and again implies that $S(t)$ is constant.
-
-\subsection{What is meant by $P_{\infty}(S;\lambda)$}
+\subsection{Interpretation of $P_{\infty}(S;\lambda)$}
 \label{sec:Pinf_meaning}
 
-In the second part of the paper, $P_{\infty}(S;\lambda)$ denotes a \emph{long-time}
-entropy distribution induced by an invariant measure. Two standard routes make
-this precise:
-(i) assume the dynamics are ergodic/mixing on the relevant invariant set so that
-time averages (and long-time distributions) are independent of the initial
-microstate up to measure-zero exceptions; or
-(ii) consider an ensemble whose initial microstates are drawn from the invariant
-measure (microcanonical or canonical), in which case $P_{\infty}$ is immediate.
-Our formulas below are statements about the invariant measures themselves and the
-entropy distributions induced by them; the above routes justify interpreting these
-as long-time distributions.
+In the second part of the paper, $P_{\infty}(S;\lambda)$ denotes the
+\emph{long-time} entropy distribution induced by the invariant measure of Axiom~4.
+Under ergodicity or when the initial ensemble is drawn from the invariant measure,
+$P_{\infty}$ is the limiting distribution of $S$ over long time. The formulas
+below are statements about these invariant measures and the entropy
+distributions they induce.
 
 \section{The mirror-state paradox}
 \label{sec:paradox}
 
 \subsection{Strict (trajectory-wise) monotonicity is impossible as a universal law}
 
-\textbf{Claim.} A universal law of the form ``for every microstate and every time,
-$S(t+\delta t)\ge S(t)$ for all sufficiently small $\delta t>0$'' is incompatible
-with time-reversal invariant microscopic dynamics and time-reversal symmetric
-coarse-grained entropy.
+\textbf{Claim.} From Axioms~1--3 (Sec.~\ref{sec:prelim}), a universal statement of
+the form ``for every microstate and every time,
+$S(t+\delta t)\ge S(t)$ for all sufficiently small $\delta t>0$'' is
+incompatible.
 
 \textit{Proof (mirror-state construction).}
 Fix an arbitrary time $t_0$ on an arbitrary trajectory $\Gamma_A(t)$. Construct the
 mirror state at the same time: $\Gamma_B(t_0)=\mathcal{T}\Gamma_A(t_0)$, and let
-$\Gamma_B(t)$ be its forward-time evolution. By time-reversal invariance, for any
+$\Gamma_B(t)$ be its forward-time evolution. By Axiom~2, for any
 $\delta t>0$,
 \[
 \Gamma_B(t_0+\delta t)=\mathcal{T}\Gamma_A(t_0-\delta t).
 \]
-By time-reversal symmetry of the coarse-graining, $S(\mathcal{T}\Gamma)=S(\Gamma)$,
+By Axiom~3, $S(\mathcal{T}\Gamma)=S(\Gamma)$,
 so
 \[
 S_B(t_0+\delta t)=S_A(t_0-\delta t),
@@ -195,12 +189,12 @@ S_A(t_0-\delta t)\ge S_A(t_0).
 \end{equation}
 Thus $t_0$ is a (two-sided) local minimum of $S_A(t)$.
 
-Because $t_0$ was arbitrary, \emph{every} time is a local minimum. If $S_A(t)$ is
-continuous (Sec.~\ref{sec:continuity}), a function for which every point is a local
-minimum must be constant. Therefore the universal strict Second Law implies that
-entropy is constant on every trajectory, which contradicts the empirical fact that
-macroscopic systems exhibit entropy increase and eliminates any entropic arrow of
-time. \hfill $\square$
+Because $t_0$ was arbitrary, \emph{every} time is a local minimum. Whether
+$S_A(t)$ is continuous or piecewise constant (Sec.~\ref{sec:continuity}), a
+function for which every time is a two-sided local minimum must be constant.
+Therefore any universal statement that entropy does not decrease along every
+trajectory would imply that entropy is constant on every trajectory, eliminating
+any entropic arrow of time. \hfill $\square$
 
 \begin{figure}[t]
 \centering
@@ -213,35 +207,33 @@ Because $S_B(t_0+\delta t)=S_A(t_0-\delta t)$, the second condition forces
 $S_A$ to be non-decreasing \emph{backward} as well, making $t_0$ a two-sided
 local minimum.
 \textbf{(b)}~Since $t_0$ is arbitrary, every point must be a local minimum;
-for a continuous function this implies $S(t)=\mathrm{const}$, contradicting
-observed entropy changes.}
+whether $S(t)$ is continuous or not, this implies $S(t)=\mathrm{const}$,
+contradicting observed entropy changes.}
 \label{fig:mirror}
 \end{figure}
 
-\subsection{Extension: the statistical Second Law cannot be universal}
+\subsection{Extension: universal statistical monotonicity is likewise incompatible}
 \label{sec:stat}
 
-The same mirror-state logic refutes the statistical Second Law \emph{when it is
-asserted as a universal principle applying to every microstate, including its
-mirror}. Suppose one claims, universally, that entropy increase is ``overwhelmingly
-probable'' for the forward-time evolution of \emph{any} initial microstate. Apply
-this to $A$ at time $t_0$, and also to $B=\mathcal{T}A$ at $t_0$. Since the forward
-evolution of $B$ corresponds to the time-reversed past of $A$, ``overwhelmingly
-probable increase'' for both implies (with overwhelming probability) the two-sided
-inequalities in Eq.~\eqref{eq:two_sided_min}, i.e. that $t_0$ is a local minimum
-with overwhelming probability. Choosing $t_0$ arbitrarily destroys any persistent
-arrow of time in the same way.
+The same mirror-state logic shows that a \emph{universal} statistical principle
+``entropy increase is overwhelmingly probable for the forward-time evolution of
+any initial microstate'' is incompatible with time-reversal invariance. Apply
+that principle to $A$ at time $t_0$, and also to $B=\mathcal{T}A$ at $t_0$. Since
+the forward evolution of $B$ corresponds to the time-reversed past of $A$,
+``overwhelmingly probable increase'' for both implies (with overwhelming probability)
+the two-sided inequalities in Eq.~\eqref{eq:two_sided_min}, i.e. that $t_0$ is a
+local minimum with overwhelming probability. Choosing $t_0$ arbitrarily removes any
+persistent arrow of time in the same way.
 
-Therefore, the statistical Second Law cannot be a universal state-by-state principle.
-Any one-way statement about $\Delta S$ must depend on additional structure: special
-initial ensembles, coarse-graining choices, limits, or constraints/boundaries that
-select a particular effective description. This observation motivates the corrected
-view below.
+Thus, from Axioms~1--3, no universal one-way statement about $\Delta S$ can hold
+for every microstate; any such statement must depend on additional structure
+(initial ensemble, coarse-graining, limits, or constraints/boundaries). This
+leads to the derived view below.
 
-\section{Corrected view: entropy is a random variable\\with a constraint-dependent PDF}
+\section{Derived view: entropy is a random variable\\with a constraint-dependent PDF}
 \label{sec:corrected}
 
-The consistent replacement of ``entropy has a direction'' is:
+From the preceding derivation, the picture is:
 \textbf{entropy has no direction; it has a probability distribution}.
 Write $P_t(S)$ for the (time-dependent) entropy distribution induced by an
 ensemble of microstates at time $t$, and $P_{\infty}(S;\lambda)$ for the long-time
@@ -290,11 +282,11 @@ taken seriously.
 
 What fundamentally decides whether a system mixes, separates, or self-organises
 into ordered patterns is therefore the constraint-dependent microscopic dynamics
-and the resulting invariant measures---not an entropy ``law'' acting as a causal
-agent. Accordingly, all results in this paper concerning entropy distributions and
-their evolution should be read as probabilistic, ensemble-level characterisations
-of typical behaviour under specified constraints, rather than as per-trajectory
-guarantees for every single realisation of a physical system.
+and the resulting invariant measures. All results in this paper concerning entropy
+distributions and their evolution should thus be read as probabilistic,
+ensemble-level characterisations of typical behaviour under specified constraints,
+rather than as per-trajectory guarantees for every single realisation of a physical
+system.
 
 The remainder of this paper proves the second core claim---\textbf{constraints and
 boundaries can change the long-time entropy distribution
@@ -303,6 +295,9 @@ experimental validation of this framework.
 
 \section{First-principles derivation: constraints $\lambda \to P_{\infty}(S;\lambda)$}
 \label{sec:constraint_to_P}
+
+This section uses Axioms~1, 3 and 4 to derive how constraint parameters
+$\lambda$ determine the long-time entropy distribution $P_{\infty}(S;\lambda)$.
 
 \subsection{Constraints as Hamiltonian/accessible-set modifications}
 
@@ -317,8 +312,11 @@ $\mathcal{A}(\lambda)$.
 
 \subsection{Long-time invariant measures (microcanonical and canonical)}
 
+By Axiom~4, the invariant measure is determined solely by the Hamiltonian and
+the accessible phase space. We make this explicit for the two standard cases.
+
 \paragraph{Microcanonical (isolated).}
-At fixed energy $E$, a natural invariant measure is uniform on the accessible energy shell:
+At fixed energy $E$, the invariant measure is uniform on the accessible energy shell:
 \begin{equation}
 \rho_{\infty}^{(E)}(\Gamma;\lambda)=
 \frac{1}{\Omega(E;\lambda)}\,
@@ -349,7 +347,7 @@ e^{-\beta H(\Gamma;\lambda)}.
 
 \subsection{Boltzmann entropy on the energy shell}
 
-Fix a time-reversal symmetric coarse-graining $\{C_m\}_{m\in\mathcal{M}}$.
+Fix a time-reversal symmetric coarse-graining $\{C_m\}_{m\in\mathcal{M}}$ (Axiom~3).
 Define the accessible macrostate volume on the energy shell:
 \begin{equation}
 W_m^{(E)}(\lambda)=
@@ -471,9 +469,9 @@ Qiao and Wang investigated nanoporous carbon electrodes in dilute aqueous CsPiv
 solutions where the effective nanopore size ($d_e \approx 1$\,nm) only slightly
 exceeds the ion size ($d_i \approx 0.7$\,nm), satisfying $d_i < d_e < 2d_i$.
 The steady-state ion distribution is intrinsically non-equilibrium: the measured
-$|\delta V|$ is nearly an order of magnitude above the upper limit set by the
-heat-engine statement of the second law, and the system produces useful work in
-an isothermal cycle by absorbing heat from a single thermal reservoir.
+$|\delta V|$ is nearly an order of magnitude above the upper limit that
+equilibrium thermodynamics would assign to such a system, and the system produces
+useful work in an isothermal cycle by absorbing heat from a single thermal reservoir.
 
 \subsection{Interpretation: constraint-reshaped $P_{\infty}(S;\lambda)$}
 
@@ -522,24 +520,23 @@ entropy landscape---the same core mechanism as the nanopore experiment, just
 scaled to macroscopic geophysical systems.
 
 These engineering practices confirm that constraint-reshaped entropy
-distribution is not a microscopic peculiarity, but a universal principle
+distribution is not a microscopic peculiarity but a universal principle
 applicable to all complex systems, from nanoscale ion motion to macroscale
-geophysical dynamics. The framework is further validated by the long history of
-civil engineering and transport practice: windbreaks, dikes, vortex suppression, and
+geophysical dynamics. Windbreaks, dikes, vortex suppression, and
 vehicle--road coordination have repeatedly achieved ordered, low-entropy
-outcomes by choosing constraints that reshape the entropy landscape,
-without relying on any universal ``entropy must increase'' law.
+outcomes through constraint design alone.
 
 \section{Conclusion}
 
 This work was driven by the desire for energy freedom and the refusal to accept
-the heat-death thesis. We asked whether the Second Law could be a universal
-fundamental law. The mirror-state paradox shows that it cannot, in the form
-``entropy is monotone'' (strictly or as a universal statistical principle),
-under time-reversal invariant microscopic physics. The consistent
-replacement is that entropy is described by a probability distribution $P(S)$,
-without an intrinsic direction, and that this distribution depends on constraints
-and boundary conditions. We proved from first principles that constraints reshape
+the heat-death thesis. Starting from the four axioms of Sec.~\ref{sec:prelim} (Hamiltonian dynamics,
+time-reversal invariance, Boltzmann coarse-grained entropy, phase-space and
+invariant measure), we derived that entropy cannot have a universal monotonic
+direction: the mirror-state construction (Axioms~1--3) shows that any such
+universal statement would force entropy to be constant on every trajectory. The derived picture is
+that entropy is described by a probability distribution $P(S)$, without an
+intrinsic direction, and that this distribution depends on constraints and
+boundary conditions. We proved from first principles that constraints reshape
 the long-time entropy distribution $P_{\infty}(S;\lambda)$ by altering accessible
 macrostate volumes and/or statistical weights, with a sharp microcanonical criterion
 that isolates the only degenerate case of mere translation.
@@ -567,23 +564,24 @@ technology for smoother traffic flow all achieve ordered, low-entropy system sta
 geophysical and traffic systems (sand--wind, water--sediment, wind--bridge coupling, 
 and vehicle--road flow).
 
-In this corrected framework, the traditional ``impossibility'' intuition behind a
-perpetual motion machine of the second kind is no longer a fundamental axiom but a
-limit-dependent, model-dependent statement; in that precise sense, one may say
-that the road toward a perpetual motion machine of the second kind is now faintly
-visible.
+In this framework, whether a system can produce useful work in a cycle by
+absorbing heat from a single thermal reservoir is determined by the constraints
+and the resulting $P_{\infty}(S;\lambda)$; it is a limit-dependent,
+model-dependent question. The possibility of harnessing abundant thermal energy
+through constraint design is in that sense open in principle.
 
 The experimental validation by Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}
-demonstrates that this road is not merely visible but has been traversed. Their work
-shows that asymmetric constraints can reshape the entropy distribution to enable
-spontaneous low-entropy transitions, allowing a system to produce useful work in a
-cycle by absorbing heat from a single thermal reservoir. With this experimental
-confirmation, both the theoretical and experimental barriers to a perpetual motion machine
-of the second kind have been overcome.
+demonstrates that this possibility is not merely theoretical but has been
+realised. Their work shows that asymmetric constraints can reshape the entropy
+distribution to enable spontaneous low-entropy transitions, allowing a system to
+produce useful work in a cycle by absorbing heat from a single thermal reservoir.
+With this experimental confirmation, the fuller exploitation of thermal energy is
+no longer only consistent with the derived framework but has been achieved in the
+laboratory.
 
 The path forward is clear: through iterative enhancement, engineering optimisation,
-and scaling of constraint-based entropy reshaping, practical devices can be
-developed. The implications extend far beyond energy generation. Because
+and scaling of constraint-based entropy reshaping, practical means to harness
+thermal energy can be developed. The implications extend far beyond energy generation. Because
 constraints can perpetually reshape entropy distributions and enable spontaneous
 order, the macroscopic world need not tend toward a featureless equilibrium:
 universal heat death is not a foregone conclusion but an artefact of the
@@ -593,9 +591,15 @@ of human culture. The macroscopic world will not end in silence; it will
 continuously manifest various wonderful phenomena, sustained by the ever-present
 possibility of constraint-induced order generation.
 
-The era of thermodynamic fatalism is over; the age of thermodynamic design has begun.
-That outcome answers the desire for energy freedom and the refusal to accept
-the heat-death thesis with which we began.
+The era of thermodynamic fatalism is giving way to the age of thermodynamic design.
+The end of thermodynamic fatalism means that human beings are no longer passive
+acceptors of thermodynamic laws, but active designers of entropy evolution.
+Through constraint engineering, we can not only realise energy freedom, but also
+shape the ordered evolution of various complex systems, from nanoscale energy
+devices to macroscale geophysical systems, and even the entire universe. This research points to a shift in which engineering science drives the
+development of fundamental physics and human civilisation extends the scope of
+what is possible within natural laws. That outcome answers the desire for energy freedom and the
+refusal to accept the heat-death thesis with which we began.
 
 %\section*{References (background)}
 \begin{thebibliography}{13}
