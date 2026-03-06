@@ -23,26 +23,34 @@
 \noindent\footnotesize The \LaTeX\ source of this manuscript, together with a live FAQ, is available at \url{https://github.com/tpeng1977/entropy}.
 
 \begin{abstract}
-The central conclusion of this paper is that \textbf{constraints change the
-system's operating characteristics and reshape the entropy distribution}. From
-four axioms of classical mechanics and statistical mechanics (Hamiltonian
-dynamics, time-reversal invariance, Boltzmann coarse-grained entropy,
-phase-space and invariant measure), we derive two results that support this
-conclusion. First, a mirror-state construction: for any microstate $A$ one
-constructs its time-reversed partner $B$ (Axiom~2). Any universal statement that
-entropy does not decrease forward in time, applied to both $A$ and $B$, implies
-that entropy is constant on every trajectory; universal monotonicity is therefore
-incompatible with Axioms~1--3. Second, from Axiom~4 we prove that constraints
-necessarily reshape the long-time entropy distribution
-$P_{\infty}(S;\lambda)$ by altering the invariant measure through the Hamiltonian
-and/or the accessible phase space. Constraints, as the core variable of engineering
-design, thus relax the long-standing limit of entropy increase and pave a
-brand-new path for human energy freedom. A sharp microcanonical criterion is given;
-recent experimental work validates the framework. The energy crisis has
-become a core bottleneck restricting the sustainable development of human
-civilisation. This research challenges traditional thermodynamic fatalism and
-opens the era of thermodynamic design, with profound
-significance for the long-term survival and development of humanity.
+We revisit textbook claims that entropy must increase and show that, under
+time-reversal invariant microscopic dynamics, no universal trajectory-wise or
+statistical assertion that the coarse-grained entropy $S(t)$ is non-decreasing
+can hold. The core is a mirror-state construction: for any microstate $A$ one
+constructs its time-reversed partner $B$ (momenta inverted); requiring $S(t)$
+to be non-decreasing for both $A$ and $B$ forces every time to be a local
+minimum of $S$ and hence makes $S(t)$ constant along the trajectory. The
+consistent picture is that entropy is a stochastic variable described by a
+probability distribution $P(S)$ whose shape depends on constraints and boundary
+conditions; entropy-based regularities are emergent summaries of
+constraint-dependent microscopic dynamics, and in practice it is constraints
+and boundaries---not entropy itself---that one manipulates to achieve mixing,
+separation, or self-organization.
+Working with Boltzmann (coarse-grained) entropy on the energy shell, we then
+derive from first principles how constraints reshape the long-time entropy
+distribution $P_{\infty}(S;\lambda)$ by altering the invariant measure through
+changes in the Hamiltonian and/or the accessible phase space. In the
+microcanonical setting we obtain a sharp criterion: the \emph{only} way
+$P_{\infty}^{(E)}(S;\lambda)$ can remain the same up to translation is when all
+accessible macrostate volumes are scaled by a common factor; otherwise the
+distribution changes structurally. We connect this framework to experiments on
+asymmetric nanopores and molecular gates, to macroscopic examples from civil
+engineering (windbreak forests, dikes, vortex suppression, traffic-flow
+control), and to natural phenomena such as lightning guided to lightning rods,
+snowflake and mineral-veil growth, and the sudden crystallisation of supercooled
+water. In all these cases, constraints and dynamics together determine the
+long-time entropy distribution and can make ordered, low-entropy macrostates
+statistically favoured compared with the unconstrained case.
 \end{abstract}
 
 \section{Introduction}
@@ -496,6 +504,9 @@ reshaped, not the entropy balance between subsystems.
 Independent work by other groups is consistent with the same mechanism.
 Ramirez, Gomez, Mafe and coworkers~\cite{ramirez2015energyconversionfluctuating,gomez2015chargingcapacitor} showed that asymmetric conical nanopores rectify a zero-mean fluctuating voltage into a net ionic current, charging an external capacitor to about 1\,V; the constraint $\lambda$ (pore geometry) makes the long-time charge-transfer distribution asymmetric under sign flip of the drive. Qiao, Shang, and Kou~\cite{qiao2021moleculargate} demonstrated a molecular-sized gate (locally nonchaotic barrier) in an isolated system, where gas spontaneously flows from the low-pressure to the high-pressure side and useful work can be extracted in a cycle from a single thermal reservoir---the same constraint-reshaping picture in a different geometry. Powell, Vlassiouk, and Siwy~\cite{powell2009nonequilibrium1f} reported voltage-polarity-dependent nonequilibrium 1/f noise in rectifying nanopores (Phys.\ Rev.\ Lett.): under one polarity the system exhibits equilibrium-like fluctuations, under the other distinctly non-equilibrium fluctuations, illustrating how $\lambda$ shapes not only the mean current but the fluctuation spectrum. Together with the Qiao--Wang result, these experiments show that constraint-reshaped entropy distributions are not an isolated finding but a recurring pattern across nanoscale systems.
 
+\paragraph{Technical outlook: unidirectional nanopore membranes and phase change.}
+In the present framework, \textbf{unidirectional (asymmetric) nanopore membranes} and \textbf{phase change} are two approaches for which the hope of achieving \textbf{sustained useful work or power generation from a single heat source} is relatively high. Asymmetric pores already rectify flows and reshape $P_{\infty}(S;\lambda)$ so that net work from one reservoir is possible; phase change (e.g.\ liquid--vapour or subcooled liquid flash) provides large density and entropy changes that can be harnessed under the same constraint-reshaping mechanism. Together they are among the schemes with relatively high hope: nanopore-like asymmetry (or equivalent constraints) plus a phase-change working fluid can in principle yield continuous, single-reservoir power output, consistent with the theory developed in this paper and with the companion implementation (micro temperature difference, subcooled liquid, liquid-only compression) outlined elsewhere.
+
 \subsection{Macroscopic engineering validation: Constraint-induced entropy shaping in civil engineering and transport}
 
 Beyond the microscopic nanopore experiment, the framework of constraint-reshaped
@@ -530,6 +541,17 @@ geophysical dynamics. Windbreaks, dikes, vortex suppression, and
 vehicle--road coordination have repeatedly achieved ordered, low-entropy
 outcomes through constraint design alone.
 
+Natural phenomena provide further examples of the same mechanism. Lightning
+strikes are guided with high spatial precision toward lightning rods because
+the conducting structure reshapes the electric field and the accessible
+paths for charge motion. Snowflake growth, the formation of mineral veins,
+and the sudden crystallisation of supercooled water all involve geometric
+and chemical constraints that guide microscopic dynamics from relatively
+disordered configurations into highly ordered crystalline structures. In
+each case, constraints determine the long-time entropy distribution and make
+these low-entropy macrostates statistically favoured compared with the
+unconstrained case.
+
 \section{Conclusion}
 
 \textbf{The most important conclusion of this work is that constraints change the
@@ -558,7 +580,7 @@ possible, and each regime remains open to design. Every day is new.
 This pattern---constraints reshaping the entropy landscape and enabling spontaneous
 formation of structure---is familiar from star and planet formation, crystal and
 snowflake growth, mineral veins, and arguably the emergence of life: all instances of
-constraint-induced local entropy decrease, consistent with the present framework.
+constraint-induced entropy decrease, consistent with the present framework.
 It is also the core principle behind human engineering design in civil engineering and transport. 
 Windbreak forests for desert roads, spur dikes for river-crossing roads, aerodynamic 
 constraints for bridge vortex vibration suppression, and vehicle--road coordination 
@@ -583,8 +605,11 @@ no longer only consistent with the derived framework but has been achieved in th
 laboratory.
 
 The path forward is clear: through iterative enhancement, engineering optimisation,
-and scaling of constraint-based entropy reshaping, practical means to harness
-thermal energy can be developed. The implications extend far beyond energy generation. Because
+and scaling of constraint-based entropy reshaping, practical devices can be
+developed. In particular, \textbf{unidirectional nanopore membranes} (or analogous
+asymmetric constraints) and \textbf{phase change} are two approaches for which
+the hope of realising sustained useful work or power generation from a single
+heat source is relatively high, as argued in Sec.~\ref{sec:experimental}. The implications extend far beyond energy generation. Because
 constraints can perpetually reshape entropy distributions and enable spontaneous
 order, the macroscopic world need not tend toward a featureless equilibrium:
 universal heat death is not a foregone conclusion but an artefact of the
@@ -641,7 +666,7 @@ T.~Peng,
 arXiv:2602.13931 [physics.comp-ph] (2026).
 
 \bibitem{ramirez2015energyconversionfluctuating}
-P.~Ramirez, P.~Gomez, J.~Cervera, S.~Nasir, M.~Ali, W.~Ensinger, and S.~Mafe,
+P.~Ramirez, V.~Gomez, J.~Cervera, S.~Nasir, M.~Ali, W.~Ensinger, and S.~Mafe,
 ``Energy conversion from external fluctuating signals based on asymmetric nanopores,''
 \textit{Nano Energy} \textbf{16}, 375--382 (2015).
 
