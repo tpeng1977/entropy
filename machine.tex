@@ -395,24 +395,31 @@ So the cycle delivers \textbf{0.514\,kJ useful work per kg of fluid per cycle},
 from \textbf{0.9\,kJ heat absorbed per kg per cycle}; 0.386\,kJ/kg is rejected
 as heat and the rest is net work.
 
-Table~\ref{tab:process_energy} gives, for each process, the heat and work
-amounts (per unit mass). Figure~\ref{fig:energy_flow} gives an intuitive
-picture of the energy flows. \textbf{Energy to maintain the temperature
-difference:} If the 1--2\,$^\circ$C difference were maintained by an
-auxiliary heat pump, the work required would be $w_{\mathrm{HP,ideal}} \approx
-0.006\,\mathrm{kJ}/\mathrm{kg}$ (ideal) or $w_{\mathrm{HP}} \approx
+Table~\ref{tab:process_energy} gives, for \textbf{each stage}, the heat
+absorbed ($Q_{\mathrm{in}}$), heat rejected ($Q_{\mathrm{out}}$), work input
+($W_{\mathrm{in}}$), and work output ($W_{\mathrm{out}}$) per unit mass
+(kJ/kg). Figure~\ref{fig:energy_flow} gives an intuitive picture of these
+energy flows. \textbf{Energy to maintain the temperature difference:} If the
+1--2\,$^\circ$C difference were maintained by an auxiliary heat pump, the
+work required would be $w_{\mathrm{HP,ideal}} \approx
+0.006\,\mathrm{kJ}/\mathrm{kg}$ (ideal Carnot) or $w_{\mathrm{HP}} \approx
 0.015$--$0.03\,\mathrm{kJ}/\mathrm{kg}$ (realistic COP); see the paragraph
-below and Table~\ref{tab:process_energy}. That is only about 1--6\% of
-$w_{\mathrm{net}}$, so the cycle can sustain $\Delta T$ with a small fraction
-of its output and still deliver surplus.
+below and the last row of Table~\ref{tab:process_energy}. That is only about
+1--6\% of $w_{\mathrm{net}}$, so the cycle can sustain $\Delta T$ with a
+small fraction of its output and still deliver surplus.
 
 \begin{table}[htbp]
 \centering
-\caption{Energy balance per process (per unit mass, kJ/kg). Heat in/out and work in/out for each step; last row: optional auxiliary work to maintain the 1--2\,$^\circ$C difference.}
+\caption{Energy balance per stage (per unit mass, kJ/kg). For each process:
+heat absorbed $Q_{\mathrm{in}}$, heat rejected $Q_{\mathrm{out}}$, work
+required $W_{\mathrm{in}}$, work delivered $W_{\mathrm{out}}$. Last row:
+energy used to maintain the 1--2\,$^\circ$C difference if an auxiliary heat
+pump is used (optional; otherwise $\Delta T$ can be self-sustained by phase
+change).}
 \label{tab:process_energy}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Process & $Q_{\mathrm{in}}$ & $Q_{\mathrm{out}}$ & $W_{\mathrm{in}}$ & $W_{\mathrm{out}}$ \\
+Stage (process) & $Q_{\mathrm{in}}$ & $Q_{\mathrm{out}}$ & $W_{\mathrm{in}}$ & $W_{\mathrm{out}}$ \\
 \midrule
 1$\to$2 (pump) & 0 & 0 & 0.026 & 0 \\
 2$\to$3 (absorb heat) & 0.9 & 0 & 0 & 0 \\
@@ -421,7 +428,7 @@ Process & $Q_{\mathrm{in}}$ & $Q_{\mathrm{out}}$ & $W_{\mathrm{in}}$ & $W_{\math
 \midrule
 \textbf{Total (cycle)} & \textbf{0.9} & \textbf{0.386} & \textbf{0.026} & \textbf{0.54} \\
 \midrule
-Auxiliary (maintain $\Delta T$, optional) & -- & -- & 0.006--0.03 & -- \\
+Maintain $\Delta T$ (optional heat pump) & -- & -- & 0.006--0.03 & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -431,22 +438,26 @@ Auxiliary (maintain $\Delta T$, optional) & -- & -- & 0.006--0.03 & -- \\
 \begin{tikzpicture}[scale=0.9, every node/.style={font=\small},
   box/.style={rectangle, draw, rounded corners=1pt, minimum height=0.6cm},
   lbl/.style={fill=white, inner sep=1pt}]
-  \node[box, minimum height=3.2cm] (env) at (0,-0.6) {Environment};
-  \coordinate (e1) at ([yshift=0.9cm]env.east);
-  \coordinate (e2) at ([yshift=0.3cm]env.east);
-  \coordinate (e3) at ([yshift=-0.3cm]env.east);
-  \coordinate (e4) at ([yshift=-0.9cm]env.east);
-  \node[box] (hp) at (4.5,1.2) {HP side (2$\to$3)};
-  \node[box] (pump) at (4.5,0) {Pump (1$\to$2)};
-  \node[box] (exp) at (4.5,-1.2) {Expander (3$\to$4)};
-  \node[box] (ch) at (4.5,-2.4) {Chamber (4$\to$1)};
-  \draw[->, thick] (e1) -- (hp.west) node[lbl, pos=0.6, above=1pt] {$Q_{\mathrm{in}}{=}0.9$};
-  \draw[->, thick] (e2) -- (pump.west) node[lbl, pos=0.6, above=1pt] {$W_{\mathrm{in}}{=}0.026$};
-  \draw[->, thick] (exp.west) -- (e3) node[lbl, pos=0.4, above=1pt] {$W_{\mathrm{out}}{=}0.54$};
-  \draw[->, thick] (ch.west) -- (e4) node[lbl, pos=0.4, below=1pt] {$Q_{\mathrm{out}}{=}0.386$};
-  \node[align=center, font=\footnotesize] at (2.25,-3.5) {Net: $w_{\mathrm{net}}=0.54-0.026=0.514$; optional $W_{\mathrm{HP}}\approx0.006$--0.03 to maintain $\Delta T$.};
+  % Environment block
+  \node[box, minimum height=4.0cm] (env) at (0,-0.5) {Environment};
+  % Anchor points on the environment block (spaced to reduce overlap)
+  \coordinate (e1) at ([yshift=1.2cm]env.east);
+  \coordinate (e2) at ([yshift=0.4cm]env.east);
+  \coordinate (e3) at ([yshift=-0.4cm]env.east);
+  \coordinate (e4) at ([yshift=-1.2cm]env.east);
+  % Cycle components on the right, vertically spaced
+  \node[box] (hp)   at (5,  1.5) {HP side (2$\to$3)};
+  \node[box] (pump) at (5,  0.5) {Pump (1$\to$2)};
+  \node[box] (exp)  at (5, -0.5) {Expander (3$\to$4)};
+  \node[box] (ch)   at (5, -1.5) {Chamber (4$\to$1)};
+  % Arrows with labels, positioned to avoid overlapping boxes
+  \draw[->, thick] (e1) -- (hp.west) node[lbl, pos=0.5, above=1pt] {$Q_{\mathrm{in}}{=}0.9$};
+  \draw[->, thick] (e2) -- (pump.west) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{in}}{=}0.026$};
+  \draw[->, thick] (exp.west) -- (e3) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{out}}{=}0.54$};
+  \draw[->, thick] (ch.west) -- (e4) node[lbl, pos=0.5, below=1pt] {$Q_{\mathrm{out}}{=}0.386$};
+  \node[align=center, font=\footnotesize] at (2.5,-3.4) {Net: $w_{\mathrm{net}}=0.54-0.026=0.514$; optional $W_{\mathrm{HP}}\approx0.006$--0.03 to maintain $\Delta T$.};
 \end{tikzpicture}
-\caption{Energy flows per cycle (per kg, kJ/kg). Heat from environment to HP side; work from environment (or from part of net output) to pump; work from expander to environment; heat rejected from chamber to environment. Optional auxiliary work to maintain the micro $\Delta T$ is 0.006--0.03\,kJ/kg (see text). This figure is distinct from Fig.~\ref{fig:cycle} (process layout).}
+\caption{Energy flows per cycle (per kg, kJ/kg). Each stage: heat absorbed (2$\to$3 only, $Q_{\mathrm{in}}{=}0.9$), heat rejected (4$\to$1, $Q_{\mathrm{out}}{=}0.386$), work in (1$\to$2 pump, $W_{\mathrm{in}}{=}0.026$), work out (3$\to$4 expander, $W_{\mathrm{out}}{=}0.54$). Net work $w_{\mathrm{net}}=0.514$. Energy used to maintain the 1--2\,$^\circ$C difference (optional heat pump): 0.006--0.03\,kJ/kg. This figure is distinct from Fig.~\ref{fig:cycle} (process layout).}
 \label{fig:energy_flow}
 \end{figure}
 
