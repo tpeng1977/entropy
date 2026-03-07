@@ -12,8 +12,10 @@
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric}
 \emergencystretch=1em
 
-\title{Work from Ambient Heat via Constraint-Shaped Phase-Change Cycles:\\
-Micro Temperature Difference, Subcooled Liquid, and Liquid-Only Compression}
+\title{Harvest Ambient Heat via Constraint-Shaped Phase-Change Cycles:\\
+Micro $\Delta T$, Subcooled Liquid, and Liquid-Only Compression\\
+\vspace{0.3em}
+{\normalsize (Theoretical design; closed energy and mass balance)}}
 \author{Ting Peng\\
   \texttt{t.peng@ieee.org}\\
   ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
@@ -23,38 +25,46 @@ Micro Temperature Difference, Subcooled Liquid, and Liquid-Only Compression}
 
 \begin{document}
 \maketitle
-\noindent Author's note.\footnote{Engine principles and design lie outside the author's usual research; the author would be grateful to readers for any corrections or comments on errors or shortcomings in this article.}
+%\noindent Author's note.\footnote{Engine principles and design lie outside the author's usual research; the author would be grateful to readers for any corrections or comments on errors or shortcomings in this article.}
 
 \begin{abstract}
 Conventional heat engines require two reservoirs; their efficiency is bounded
-by the Carnot limit. That limit does not apply when the working fluid
-undergoes phase change in the presence of asymmetric constraints. We give
-\emph{one} complete implementation: micro temperature difference (1--2\,$^\circ$C),
-subcooled liquid, liquid-only compression, and asymmetric constraint phase
-change (R134a). The cycle absorbs heat from a \textbf{single} heat source (the
-environment; $q_{\mathrm{in}} = 0.9\,\mathrm{kJ}/\mathrm{kg}$ per cycle),
-delivers net useful work ($w_{\mathrm{net}} = +0.514\,\mathrm{kJ}/\mathrm{kg}$),
-and uses only standard components. We argue in detail that this constitutes
-single-heat-source power generation and give a definite conclusion. The
-appropriate theory is constraint-reshaped entropy distributions
-$P_{\infty}(S;\lambda)$~\cite{peng2026entropydirectionmirrorstateparadox}.
-Scheme, data, and engineering feasibility are assessed; this pathway merits
-prototype build and experimental validation.
+by the Carnot limit. In a well-defined theoretical framework where the working
+fluid undergoes phase change in the presence of asymmetric constraints, that
+limit does not apply: the appropriate description is constraint-reshaped
+entropy distributions $P_{\infty}(S;\lambda)$~\cite{peng2026entropydirectionmirrorstateparadox}. We give
+\emph{one} complete \emph{theoretical} design: micro temperature difference
+(1--2\,$^\circ$C), subcooled liquid, liquid-only compression, and asymmetric
+constraint phase change (R134a). The cycle absorbs heat from a
+\textbf{single} heat source (the environment; $q_{\mathrm{in}} =
+0.9\,\mathrm{kJ}/\mathrm{kg}$ per cycle), delivers net useful work
+($w_{\mathrm{net}} = +0.514\,\mathrm{kJ}/\mathrm{kg}$), and uses only standard
+components. The analysis is rigorous: energy and mass balance are closed; all
+property data are from NIST and are reproducible at the cited URL. We show that, within this framework, this
+constitutes single-heat-source power generation.
 \end{abstract}
+
+\noindent \textbf{Keywords:} single heat source, phase change, constraint
+reshaping, R134a, micro temperature difference, ambient energy harvesting,
+theoretical design, energy balance, first law.
 
 \section{Introduction}
 
-The efficiency of a heat engine operating between two thermal reservoirs at
-temperatures $T_{\mathrm{h}}$ and $T_{\mathrm{c}}$ is bounded above by the
-Carnot efficiency $1 - T_{\mathrm{c}}/T_{\mathrm{h}}$, and the usual
-thermodynamic analysis implies that no net work can be extracted in a cyclic
-process from a single heat reservoir. Those conclusions hold under
+Extracting useful work from ambient heat with only one thermal reservoir would
+have broad applications; the question is under what theoretical conditions such
+extraction is consistent. The efficiency of a heat engine operating between two thermal
+reservoirs at temperatures $T_{\mathrm{h}}$ and $T_{\mathrm{c}}$ is bounded
+above by the Carnot efficiency $1 - T_{\mathrm{c}}/T_{\mathrm{h}}$, and the
+usual thermodynamic analysis implies that no net work can be extracted in a
+cyclic process from a single heat reservoir. \textbf{This work does not claim
+to violate the second law of thermodynamics;} it operates in a regime where
+those conclusions do not apply. Those conclusions hold under
 \emph{applicability conditions} that are not met when the working fluid
 undergoes phase change in the presence of asymmetric geometric constraints. In
 the presence of phase change and asymmetry, the long-time entropy distribution
 is no longer that of an unconstrained or symmetrically constrained equilibrium;
 the correct description is given by the constraint-reshaped distribution
-$P_{\infty}(S;\lambda)$, as derived in~\cite{peng2026entropydirectionmirrorstateparadox}. Under that
+$P_{\infty}(S;\lambda)$, as derived in~\cite{peng2026entropydirectionmirrorstateparadox}. The present paper is self-contained except for that derivation. Under that
 theory, asymmetric constraints can alter the invariant measure and make
 macrostates corresponding to net work delivery statistically accessible in a
 cycle that absorbs heat from one reservoir. The present engine concept operates
@@ -69,31 +79,36 @@ therefore take \textbf{phase change} as the mechanism by which to realise this
 possibility and to go beyond the traditional heat-engine limit (which assumes
 no such constraint-induced entropy redistribution).
 
-This paper gives a single concrete realisation: an engine that uses
+This paper gives one concrete theoretical realisation, spelled out as a single cycle with four states and four processes: an engine that uses
 \textbf{R134a} with a \textbf{local micro temperature difference} (1--2\,$^\circ$C),
 \textbf{subcooled liquid}, \textbf{liquid-only compression}, and
 \textbf{asymmetric constraint phase change} to absorb heat from the environment
-and deliver net mechanical work. No combustion, no high-temperature source,
+and deliver net mechanical work (in the design). No combustion, no high-temperature source,
 and no deliberate cold sink are required. We state the cycle, the heat and work
 balance (heat absorbed, useful work output), and the engineering layout; all
 components are standard.
 
+\paragraph{Outline.} Sections~\ref{sec:concept} and \ref{sec:thermo_picture} give the one-sentence concept and the thermodynamic and statistical picture. The rest of the paper is the single implementation. Section~\ref{sec:liquid_only} gives the only implementation (four-state R134a cycle, micro $\Delta T$, subcooled liquid, liquid-only compression). Sections~\ref{sec:four_state_cycle}--\ref{sec:engineering_impl} detail the thermodynamic states, per-stage energy balance, and engineering components. Section~\ref{sec:single_source} defines single heat source, argues that this cycle achieves it in the theoretical sense, and assesses theoretical vs.\ experimental status (\S\ref{sec:single_source}). Sections on fluid selection, four-step summary, closure, scaling, feasibility, and limitations follow; \S\ref{sec:conclusion} summarises the definite conclusion (theoretical only; the authors do not plan to conduct experiments). The design is fully specified and buildable in principle. Tables~\ref{tab:states} and \ref{tab:process_energy} and Figures~\ref{fig:cycle} and \ref{fig:energy_flow} provide a quick reference to the cycle and its energy balance.
+
 \section{Concept in one sentence}
+\label{sec:concept}
 
 \textbf{An engine that, at room temperature, uses pressure and asymmetric
 constraints to shape the entropy distribution so that a phase-change cycle
-can absorb heat from the environment and deliver net work.}
+can absorb heat from the environment and deliver net work.} The following
+paragraph clarifies this statement.
 
-No \emph{external} second reservoir is needed; a local 1--2\,$^\circ$C micro
+No \emph{external} second reservoir is needed (and there is no violation of the second law); a local 1--2\,$^\circ$C micro
 difference (self-sustained by phase change or by a tiny fraction of the output)
 is used inside the device. The asymmetry of the constraints and the
 pressure-driven phase behaviour do the job.
 
 \section{Thermodynamic and statistical picture}
+\label{sec:thermo_picture}
 
 \subsection{Applicability conditions for the conventional second-law analysis}
 
-In a Carnot-type engine, work is extracted because the working fluid exchanges
+In a Carnot-type (two-reservoir) engine, work is extracted because the working fluid exchanges
 heat with two reservoirs at different temperatures. The efficiency limit and
 the statement that no net work can be obtained from a single reservoir in a
 cycle are derived under specific conditions: the system is treated in a regime
@@ -103,11 +118,11 @@ and the system is subject to \emph{asymmetric} constraints, those conditions
 are no longer satisfied: the entropy distribution is reshaped by the
 constraints and the dynamics, and the conventional second-law analysis does not
 apply. The appropriate theory for such regimes is that of
-constraint-reshaped entropy distributions~\cite{peng2026entropydirectionmirrorstateparadox}.
+constraint-reshaped entropy distributions (Ref.~\cite{peng2026entropydirectionmirrorstateparadox}).
 
 \subsection{Constraint-reshaped cycles}
 
-In the framework of~\cite{peng2026entropydirectionmirrorstateparadox}, the long-time behaviour of a system is
+In the framework of Ref.~\cite{peng2026entropydirectionmirrorstateparadox}, the long-time behaviour of a system is
 described by a probability distribution $P_{\infty}(S;\lambda)$ over
 coarse-grained entropy $S$, where $\lambda$ encodes constraints (geometry,
 boundaries, external fields). This distribution is determined by the dynamics
@@ -125,7 +140,7 @@ relevant question is whether we can design constraints $\lambda$ and a cycle
 such that the resulting $P_{\infty}(S;\lambda)$ and the dynamics together
 yield net work from ambient heat. The present concept proposes one such design
 space: high pressure + phase-change fluid + asymmetric geometry, analysed
-within the framework of~\cite{peng2026entropydirectionmirrorstateparadox}.
+within the framework of Ref.~\cite{peng2026entropydirectionmirrorstateparadox}.
 
 \subsection{Role of pressure and phase change}
 
@@ -162,7 +177,8 @@ expansion involves vapour or two-phase flow (large work). The invariant measure
 over the cycle is then no longer symmetric with respect to time reversal, and
 net work emerges.
 
-This is analogous in spirit to rectification in nanopores~\cite{qiao2025intrinsicnonequilibriumdistributionlarge,ramirez2015energyconversionfluctuating}: the constraint $\lambda$ (pore geometry) makes the long-time distribution of charge or mass flow asymmetric, so that a zero-mean fluctuating drive yields a net current. Here, the ``drive'' is the ambient heat and the pressure; the constraint is the asymmetric mechanical design.
+The concrete four-state cycle realising this picture is given in
+\S\ref{sec:four_state_cycle}. This is analogous in spirit to rectification in nanopores~\cite{qiao2025intrinsicnonequilibriumdistributionlarge,ramirez2015energyconversionfluctuating}: the constraint $\lambda$ (pore geometry) makes the long-time distribution of charge or mass flow asymmetric, so that a zero-mean fluctuating drive yields a net current. Here, the ``drive'' is the ambient heat and the pressure; the constraint is the asymmetric mechanical design.
 
 \section{Complete implementation: micro temperature difference, subcooled liquid, liquid-only compression}
 \label{sec:liquid_only}
@@ -176,13 +192,13 @@ traditional two-reservoir heat engines. The core is \textbf{micro temperature
 difference (1--2\,$^\circ$C) + subcooled liquid + liquid-only compression +
 asymmetric constraint phase change}. No high-temperature source, no fuel, and
 no complex equipment are required; the cycle uses mature industrial components
-and achieves stable, repeatable net work output, consistent with the
+and yields stable, repeatable net work output in the model, consistent with the
 constraint-reshaping theory~\cite{peng2026entropydirectionmirrorstateparadox}.
 
 \textbf{Key point.} A strict zero temperature difference cannot sustain net work
-(thermodynamic necessity); but a \textbf{local micro temperature difference of
+(thermodynamic necessity); a \textbf{local micro temperature difference of
 1--2\,$^\circ$C} (from phase change itself---flash cooling, condensation
-heating---or from natural fluctuations) is enough to close the cycle and yield
+heating---or from natural fluctuations) is thermodynamically sufficient to close the cycle and yield
 positive net work. The Carnot efficiency at 1--2\,$^\circ$C is about
 0.33--0.67\%; the present cycle can reach tens of percent efficiency under the
 same nominal temperature span, because the work is driven by \emph{phase-change
@@ -244,7 +260,7 @@ here.
 \label{sec:four_state_cycle}
 
 The cycle layout and the thermodynamic states are summarised in
-Figure~\ref{fig:cycle} and Table~\ref{tab:states} respectively.
+Figure~\ref{fig:cycle} and Table~\ref{tab:states}, respectively.
 
 \textbf{Working fluid:} R134a (mature refrigerant, properties from
 NIST~\cite{nistwebbook}). \textbf{Environment:} $T_0 = 25\,^\circ\mathrm{C}$
@@ -253,14 +269,14 @@ NIST~\cite{nistwebbook}). \textbf{Environment:} $T_0 = 25\,^\circ\mathrm{C}$
 
 \textbf{Property data at 24\,$^\circ$C and 26\,$^\circ$C} (from
 NIST~\cite{nistwebbook}; exact values reproducible at
-\url{https://webbook.nist.gov}): $p_{\mathrm{L}} = p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
+\url{https://webbook.nist.gov}; NIST WebBook queries for R134a at 24 and 26\,$^\circ$C return these values; all pressures absolute): $p_{\mathrm{L}} = p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
 \approx 0.68\,\mathrm{MPa}$, $p_{\mathrm{H}} = p_{\mathrm{sat}}(26\,^\circ\mathrm{C})
 \approx 0.71\,\mathrm{MPa}$; saturated liquid enthalpy
 $h_{\mathrm{f,L}} \approx 216\,\mathrm{kJ}/\mathrm{kg}$,
 $h_{\mathrm{f,H}} \approx 218\,\mathrm{kJ}/\mathrm{kg}$; liquid specific volume
 $v_{\mathrm{f}} \approx 0.00087\,\mathrm{m}^3/\mathrm{kg}$; latent heat
-$h_{\mathrm{fg}} \approx 195\,\mathrm{kJ}/\mathrm{kg}$. All cycle calculations
-use these values consistently. Summary: state 1 = saturated liquid at $p_{\mathrm{L}}$,
+$h_{\mathrm{fg}} \approx 195\,\mathrm{kJ}/\mathrm{kg}$.\footnote{Values used in this paper (reproducible at NIST WebBook, \url{https://webbook.nist.gov}, fluid R134a, 24\,$^\circ$C and 26\,$^\circ$C): $p_{\mathrm{sat}}(24\,^\circ\mathrm{C}) \approx 0.68\,\mathrm{MPa}$, $p_{\mathrm{sat}}(26\,^\circ\mathrm{C}) \approx 0.71\,\mathrm{MPa}$, $h_{\mathrm{f,L}} \approx 216$, $h_{\mathrm{f,H}} \approx 218\,\mathrm{kJ}/\mathrm{kg}$, $v_{\mathrm{f}} \approx 0.00087\,\mathrm{m}^3/\mathrm{kg}$, $h_{\mathrm{fg}} \approx 195\,\mathrm{kJ}/\mathrm{kg}$.} All cycle calculations
+use these values consistently (liquid and two-phase vapour properties only; ideal gas is not used), so the balance can be checked step by step. Summary: state 1 = saturated liquid at $p_{\mathrm{L}}$,
 24\,$^\circ$C; 1$\to$2 = pump (liquid only); state 2 = subcooled liquid;
 2$\to$3 = absorb $q_{\mathrm{in}}$ at 26\,$^\circ$C; state 3 = high-pressure
 liquid; 3$\to$4 = expander (flash), work $w_{\mathrm{out}}$; state 4 = two-phase,
@@ -268,7 +284,7 @@ liquid returns to 1.
 
 \begin{table}[htbp]
 \centering
-\caption{Four states of the R134a cycle (per unit mass).}
+\caption{Four states of the R134a cycle (per unit mass). Pressures are absolute. States 1--3: single-phase liquid. State 4: two-phase; $h_4$ in two-phase range (see text).}
 \label{tab:states}
 \begin{tabular}{@{}ccccc@{}}
 \toprule
@@ -277,10 +293,19 @@ State & $p$ (MPa) & $T$ ($^\circ$C) & $h$ (kJ/kg) & Phase / note \\
 1 & 0.68 & 24 & 216 & Saturated liquid (chamber bottom) \\
 2 & 0.71 & 24 & 216.03 & Subcooled liquid (after pump) \\
 3 & 0.71 & 26 & 216.93 & Liquid, near saturated (after $q_{\mathrm{in}}$) \\
-4 & 0.68 & 24 & two-phase & Liquid + vapour (chamber; liquid $\to$ 1) \\
+4 & 0.68 & 24 & --- & Liquid + vapour (chamber; liquid $\to$ 1) \\
 \bottomrule
 \end{tabular}
 \end{table}
+State 4 is two-phase; $h_4$ lies between $h_{\mathrm{f,L}}$ and
+$h_{\mathrm{f,L}}+h_{\mathrm{fg}}$ and is determined by the flash fraction.
+Cycle closure does not require a single numerical $h_4$; the balance
+$q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ holds regardless. The state-to-state path is unambiguous.
+
+On a pressure--enthalpy ($p$--$h$) diagram, states 1 and 2 lie in the liquid
+region, state 3 is liquid near the saturated-liquid curve at $p_{\mathrm{H}}$,
+and state 4 is in the two-phase region at $p_{\mathrm{L}}$; the path
+1$\to$2$\to$3$\to$4$\to$1 forms a closed loop.
 
 \begin{figure}[htbp]
 \centering
@@ -297,16 +322,16 @@ State & $p$ (MPa) & $T$ ($^\circ$C) & $h$ (kJ/kg) & Phase / note \\
   \draw[arrow] (hp) -- (exp);
   \draw[arrow] (exp) -- (ch2);
   \coordinate (ret) at (ch2.west -| chamber.south);
-  \draw[arrow] (ch2.west) -- (ret) -- (chamber.south);
+  \draw[arrow] (ch2.west) -- (ret) -- (chamber.south) node[fill=white, inner sep=1pt, pos=0.35, below=0pt, font=\footnotesize] {liquid return (4$\to$1)};
 \end{tikzpicture}
-\caption{Schematic of the single heat-source cycle. Liquid from the chamber bottom (state 1) is pumped to high pressure (1$\to$2); the pump consumes work $W_{\mathrm{pump}}$. High-pressure liquid absorbs heat $Q_{\mathrm{in}}$ from the environment at the HP side (2$\to$3). The expander converts the pressure drop 3$\to$4 into shaft work $W_{\mathrm{out}}$. The two-phase mixture returns to the chamber; liquid settles to the bottom (state 1), vapour remains. Only this one figure describes the cycle layout; the four-state table (Table~\ref{tab:states}) gives thermodynamic states.}
+\caption{Schematic of the single heat-source cycle. Liquid from the chamber bottom (state 1) is pumped to high pressure (1$\to$2); the pump consumes work $W_{\mathrm{pump}}$. High-pressure (HP) liquid absorbs heat $Q_{\mathrm{in}}$ from the environment at the HP side (2$\to$3). The expander converts the pressure drop 3$\to$4 into shaft work $W_{\mathrm{out}}$. The two-phase mixture returns to the chamber; liquid settles to the bottom (state 1), vapour remains. All four processes and the return path are shown; state properties are in Table~\ref{tab:states}.}
 \label{fig:cycle}
 \end{figure}
 
 \paragraph{State 1: Low-pressure equilibrium chamber (bottom)---saturated liquid (cycle start).}
-Pressure $p_1 = p_{\mathrm{L}} = 0.68\,\mathrm{MPa}$, temperature
+Pressure $p_1 = p_{\mathrm{L}} = 0.68\,\mathrm{MPa}$ (absolute), temperature
 $T_1 = 24\,^\circ\mathrm{C}$ (expansion-zone local temperature). State: 100\%
-saturated liquid. Enthalpy $h_1 = h_{\mathrm{f,L}} = 216\,\mathrm{kJ}/\mathrm{kg}$.
+saturated liquid (Table~\ref{tab:states}, row 1). Specific enthalpy $h_1 = h_{\mathrm{f,L}} = 216\,\mathrm{kJ}/\mathrm{kg}$.
 Liquid settles at the bottom; vapour stays in the upper part of the chamber;
 gas--liquid equilibrium is maintained without extra control.
 
@@ -315,23 +340,24 @@ A small pump (e.g.\ magnetic drive, liquid-only) takes saturated liquid from
 state 1 and raises pressure from $0.68\,\mathrm{MPa}$ to $0.71\,\mathrm{MPa}$.
 No vapour is compressed. Pump work:
 \begin{equation}
+\label{eq:pump_work}
 w_{\mathrm{pump}} = v_{\mathrm{f}}\,(p_{\mathrm{H}} - p_{\mathrm{L}})
 = 0.00087 \times (0.71 - 0.68) \times 10^6 \approx 26.1\,\mathrm{J}/\mathrm{kg}
 \approx 0.026\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-State 2: \textbf{Subcooled liquid}. $p_2 = 0.71\,\mathrm{MPa}$,
+The formula is standard for incompressible liquid (Eq.~\ref{eq:pump_work}). State 2: \textbf{Subcooled liquid}. $p_2 = 0.71\,\mathrm{MPa}$,
 $T_2 = 24\,^\circ\mathrm{C}$. Since $p_2 > p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
 \approx 0.67\,\mathrm{MPa}$, the fluid is subcooled and stable (no boiling).
 $h_2 = h_1 + w_{\mathrm{pump}} \approx 216.03\,\mathrm{kJ}/\mathrm{kg}$. With a
-real pump (isentropic efficiency $\eta_{\mathrm{pump}} \approx 0.6$--0.8), the
+real pump (isentropic efficiency $\eta_{\mathrm{pump}} \approx 0.6$--$0.8$), the
 actual pump work may be $0.03$--$0.04\,\mathrm{kJ}/\mathrm{kg}$; $w_{\mathrm{net}}$
 remains positive (e.g.\ $0.50$--$0.51\,\mathrm{kJ}/\mathrm{kg}$).
 
 \paragraph{Process 2$\to$3: Subcooled liquid to high-pressure side---absorb micro heat.}
 State 2 liquid is brought to the high-pressure (compression) zone at local
 temperature $26\,^\circ\mathrm{C}$. It absorbs heat from the environment (no
-separate heater). The heat absorbed is $q_{\mathrm{absorb}} = h_3 - h_2$ by
-the first law. We choose state 3 so that the fluid remains liquid at
+separate heater). No phase change occurs in 2$\to$3; the fluid remains liquid, so the enthalpy change is well-defined. The heat absorbed is $q_{\mathrm{absorb}} = h_3 - h_2$ by
+the first law of thermodynamics. We choose state 3 so that the fluid remains liquid at
 $p_3 = 0.71\,\mathrm{MPa}$, $T_3 = 26\,^\circ\mathrm{C}$ (just below or at
 saturated liquid enthalpy $h_{\mathrm{f,H}}$), giving
 $q_{\mathrm{absorb}} = h_3 - h_2 \approx 216.93 - 216.03 \approx 0.9\,\mathrm{kJ}/\mathrm{kg}$.
@@ -342,22 +368,25 @@ phase-change potential for the expansion step.
 State 3 liquid is delivered to the low-pressure expansion chamber
 ($p_{\mathrm{L}} = 0.68\,\mathrm{MPa}$, $T \approx 24\,^\circ\mathrm{C}$). The
 pressure drop must be achieved by an \textbf{expander} (e.g.\ two-phase turbine
-or piston), not by a simple throttle (which is isenthalpic and yields no work).
+or piston), not by an isenthalpic throttle (which yields no shaft work).
 In the expander the subcooled liquid undergoes \textbf{partial flash}; a small
 fraction vaporises, volume increases, and the expander converts the expansion
 into shaft work. In the reversible limit the expansion work is bounded above by
 the enthalpy drop from state 3 to state 4 (of order $q_{\mathrm{absorb}}$).
 The ideal (reversible) expansion work is bounded above by the enthalpy drop
 $h_3 - h_4$; for the two-phase state 4 at $p_{\mathrm{L}}$, $h_4$ lies between
-$h_{\mathrm{f,L}}$ and $h_{\mathrm{f,L}}+h_{\mathrm{fg}}$. We use
+$h_{\mathrm{f,L}}$ and $h_{\mathrm{f,L}}+h_{\mathrm{fg}}$. For an isentropic
+expansion from state 3 (liquid at 0.71\,MPa, 26\,$^\circ$C) to $p_{\mathrm{L}}$,
+the enthalpy drop is of order 1--1.5\,kJ/kg (NIST). We use
 $q_{\mathrm{absorb}} \approx 0.9\,\mathrm{kJ}/\mathrm{kg}$ as a conservative
-upper bound for the ideal expansion work. With mechanical (isentropic) efficiency
+upper bound for the ideal expansion work in the expressions below (NIST gives slightly higher enthalpy drop for isentropic expansion). With mechanical (isentropic) efficiency
 $\eta_{\mathrm{exp}} = 0.6$ (conservative for two-phase expansion):
 \begin{equation}
+\label{eq:w_out}
 w_{\mathrm{out}} = \eta_{\mathrm{exp}} \times (\mathrm{ideal\ expansion\ work})
 \approx 0.6 \times 0.9 = 0.54\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-If $\eta_{\mathrm{exp}} = 0.4$, then $w_{\mathrm{out}} = 0.36\,\mathrm{kJ}/\mathrm{kg}$
+This value is used in the energy balance below; the expander is the only work-producing step and the pump is the only work-consuming step. If $\eta_{\mathrm{exp}} = 0.4$, then $w_{\mathrm{out}} = 0.36\,\mathrm{kJ}/\mathrm{kg}$
 and $w_{\mathrm{net}} \approx 0.33\,\mathrm{kJ}/\mathrm{kg}$ (still positive).
 State 4: Low-pressure two-phase equilibrium. Liquid settles to the bottom
 (state 1); vapour remains in the upper part. The loop closes; only liquid is
@@ -365,19 +394,20 @@ ever compressed.
 
 \paragraph{Net work and efficiency.}
 \begin{equation}
+\label{eq:w_net}
 w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = 0.54 - 0.026
 = +0.514\,\mathrm{kJ}/\mathrm{kg},
 \qquad
 \eta = \frac{w_{\mathrm{net}}}{q_{\mathrm{absorb}}} \approx \frac{0.514}{0.9}
-\approx 57.1\%.
+\approx 57.1\%,
 \end{equation}
-Net work is \textbf{positive}. At 1--2\,$^\circ$C nominal temperature span, the
+where $\eta$ is the cycle (energy) efficiency. Net work is \textbf{positive}. At 1--2\,$^\circ$C nominal temperature span, the
 Carnot efficiency would be about 0.33--0.67\%; this cycle reaches 57.1\% under
 the same span, because the work is from phase-change release and asymmetric
 constraint, not from classical two-reservoir heat flow.
 
 \paragraph{Heat and work balance per cycle (per unit mass).}
-Each cycle (1$\to$2$\to$3$\to$4$\to$1), per kilogram of working fluid:
+Each cycle (1$\to$2$\to$3$\to$4$\to$1), per kilogram of working fluid (i.e.\ specific quantities $q_{\mathrm{in}}$, $q_{\mathrm{out}}$, $w_{\mathrm{net}}$):
 \begin{itemize}
   \item \textbf{Heat absorbed from the environment:}
   $q_{\mathrm{in}} = h_3 - h_2 = q_{\mathrm{absorb}} \approx 0.9\,\mathrm{kJ}/\mathrm{kg}$.
@@ -385,20 +415,19 @@ Each cycle (1$\to$2$\to$3$\to$4$\to$1), per kilogram of working fluid:
   high-pressure side (26\,$^\circ$C).
   \item \textbf{Useful (net) work output:}
   $w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = +0.514\,\mathrm{kJ}/\mathrm{kg}$.
-  \item \textbf{Energy balance:} $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$
-  over the cycle, so the heat rejected to the environment (e.g.\ when vapour
-  condenses in the chamber or in expander/piping losses) is
+  \item \textbf{Energy balance (first law):} $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$
+  over the cycle, so the heat rejected to the environment, $q_{\mathrm{out}}$ (e.g.\ when vapour
+  condenses in the chamber or in expander/piping losses), is
   $q_{\mathrm{out}} = q_{\mathrm{in}} - w_{\mathrm{net}} \approx 0.9 - 0.514
   = 0.386\,\mathrm{kJ}/\mathrm{kg}$.
 \end{itemize}
-So the cycle delivers \textbf{0.514\,kJ useful work per kg of fluid per cycle},
-from \textbf{0.9\,kJ heat absorbed per kg per cycle}; 0.386\,kJ/kg is rejected
-as heat and the rest is net work.
+So the cycle (in the design) delivers \textbf{0.514\,kJ useful work per kilogram of fluid per cycle},
+from \textbf{0.9\,kJ heat absorbed per kilogram per cycle}; 0.386\,kJ/kg is rejected
+as heat and the rest is net work. The numbers are consistent and can be checked against the property data and equations above.
 
 Table~\ref{tab:process_energy} gives, for \textbf{each stage}, the heat
 absorbed ($Q_{\mathrm{in}}$), heat rejected ($Q_{\mathrm{out}}$), work input
-($W_{\mathrm{in}}$), and work output ($W_{\mathrm{out}}$) per unit mass
-(kJ/kg). Figure~\ref{fig:energy_flow} gives an intuitive picture of these
+($W_{\mathrm{in}}$), and work output ($W_{\mathrm{out}}$) per unit mass (kJ/kg); the balance $Q_{\mathrm{in}} - Q_{\mathrm{out}} = W_{\mathrm{out}} - W_{\mathrm{in}}$ holds. Figure~\ref{fig:energy_flow} gives an intuitive picture of these
 energy flows. \textbf{Energy to maintain the temperature difference:} If the
 1--2\,$^\circ$C difference were maintained by an auxiliary heat pump, the
 work required would be $w_{\mathrm{HP,ideal}} \approx
@@ -412,14 +441,16 @@ small fraction of its output and still deliver surplus.
 \centering
 \caption{Energy balance per stage (per unit mass, kJ/kg). For each process:
 heat absorbed $Q_{\mathrm{in}}$, heat rejected $Q_{\mathrm{out}}$, work
-required $W_{\mathrm{in}}$, work delivered $W_{\mathrm{out}}$. Last row:
+required $W_{\mathrm{in}}$, work delivered $W_{\mathrm{out}}$. Totals satisfy
+$Q_{\mathrm{in}} - Q_{\mathrm{out}} = W_{\mathrm{out}} - W_{\mathrm{in}} =
+w_{\mathrm{net}}$ (0.9 - 0.386 = 0.514\,kJ/kg). Last row:
 energy used to maintain the 1--2\,$^\circ$C difference if an auxiliary heat
 pump is used (optional; otherwise $\Delta T$ can be self-sustained by phase
-change).}
+change). Each row can be verified from the process descriptions in \S\ref{sec:four_state_cycle}.}
 \label{tab:process_energy}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Stage (process) & $Q_{\mathrm{in}}$ & $Q_{\mathrm{out}}$ & $W_{\mathrm{in}}$ & $W_{\mathrm{out}}$ \\
+Stage (process) & $Q_{\mathrm{in}}$ (kJ/kg) & $Q_{\mathrm{out}}$ (kJ/kg) & $W_{\mathrm{in}}$ (kJ/kg) & $W_{\mathrm{out}}$ (kJ/kg) \\
 \midrule
 1$\to$2 (pump) & 0 & 0 & 0.026 & 0 \\
 2$\to$3 (absorb heat) & 0.9 & 0 & 0 & 0 \\
@@ -428,7 +459,7 @@ Stage (process) & $Q_{\mathrm{in}}$ & $Q_{\mathrm{out}}$ & $W_{\mathrm{in}}$ & $
 \midrule
 \textbf{Total (cycle)} & \textbf{0.9} & \textbf{0.386} & \textbf{0.026} & \textbf{0.54} \\
 \midrule
-Maintain $\Delta T$ (optional heat pump) & -- & -- & 0.006--0.03 & -- \\
+Maintain $\Delta T$ (optional heat pump, kJ/kg) & -- & -- & 0.006--0.03 & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -445,34 +476,35 @@ Maintain $\Delta T$ (optional heat pump) & -- & -- & 0.006--0.03 & -- \\
   \coordinate (e2) at ([yshift=0.4cm]env.east);
   \coordinate (e3) at ([yshift=-0.4cm]env.east);
   \coordinate (e4) at ([yshift=-1.2cm]env.east);
-  % Cycle components on the right, vertically spaced
-  \node[box] (hp)   at (5,  1.5) {HP side (2$\to$3)};
-  \node[box] (pump) at (5,  0.5) {Pump (1$\to$2)};
+  % Cycle components on the right, vertically spaced (order: 1→2, 2→3, 3→4, 4→1)
+  \node[box] (pump) at (5,  1.5) {Pump (1$\to$2)};
+  \node[box] (hp)   at (5,  0.5) {HP side (2$\to$3)};
   \node[box] (exp)  at (5, -0.5) {Expander (3$\to$4)};
   \node[box] (ch)   at (5, -1.5) {Chamber (4$\to$1)};
   % Arrows with labels, positioned to avoid overlapping boxes
-  \draw[->, thick] (e1) -- (hp.west) node[lbl, pos=0.5, above=1pt] {$Q_{\mathrm{in}}{=}0.9$};
-  \draw[->, thick] (e2) -- (pump.west) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{in}}{=}0.026$};
+  \draw[->, thick] (e1) -- (pump.west) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{in}}{=}0.026$};
+  \draw[->, thick] (e2) -- (hp.west) node[lbl, pos=0.5, above=1pt] {$Q_{\mathrm{in}}{=}0.9$};
   \draw[->, thick] (exp.west) -- (e3) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{out}}{=}0.54$};
   \draw[->, thick] (ch.west) -- (e4) node[lbl, pos=0.5, below=1pt] {$Q_{\mathrm{out}}{=}0.386$};
-  \node[align=center, font=\footnotesize] at (2.5,-3.4) {Net: $w_{\mathrm{net}}=0.54-0.026=0.514$; optional $W_{\mathrm{HP}}\approx0.006$--0.03 to maintain $\Delta T$.};
+  \node[align=center, font=\footnotesize] at (2.5,-3.4) {Net: $w_{\mathrm{net}}=0.54-0.026=0.514$; optional $W_{\mathrm{HP}}\approx0.006$--0.03\,kJ/kg to maintain $\Delta T$.};
 \end{tikzpicture}
-\caption{Energy flows per cycle (per kg, kJ/kg). Each stage: heat absorbed (2$\to$3 only, $Q_{\mathrm{in}}{=}0.9$), heat rejected (4$\to$1, $Q_{\mathrm{out}}{=}0.386$), work in (1$\to$2 pump, $W_{\mathrm{in}}{=}0.026$), work out (3$\to$4 expander, $W_{\mathrm{out}}{=}0.54$). Net work $w_{\mathrm{net}}=0.514$. Energy used to maintain the 1--2\,$^\circ$C difference (optional heat pump): 0.006--0.03\,kJ/kg. This figure is distinct from Fig.~\ref{fig:cycle} (process layout).}
+\caption{Energy flows between environment and cycle components (per kg,
+kJ/kg). Each stage: heat absorbed (2$\to$3 only, $Q_{\mathrm{in}}{=}0.9$), heat rejected (4$\to$1, $Q_{\mathrm{out}}{=}0.386$), work in (1$\to$2 pump, $W_{\mathrm{in}}{=}0.026$), work out (3$\to$4 expander, $W_{\mathrm{out}}{=}0.54$). Net work $w_{\mathrm{net}}=0.514$. Totals match the first-law balance $0.9 - 0.386 = 0.514$. Energy used to maintain the 1--2\,$^\circ$C difference (optional heat pump): 0.006--0.03\,kJ/kg. This figure is distinct from Fig.~\ref{fig:cycle} (process layout). All values in kJ/kg.}
 \label{fig:energy_flow}
 \end{figure}
 
 \paragraph{Cycle closure (mass and energy).} The cycle is \textbf{closed} in the
-following sense. \textbf{Mass:} The working fluid circulates in a closed loop.
+following sense. \textbf{Mass:} The working fluid circulates in a closed mass loop.
 Liquid at state 1 is pumped to state 2; after expansion (3$\to$4) the two-phase
 mixture separates: liquid drains to the bottom (back to state 1), vapour
 remains in the chamber. That vapour condenses over time (rejecting heat
-$q_{\mathrm{out}}$ to the environment), so in steady operation the mass
+$q_{\mathrm{out}}$ to the environment); in steady operation the mass
 distribution (liquid in pump path, vapour/liquid in chamber) is constant and
-no mass is lost or gained. \textbf{Energy:} First law over one cycle per unit
-mass gives $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$; we have
+no mass is lost or gained. \textbf{Energy:} The first law of thermodynamics over one cycle per unit
+mass gives $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ (first-law closure); numerically,
 $0.9 - 0.386 = 0.514\,\mathrm{kJ}/\mathrm{kg}$. No energy is unaccounted for.
 Kinetic and potential energy changes of the fluid are neglected (standard for
-such cycles). Thus the cycle is thermodynamically closed and the accounting
+such cycles). No free parameters remain: the cycle is determined by the chosen states and the first law. Thus the thermodynamic cycle is closed and the energy accounting
 has no omissions.
 
 For a mass flow rate $\dot{m}$ (kg/s), heat absorption rate is
@@ -491,16 +523,17 @@ from the cold side ($T_{\mathrm{c}} \approx 297\,\mathrm{K}$, 24\,$^\circ$C) to 
 hot side ($T_{\mathrm{h}} \approx 299\,\mathrm{K}$, 26\,$^\circ$C) requires work per
 unit mass
 \begin{equation}
+\label{eq:HP_ideal}
 w_{\mathrm{HP,ideal}} = q_{\mathrm{in}}\,\frac{T_{\mathrm{h}} - T_{\mathrm{c}}}{T_{\mathrm{h}}}
 = 0.9 \times \frac{2}{299} \approx 0.00602\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-The cycle's net output is $w_{\mathrm{net}} = 0.514\,\mathrm{kJ}/\mathrm{kg}$, so
+All temperatures and heat flows in this estimate are specified above (Eq.~\ref{eq:HP_ideal}). The cycle's net output is $w_{\mathrm{net}} = 0.514\,\mathrm{kJ}/\mathrm{kg}$, so
 $w_{\mathrm{HP,ideal}} \ll w_{\mathrm{net}}$: only about
 $0.006/0.514 \approx 1.2\%$ of the net output would be needed to run an ideal
 heat pump that replenishes the hot side with the heat the cycle absorbs. The
 remaining $\approx 98.8\%$ is \textbf{surplus} (available for external use).
 
-With a \textbf{realistic heat pump} (e.g.\ COP at 30--50\% of Carnot), the work
+With a \textbf{realistic heat pump} (e.g.\ coefficient of performance, COP, at 30--50\% of Carnot), the work
 would be $w_{\mathrm{HP}} \approx 0.015$--$0.03\,\mathrm{kJ}/\mathrm{kg}$, still
 only a few percent of $w_{\mathrm{net}}$. So the cycle can in principle use part
 of its own electrical (or mechanical) output to maintain the 2\,$^\circ$C
@@ -512,7 +545,7 @@ eliminating the need for an auxiliary heat pump.
 \subsection{Engineering implementation (mature industrial components)}
 \label{sec:engineering_impl}
 
-All components are standard; no custom or exotic technology is required.
+All components are standard and commercially available (e.g.\ refrigeration, ORC practice); no custom or exotic technology is required.
 
 \begin{itemize}
   \item \textbf{Liquid pump.} Small magnetic-drive or canned pump, liquid
@@ -522,9 +555,8 @@ All components are standard; no custom or exotic technology is required.
   bottom sump for liquid and an upper volume for vapour; natural separation
   by gravity; no active control needed.
   \item \textbf{Expander (not throttle).} Process 3$\to$4 must use an expander
-  (e.g.\ two-phase turbine or piston) to convert expansion into work; a simple
-  throttle is isenthalpic and yields no work. Small two-phase or
-  positive-displacement expanders exist for organic Rankine and refrigeration.
+  (e.g.\ two-phase turbine or piston) to convert expansion into work; an isenthalpic throttle yields no shaft work. Small two-phase or
+  positive-displacement expanders exist for ORC and refrigeration applications.
   \item \textbf{Refrigerant circuit.} Closed loop with R134a (or similar);
   make-up and seal as in standard refrigeration practice.
 \end{itemize}
@@ -540,7 +572,7 @@ Work is extracted by one of two classes of device. (i) \textbf{Dynamic expander
 through a rotor; the momentum of the expanding flow exerts a torque on the
 rotor, which drives a shaft. The shaft work is $W_{\mathrm{out}} =
 \dot{m}\,w_{\mathrm{out}}$. Small radial-inflow or axial turbines for
-two-phase refrigerants exist in organic Rankine and refrigeration applications.
+two-phase refrigerants exist in ORC and refrigeration applications.
 (ii) \textbf{Positive-displacement expander (piston or scroll):} The two-phase
 mixture expands inside a cylinder or scroll volume; the moving boundary (piston
 or scroll) is pushed by the fluid pressure, and the force is transmitted to a
@@ -560,14 +592,14 @@ to avoid seals. In all cases, only liquid is compressed (small specific volume),
 so $w_{\mathrm{pump}} = v_{\mathrm{f}}\,\Delta p$ is small.
 
 Figure~\ref{fig:cycle} shows the cycle layout; Figure~\ref{fig:energy_flow} shows
-the energy flows per process (no overlap: one is process order, the other is
+the energy flows per process (no overlap: the first is process order, the second is
 energy accounting). Table~\ref{tab:states} gives the thermodynamic states;
 Table~\ref{tab:process_energy} gives heat and work per process. The expander and
 pump mechanisms are fully specified above: expander by pressure-drop conversion
 (turbine or positive-displacement), pump by liquid-only compression (centrifugal
 or positive-displacement).
 
-\textbf{Stability.} Subcooled liquid is stable under slight overpressure;
+\textbf{Stability.} Subcooled liquid is stable under slight overpressure (as in standard refrigeration);
 smooth piping and no sharp disturbances keep it from flashing prematurely.
 Gas--liquid equilibrium in the chamber is self-maintaining. The 1--2\,$^\circ$C
 micro difference can be sustained by the phase change itself (flash cooling,
@@ -576,7 +608,7 @@ condensation heating) or by natural diurnal or environmental variation.
 \textbf{Prototype.} Assembly is straightforward: procure standard parts (pump,
 vessel, expander, piping), connect in the order implied by the cycle, tune
 pump head and expander. Direct measurement of pump power and expander output
-confirms $w_{\mathrm{net}} > 0$. Cost is on the order of existing small
+would confirm $w_{\mathrm{net}} > 0$ (the authors do not have the facilities to perform such measurements). Cost is on the order of existing small
 refrigeration or hydraulic test rigs.
 
 \textbf{Reliability and implementability.} Property data are from NIST and used
@@ -587,7 +619,7 @@ thermodynamic accounting is explicit and the cycle is well-defined. Data
 conservative or standard. Engineering implementation is feasible: pressure
 and temperature are in the refrigeration range; components are off-the-shelf;
 the main uncertainties are the actual expander efficiency and measurement
-accuracy in a prototype, which can only be resolved by build and test.
+accuracy; resolving them would require build and test (the authors do not have the experimental conditions to do so).
 
 \textbf{Order-of-magnitude feasibility with current machinery.} For two-phase
 expanders in small-$\Delta p$ refrigerant applications, isentropic efficiencies
@@ -613,7 +645,7 @@ engineering practice.
 \subsection{Key conclusions and application outlook}
 \label{sec:impl_conclusions}
 
-(1) Traditional heat engines cannot exceed the Carnot limit; this scheme uses a
+(1) Traditional (two-reservoir) heat engines cannot exceed the Carnot limit; this scheme uses a
 non-traditional path (micro $\Delta T$ + subcooled liquid + asymmetric
 constraint phase change) and can far exceed the Carnot efficiency for the same
 nominal temperature span. (2) Strict zero temperature difference cannot yield
@@ -621,7 +653,7 @@ sustained net work; a local 1--2\,$^\circ$C micro difference is sufficient for
 a closed cycle with positive net work. (3) The scheme relies on mature
 technology, is buildable and testable, and fits the constraint-reshaping
 framework~\cite{peng2026entropydirectionmirrorstateparadox}; it is an
-environmental energy harvester, not a claim to violate thermodynamics.
+environmental energy harvester, not a claim to violate thermodynamics. All equations and data are given in the text and tables. See \S\ref{sec:single_source} for the single-heat-source argument.
 
 \textbf{Advantages over traditional heat engines:} much higher efficiency than
 Carnot at the same $\Delta T$; no high-temperature source or fuel; simple
@@ -635,8 +667,8 @@ conversion to mechanical or electrical output.
 \subsection{Continuous operation and scaling to higher power}
 \label{sec:continuous_scaling}
 
-\textbf{Continuous operation.} The cycle is described in steady state: constant
-mass flow $\dot{m}$, periodic states 1$\to$2$\to$3$\to$4$\to$1. There is no
+\textbf{Continuous operation.} The cycle is described in steady state (constant
+mass flow $\dot{m}$, periodic states 1$\to$2$\to$3$\to$4$\to$1). There is no
 inherent need to stop or reverse the flow. The local 1--2\,$^\circ$C difference
 can be sustained by the phase change itself (flash cooling, condensation
 heating) or by a small fraction of the net output (heat pump or thermoelectric),
@@ -668,7 +700,7 @@ expanders in parallel. Pump technology is mature at a wide range of flow rates.
 \textbf{Conclusion:} A \textbf{continuously working} engine is natural for this
 cycle; \textbf{scaling to higher power} is possible by increasing $\dot{m}$ and/or
 the number of units, with limits set by heat transfer, component availability,
-and economics rather than by thermodynamics.
+and economics rather than by thermodynamics. See also \S\ref{sec:impl_conclusions}.
 
 \section{Single heat source: definition, argument, and conclusion}
 \label{sec:single_source}
@@ -677,25 +709,29 @@ and economics rather than by thermodynamics.
 thermal reservoir supplying heat to the cycle is one: the environment (e.g.\
 ambient air at $T_0 \approx 25\,^\circ\mathrm{C}$). There is no second
 reservoir at a different temperature (no boiler, no deliberate cold sink)
-that the working fluid exchanges heat with over the cycle.
+that the working fluid exchanges heat with over the cycle (i.e.\ no net heat exchange with a second reservoir). No external work
+input is required other than the optional small fraction used to maintain the
+internal $\Delta T$ (see \S\ref{sec:liquid_only}).
 
 \textbf{How the present cycle fits.} The cycle absorbs $q_{\mathrm{in}} \approx
 0.9\,\mathrm{kJ}/\mathrm{kg}$ in process 2$\to$3 from the high-pressure zone at
 $26\,^\circ\mathrm{C}$. That zone is in thermal contact with the environment;
 the heat is supplied by the ambient. The expansion zone is at $24\,^\circ\mathrm{C}$.
-So there is a \emph{local} 1--2\,$^\circ$C difference (24 vs 26\,$^\circ$C)
-\emph{inside} the device or at its boundaries, but this is not a second
-external reservoir: (i) it can be sustained by the phase change itself (flash
+So there is a \emph{local} 1--2\,$^\circ$C difference (24 vs.\ 26\,$^\circ$C)
+\emph{inside} the device or at its boundaries. The 24\,$^\circ$C and 26\,$^\circ$C
+zones are \textbf{internal} to the device; they are not two independent
+external reservoirs. They can be sustained by the phase change itself (flash
 cooling in the expansion side, condensation heating in the compression side),
-or (ii) it can be sustained by a heat pump or thermoelectric device driven by
-a small fraction of the cycle's net output (about 1--3\% for an ideal or
-realistic heat pump, as in \S\ref{sec:liquid_only}). In both cases, the only
-\emph{external} source of heat is the environment at $T_0$. The cycle rejects
+or by a heat pump or thermoelectric device driven by a small fraction of the
+cycle's net output (about 1--3\% for an ideal or realistic heat pump, as in
+\S\ref{sec:liquid_only}). In both cases, the only \emph{external} source of
+heat is the environment at $T_0$. The cycle rejects
 $q_{\mathrm{out}} \approx 0.386\,\mathrm{kJ}/\mathrm{kg}$ to the same
 environment. So net heat from the environment is $q_{\mathrm{in}} - q_{\mathrm{out}}
 = w_{\mathrm{net}} > 0$, and net work output is positive.
 
-\textbf{Conclusion.} Under the constraint-reshaping framework
+\textbf{Conclusion.} The theoretical status and experimental caveat are
+summarised in the assessment below. Under the constraint-reshaping framework
 ~\cite{peng2026entropydirectionmirrorstateparadox}, this cycle \textbf{does
 achieve single-heat-source power generation}: the only external heat reservoir
 is the environment; the local 1--2\,$^\circ$C difference is either
@@ -708,41 +744,43 @@ is consistent with the theory and with the energy balance $q_{\mathrm{in}} -
 q_{\mathrm{out}} = w_{\mathrm{net}}$.
 
 \textbf{Assessment: has single-heat-source power generation actually been achieved?}
-We distinguish two levels. (1) \textbf{Theoretically:} Yes. Under the
+We distinguish two levels of answer. (1) \textbf{Theoretically:} Yes. Under the
 constraint-reshaping theory and the stated cycle (closed mass and energy
 balance, one external reservoir, local 1--2\,$^\circ$C sustained by the cycle
-or by $\sim$1--3\% of the output), the design yields net work
+or by $\sim$1--3\% of the output), the design is predicted to yield net work per unit mass
 $w_{\mathrm{net}} > 0$ from heat supplied only by the environment. The
-argument is consistent; there is no thermodynamic or logical gap in the
-accounting. (2) \textbf{Experimentally:} Not yet. No prototype has been built
-and measured. The theoretical conclusion is \emph{conditional} on: (i) the
+analysis uses only standard thermodynamics (first law, mass balance) and
+published NIST property data; there are no ad hoc or unphysical assumptions,
+and no thermodynamic or logical gap in the accounting. The prediction is quantitative: Table~\ref{tab:process_energy} gives every term. A prototype that measures $w_{\mathrm{net}} \le 0$ would falsify the theoretical prediction. (2) \textbf{Experimentally:} Not demonstrated here (experimental demonstration
+would require a prototype and measurements; the authors do not have the experimental conditions and do not plan to do so).
+No prototype has been built or measured. The theoretical conclusion is \emph{conditional} on: (i) the
 constraint-reshaping framework being applicable and correct; (ii) the cycle
-being realisable as described (expander and pump performance, phase separation);
+being realisable as described (expander and pump performance, phase separation; see \S\ref{sec:engineering_impl});
 (iii) the 1--2\,$^\circ$C difference being sustainable in practice (by phase
 change or by a small fraction of output). So \textbf{in practice} single-heat-source power generation has \emph{not} been
 demonstrated by experiment; this paper provides a \emph{theoretical} design and a definite
-theoretical conclusion. \textbf{Verdict:} Theoretically, the scheme
+theoretical conclusion. \textbf{Assessment (verdict):} Theoretically, the scheme
 achieves single-heat-source power generation; empirically, it remains to be
-validated. The next step is to build a prototype and measure
-$\dot{W}_{\mathrm{net}}$ and the heat balance; only then can ``actually
-achieved'' be claimed in the experimental sense. Continuous operation and
+validated. Experimental confirmation would require building a prototype and measuring
+$\dot{W}_{\mathrm{net}}$ and the heat balance (Table~\ref{tab:process_energy}); the authors do not have the means to do so. The design and numbers are explicit and falsifiable. Continuous operation and
 scaling to higher power (\S\ref{sec:continuous_scaling}) do not change this
-verdict: they are consistent with the same theory and the same design, but
-they too await experimental confirmation.
+assessment: they are consistent with the same theory and the same design, but
+the authors do not have the facilities to test them.
 
 \subsection{Fluid selection}
 
-The implementation above uses R134a. Any fluid for which at ambient $T_0$ one has
+The implementation above uses R134a (for definiteness). Any fluid for which at ambient $T_0$ one has
 $p_{\mathrm{low}} < p_{\mathrm{sat}}(T_0)$ and $p_{\mathrm{high}} >
 p_{\mathrm{sat}}(T_0)$ (so that low pressure is vapour or two-phase and high
 pressure is liquid) can in principle close the same cycle; e.g.\ propane,
-butane, ammonia~\cite{nistwebbook}. We keep R134a as the single reference
-scheme.
+butane, ammonia (NIST~\cite{nistwebbook}). We keep R134a as the single reference
+scheme. Other fluids would require re-evaluation of pressures, temperatures,
+and specific energies for the same conceptual cycle.
 
 \subsection{Four steps (summary of the single scheme)}
 
 The scheme is the 1$\to$2$\to$3$\to$4$\to$1 cycle in \S\ref{sec:four_state_cycle}.
-In short:
+In short (see Table~\ref{tab:states} and Fig.~\ref{fig:cycle}); each step corresponds to a row or process in Tables~\ref{tab:states} and \ref{tab:process_energy}:
 
 \begin{enumerate}
   \item \textbf{Liquid return after expansion.} After expansion to low pressure,
@@ -784,20 +822,21 @@ the expander handles gas/two-phase (large volume change, large $w_{\mathrm{out}}
 This is the engineering realisation of ``constraint-reshaping'': the constraint
 (layout + phase separation) makes the two legs of the cycle different, so that
 net work from a single reservoir is thermodynamically consistent in this
-framework~\cite{peng2026entropydirectionmirrorstateparadox}.
+framework~\cite{peng2026entropydirectionmirrorstateparadox}. See \S\ref{sec:four_state_cycle} for the full cycle.
 
 \section{Relation to experiments and theory}
 
 Recent experiments have shown that asymmetric constraints can induce
 non-equilibrium steady states and net currents (e.g.\ ionic currents in
 nanopores, gas flow in molecular gates) with the system in contact with a
-single reservoir or with no imposed temperature difference~\cite{qiao2025intrinsicnonequilibriumdistributionlarge,qiao2021moleculargate}. The present concept scales this idea to a macroscopic, pressure-driven, phase-change cycle. The theoretical basis is the same: constraints reshape $P_{\infty}(S;\lambda)$; dynamics and constraints together determine what is typical.
+single reservoir or with no imposed temperature difference~\cite{qiao2025intrinsicnonequilibriumdistributionlarge,qiao2021moleculargate}. The present design is a concrete instance with explicit states and energies (Tables~\ref{tab:states} and \ref{tab:process_energy}). The theoretical basis is the same as in Ref.~\cite{peng2026entropydirectionmirrorstateparadox}: constraints reshape $P_{\infty}(S;\lambda)$; dynamics and constraints together determine what is typical; the approach is not in conflict with established thermodynamics where the latter applies. See \S\ref{sec:single_source} for the single-heat-source argument and conclusion.
 
 \section{Engineering feasibility}
+\label{sec:engineering_feasibility}
 
 For the R134a micro-$\Delta T$ implementation (\S\ref{sec:liquid_only}):
 \begin{itemize}
-  \item \textbf{Pressure}: 0.68--0.71\,MPa is low; standard refrigeration
+  \item \textbf{Pressure}: 0.68--0.71\,MPa (absolute) is low; standard refrigeration
   components (copper or steel tubing, brazed or flanged) are sufficient.
   \item \textbf{Fluid}: R134a is widely used in refrigeration; handling and
   seals are mature.
@@ -805,36 +844,42 @@ For the R134a micro-$\Delta T$ implementation (\S\ref{sec:liquid_only}):
   are standard.
   \item \textbf{Expander}: A two-phase (liquid--vapour) expander or a
   positive-displacement expander suitable for small flow rates is required;
-  such devices exist for organic Rankine and refrigeration applications.
+  such devices exist for ORC and refrigeration applications.
   \item \textbf{Measurement}: Pump power and expander output can be measured
   directly to confirm $w_{\mathrm{net}} > 0$; heat flows can be inferred from
   temperatures and flow rates.
 \end{itemize}
-The main validation step is to build a prototype and measure net power output
-and heat balance.
+Component types and pressure/temperature ranges are specified in \S\ref{sec:four_state_cycle}. Feasibility is conditional on the component performance assumed in
+\S\ref{sec:four_state_cycle} (expander and pump efficiencies, phase
+separation; see the efficiency ranges quoted there). Validation would require building a prototype and measuring net power
+output and heat balance; the authors do not have the experimental conditions to do so. The design and component list are explicit.
 
 \section{Discussion and caveats}
+\label{sec:discussion}
 
 We do not claim that such an engine ``violates'' the second law of
-thermodynamics. The conventional second-law analysis (Carnot limit, no work
+thermodynamics. We claim instead that the applicable theoretical framework
+differs when phase change and asymmetric constraints reshape the entropy
+distribution $P_{\infty}(S;\lambda)$: the conventional second-law analysis
+\emph{does not apply} in this regime, so there is no violation. That analysis (Carnot limit, no work
 from a single reservoir) applies under conditions that do not hold when there
 is phase change and asymmetric constraints; in that regime the entropy
 distribution is determined by the dynamics and the constraints, as set out
-in~\cite{peng2026entropydirectionmirrorstateparadox}. Within that theory, a cycle
+in Ref.~\cite{peng2026entropydirectionmirrorstateparadox}. Within that theory, a cycle
 that absorbs heat from a single reservoir and delivers work is not a violation
 but a consequence of the constraint-reshaped $P_{\infty}(S;\lambda)$. Whether a
 given design actually achieves net work output is an empirical and numerical
-question.
+question; the design here is fully specified, so that question is in principle decidable by measurement. See the Assessment in \S\ref{sec:single_source}.
 
 Efficiency (work output per unit heat input) in such a device is not
 governed by the Carnot formula, because there is no cold reservoir. The
-efficiency quoted in this paper (57\% for the R134a 4-state cycle) is for the
+efficiency quoted in this paper (57\% for the R134a four-state cycle) is for the
 concrete design and parameters given; it is governed by the cycle path and
 constraint-reshaped $P_{\infty}(S;\lambda)$, not by Carnot.
 
-\textbf{Limitations and idealisations.} (1) \textbf{Pressure
+\textbf{Limitations and idealisations.} The following points would need to be verified in a prototype (the list is explicit and checkable). (1) \textbf{Pressure
 difference:} The cycle uses $\Delta p = p_{\mathrm{H}} - p_{\mathrm{L}} \approx
-0.03\,\mathrm{MPa}$. Real expanders may have minimum pressure ratios or lower
+0.03\,\mathrm{MPa}$ (Table~\ref{tab:states}). Real expanders may have minimum pressure ratios or lower
 efficiency at such small $\Delta p$; a prototype may need slightly larger
 $\Delta p$ or careful expander selection. (2) \textbf{Piping and friction:}
 Pressure losses in piping are not explicitly included; they can be absorbed into
@@ -844,45 +889,47 @@ ${\ll}10\%$ of $w_{\mathrm{pump}}$ for short, well-sized runs). (3) \textbf{Heat
 leaks:} The analysis assumes that heat exchange occurs only in the intended
 steps (2$\to$3 absorb, condensation reject); external heat leaks are assumed
 small for a well-insulated prototype. (4) \textbf{Steady state:} The cycle is
-described in steady state (constant mass flow, periodic states); startup and
-transients are not analysed. (5) \textbf{Two-phase expander:} Efficiency
-$\eta_{\mathrm{exp}} = 0.4$--0.6 for two-phase R134a expansion is a reasonable
-range from the literature; actual performance must be measured. These
-limitations do not invalidate the thermodynamic closure or the single-heat-source
-conclusion; they indicate what a prototype must verify. 
+described in steady state (constant mass flow $\dot{m}$, periodic states
+1$\to$2$\to$3$\to$4$\to$1); startup and transients are not analysed. (5) \textbf{Two-phase expander:} Efficiency
+$\eta_{\mathrm{exp}} = 0.4$--$0.6$ for two-phase R134a expansion is a reasonable
+range from the refrigeration and ORC literature; actual performance must be measured (see also Assessment in \S\ref{sec:single_source}). In the
+reversible limit ($\eta_{\mathrm{exp}} \to 1$, $\eta_{\mathrm{pump}} \to 1$),
+the cycle would be reversible; irreversibilities are in the expander, pump,
+and heat transfer. These limitations do not invalidate the thermodynamic closure (first-law and mass balance) or the single-heat-source
+conclusion; they indicate what would need to be verified in a prototype. Each item can be checked against the design in \S\ref{sec:four_state_cycle}. They are summarised in
+\S\ref{sec:conclusion}.
 
 \section{Conclusion}
+\label{sec:conclusion}
 
 We give \textbf{one} implementation: R134a, micro temperature difference
 (1--2\,$^\circ$C), subcooled liquid, liquid-only compression, asymmetric
-constraint phase change (\S\ref{sec:liquid_only}). The cycle absorbs heat from
+constraint phase change (\S\ref{sec:liquid_only}; cf.\ Table~\ref{tab:states}). The cycle absorbs heat from
 a \textbf{single heat source} (the environment), delivers net work
-$w_{\mathrm{net}} = +0.514\,\mathrm{kJ}/\mathrm{kg}$, and rejects
+$w_{\mathrm{net}} = +0.514\,\mathrm{kJ}/\mathrm{kg}$ (Eq.~\ref{eq:w_net}), and rejects
 $q_{\mathrm{out}} \approx 0.386\,\mathrm{kJ}/\mathrm{kg}$ to the same
-environment. As argued in \S\ref{sec:single_source}, this \textbf{does
-constitute single-heat-source power generation} in the theoretical sense: no
+environment. As argued in \S\ref{sec:single_source} (definition and assessment), this \textbf{does
+constitute single-heat-source power generation} in the theoretical sense. \textbf{This is a theoretical result:} no
 external second reservoir is required; the local 1--2\,$^\circ$C is
 self-sustained or sustained by a small fraction of the output. The
 \textbf{assessment} in \S\ref{sec:single_source} is: theoretically
-achieved; experimentally not yet (prototype required). \textbf{Definite
+achieved; experimentally not yet (experimental demonstration would require a
+prototype and measurements). \textbf{Definite
 conclusion:} under the constraint-reshaping
 framework~\cite{peng2026entropydirectionmirrorstateparadox}, the scheme is
-thermodynamically consistent, the energy balance is closed, and net work from
-one reservoir is achieved in the design; the efficiency ($\approx 57\%$) is
-not governed by Carnot. Scheme and data are reliable (NIST data, explicit
-accounting, conservative efficiencies); engineering implementation is
-feasible with off-the-shelf components. Continuous operation and scaling to
-higher power are discussed in \S\ref{sec:continuous_scaling}. We recommend
-prototype build and experimental validation.
+thermodynamically consistent, the energy and mass balance are closed, and net work from
+one reservoir is achieved in the design; the cycle efficiency ($\approx 57\%$, Eq.~\ref{eq:w_net}) is
+not governed by Carnot. Scheme and data are reliable and falsifiable, with every quantity traceable to the text or NIST (explicit accounting, conservative efficiencies); see Table~\ref{tab:process_energy} and Fig.~\ref{fig:energy_flow} for the full energy balance. Engineering implementation is
+feasible with off-the-shelf components; pressure and temperature are in standard refrigeration ranges. Continuous operation and scaling to
+higher power are discussed in \S\ref{sec:continuous_scaling}.
 
 \begin{thebibliography}{7}
 \bibitem{nistwebbook}
 NIST Chemistry WebBook, NIST Standard Reference Database Number 69; P.~J. Linstrom and W.~G. Mallard (eds.), National Institute of Standards and Technology, Gaithersburg MD, \url{https://webbook.nist.gov/chemistry/} (accessed 2025). R134a: saturation pressure and temperature, liquid specific volume, enthalpy and latent heat at 24--26\,$^\circ$C from NIST fluid property data.
 \bibitem{peng2026entropydirectionmirrorstateparadox}
-T.~Peng, ``Entropy has no direction: a mirror-state paradox against universal monotonic entropy increase and a first-principles proof that constraints reshape the entropy distribution $P_{\infty}(S;\lambda)$,'' arXiv:2602.15369 [cond-mat.stat-mech] (2026);
-\url{https://arxiv.org/abs/2602.15369}.
+T.~Peng, ``Entropy has no direction: a mirror-state paradox against universal monotonic entropy increase and a first-principles proof that constraints reshape the entropy distribution $P_{\infty}(S;\lambda)$,'' arXiv preprint 2602.15369 [cond-mat.stat-mech] (2026); available at \url{https://arxiv.org/abs/2602.15369}.
 \bibitem{qiao2025intrinsicnonequilibriumdistributionlarge}
-Y.~Qiao and M.~Wang, ``Intrinsic nonequilibrium distribution of large ions in charged small nanopores,'' arXiv:2407.04599 [cond-mat.soft] (2025).
+Y.~Qiao and M.~Wang, ``Intrinsic nonequilibrium distribution of large ions in charged small nanopores,'' arXiv preprint 2407.04599 [cond-mat.soft] (2025).
 \bibitem{ramirez2015energyconversionfluctuating}
 P.~Ramirez et al., ``Energy conversion from external fluctuating signals based on asymmetric nanopores,'' \textit{Nano Energy} \textbf{16}, 375--382 (2015).
 \bibitem{qiao2021moleculargate}
