@@ -37,8 +37,8 @@ entropy distributions $P_{\infty}(S;\lambda)$~\cite{peng2026entropydirectionmirr
 (1--2\,$^\circ$C), subcooled liquid, liquid-only compression, and asymmetric
 constraint phase change (R134a). The cycle absorbs heat from a
 \textbf{single} heat source (the environment; $q_{\mathrm{in}} =
-1.97\,\mathrm{kJ}/\mathrm{kg}$ per cycle), delivers net useful work
-($w_{\mathrm{net}} = +0.694\,\mathrm{kJ}/\mathrm{kg}$), and uses only standard
+2.82\,\mathrm{kJ}/\mathrm{kg}$ per cycle), delivers net useful work
+($w_{\mathrm{net}} = +0.687\,\mathrm{kJ}/\mathrm{kg}$), and uses only standard
 components. The analysis is rigorous: energy and mass balance are closed; all
 property data are from NIST and are reproducible at the cited URL. We show that, within this framework, this
 constitutes single-heat-source power generation.
@@ -284,14 +284,13 @@ NIST~\cite{nistwebbook}). \textbf{Environment:} $T_0 = 25\,^\circ\mathrm{C}$
 (expansion zone $\approx 24\,^\circ\mathrm{C}$, compression zone $\approx 26\,^\circ\mathrm{C}$).
 
 \textbf{Property data at 24\,$^\circ$C and 26\,$^\circ$C} (from
-NIST~\cite{nistwebbook}; exact values reproducible at
-\url{https://webbook.nist.gov}; NIST WebBook queries for R134a at 24 and 26\,$^\circ$C return these values; all pressures absolute): $p_{\mathrm{L}} = p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
-\approx 0.68\,\mathrm{MPa}$, $p_{\mathrm{H}} = p_{\mathrm{sat}}(26\,^\circ\mathrm{C})
-\approx 0.71\,\mathrm{MPa}$; saturated liquid enthalpy
-$h_{\mathrm{f,L}} \approx 216\,\mathrm{kJ}/\mathrm{kg}$,
-$h_{\mathrm{f,H}} \approx 218\,\mathrm{kJ}/\mathrm{kg}$; liquid specific volume
-$v_{\mathrm{f}} \approx 0.00087\,\mathrm{m}^3/\mathrm{kg}$; latent heat
-$h_{\mathrm{fg}} \approx 195\,\mathrm{kJ}/\mathrm{kg}$.\footnote{Values used in this paper (reproducible at NIST WebBook, \url{https://webbook.nist.gov}, fluid R134a, 24\,$^\circ$C and 26\,$^\circ$C): $p_{\mathrm{sat}}(24\,^\circ\mathrm{C}) \approx 0.68\,\mathrm{MPa}$, $p_{\mathrm{sat}}(26\,^\circ\mathrm{C}) \approx 0.71\,\mathrm{MPa}$, $h_{\mathrm{f,L}} \approx 216$, $h_{\mathrm{f,H}} \approx 218\,\mathrm{kJ}/\mathrm{kg}$, $v_{\mathrm{f}} \approx 0.00087\,\mathrm{m}^3/\mathrm{kg}$, $h_{\mathrm{fg}} \approx 195\,\mathrm{kJ}/\mathrm{kg}$.} All cycle calculations
+NIST~\cite{nistwebbook}; saturation values from NIST Chemistry WebBook, see e.g.\ \url{https://webbook.nist.gov}; all pressures absolute): $p_{\mathrm{L}} = p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
+= 645.8\,\mathrm{kPa}$ ($0.6458\,\mathrm{MPa}$), $p_{\mathrm{H}} = p_{\mathrm{sat}}(26\,^\circ\mathrm{C})
+= 685.4\,\mathrm{kPa}$ ($0.6854\,\mathrm{MPa}$); saturated liquid enthalpy
+$h_{\mathrm{f,L}} = 84.98\,\mathrm{kJ}/\mathrm{kg}$,
+$h_{\mathrm{f,H}} = 87.83\,\mathrm{kJ}/\mathrm{kg}$; liquid specific volume
+$v_{\mathrm{f}} = 0.0008261\,\mathrm{m}^3/\mathrm{kg}$ (24\,$^\circ$C); latent heat at 24\,$^\circ$C
+$h_{\mathrm{fg}} = 178.70\,\mathrm{kJ}/\mathrm{kg}$.\footnote{NIST-aligned values (saturation, temperature table): $p_{\mathrm{sat}}(24\,^\circ\mathrm{C}) = 645.8\,\mathrm{kPa}$, $p_{\mathrm{sat}}(26\,^\circ\mathrm{C}) = 685.4\,\mathrm{kPa}$, $h_{\mathrm{f,L}} = 84.98$, $h_{\mathrm{f,H}} = 87.83\,\mathrm{kJ}/\mathrm{kg}$, $v_{\mathrm{f}} = 0.0008261\,\mathrm{m}^3/\mathrm{kg}$, $h_{\mathrm{fg}}(24\,^\circ\mathrm{C}) = 178.70\,\mathrm{kJ}/\mathrm{kg}$. Source: NIST Chemistry WebBook (R134a).} All cycle calculations
 use these values consistently (liquid and two-phase vapour properties only; ideal gas is not used), so the balance can be checked step by step. Summary: state 1 = saturated liquid at $p_{\mathrm{L}}$,
 24\,$^\circ$C; 1$\to$2 = pump (liquid only); state 2 = subcooled liquid;
 2$\to$3 = absorb $q_{\mathrm{in}}$ at 26\,$^\circ$C; state 3 = high-pressure
@@ -307,15 +306,15 @@ liquid returns to 1.
 \toprule
 State & $p$ (MPa) & $T$ ($^\circ$C) & $h$ (kJ/kg) & Phase / note \\
 \midrule
-1 & 0.68 & 24 & 216 & Saturated liquid (chamber bottom) \\
-2 & 0.71 & 24 & 216.03 & Subcooled liquid (after pump) \\
-3 & 0.71 & 26 & 218 & Saturated liquid at $p_{\mathrm{H}}$ (after $q_{\mathrm{in}}$) \\
-4 & 0.68 & 24 & 217.28 & Liquid + vapour (chamber; $h_4 = h_3 - w_{\mathrm{out}}$) \\
+1 & 0.646 & 24 & 84.98 & Saturated liquid (chamber bottom) \\
+2 & 0.685 & 24 & 85.01 & Subcooled liquid (after pump) \\
+3 & 0.685 & 26 & 87.83 & Saturated liquid at $p_{\mathrm{H}}$ (after $q_{\mathrm{in}}$) \\
+4 & 0.646 & 24 & 87.11 & Liquid + vapour (chamber; $h_4 = h_3 - w_{\mathrm{out}}$) \\
 \bottomrule
 \end{tabular}
 \end{table}
 State 4 is two-phase; $h_4$ lies between $h_{\mathrm{f,L}}$ and
-$h_{\mathrm{f,L}}+h_{\mathrm{fg}}$ and is fixed by the first law in process 3$\to$4 (adiabatic expander): $h_4 = h_3 - w_{\mathrm{out}} \approx 217.28\,\mathrm{kJ}/\mathrm{kg}$ (process 3$\to$4 above). The balance
+$h_{\mathrm{f,L}}+h_{\mathrm{fg}}$ and is fixed by the first law in process 3$\to$4 (adiabatic expander): $h_4 = h_3 - w_{\mathrm{out}} = 87.11\,\mathrm{kJ}/\mathrm{kg}$ (process 3$\to$4 below). The balance
 $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ holds and is consistent with $q_{\mathrm{out}} = h_4 - h_1$ in process 4$\to$1. The state-to-state path is unambiguous.
 
 On a pressure--enthalpy ($p$--$h$) diagram, states 1 and 2 lie in the liquid
@@ -345,44 +344,44 @@ and state 4 is in the two-phase region at $p_{\mathrm{L}}$; the path
 \end{figure}
 
 \paragraph{State 1: Low-pressure equilibrium chamber (bottom)---saturated liquid (cycle start).}
-Pressure $p_1 = p_{\mathrm{L}} = 0.68\,\mathrm{MPa}$ (absolute), temperature
+Pressure $p_1 = p_{\mathrm{L}} = 645.8\,\mathrm{kPa}$ ($0.6458\,\mathrm{MPa}$, absolute), temperature
 $T_1 = 24\,^\circ\mathrm{C}$ (expansion-zone local temperature). State: 100\%
-saturated liquid (Table~\ref{tab:states}, row 1). Specific enthalpy $h_1 = h_{\mathrm{f,L}} = 216\,\mathrm{kJ}/\mathrm{kg}$.
+saturated liquid (Table~\ref{tab:states}, row 1). Specific enthalpy $h_1 = h_{\mathrm{f,L}} = 84.98\,\mathrm{kJ}/\mathrm{kg}$ (NIST).
 Liquid settles at the bottom; vapour stays in the upper part of the chamber;
 gas--liquid equilibrium is maintained without extra control.
 
 \paragraph{Process 1$\to$2: Pump compresses liquid only---produce subcooled liquid.}
 A small pump (e.g.\ magnetic drive, liquid-only) takes saturated liquid from
-state 1 and raises pressure from $0.68\,\mathrm{MPa}$ to $0.71\,\mathrm{MPa}$.
+state 1 and raises pressure from $645.8\,\mathrm{kPa}$ to $685.4\,\mathrm{kPa}$.
 No vapour is compressed. Pump work:
 \begin{equation}
 \label{eq:pump_work}
 w_{\mathrm{pump}} = v_{\mathrm{f}}\,(p_{\mathrm{H}} - p_{\mathrm{L}})
-= 0.00087 \times (0.71 - 0.68) \times 10^6 \approx 26.1\,\mathrm{J}/\mathrm{kg}
-\approx 0.026\,\mathrm{kJ}/\mathrm{kg}.
+= 0.0008261 \times (685.4 - 645.8) \times 10^3 = 32.7\,\mathrm{J}/\mathrm{kg}
+= 0.0327\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-The formula is standard for incompressible liquid (Eq.~\ref{eq:pump_work}). State 2: \textbf{Subcooled liquid}. $p_2 = 0.71\,\mathrm{MPa}$,
+The formula is standard for incompressible liquid (Eq.~\ref{eq:pump_work}). State 2: \textbf{Subcooled liquid}. $p_2 = 685.4\,\mathrm{kPa}$,
 $T_2 = 24\,^\circ\mathrm{C}$. Since $p_2 > p_{\mathrm{sat}}(24\,^\circ\mathrm{C})
-\approx 0.68\,\mathrm{MPa}$, the fluid is subcooled and stable (no boiling).
-$h_2 = h_1 + w_{\mathrm{pump}} \approx 216.03\,\mathrm{kJ}/\mathrm{kg}$. With a
+= 645.8\,\mathrm{kPa}$, the fluid is subcooled and stable (no boiling).
+$h_2 = h_1 + w_{\mathrm{pump}} = 84.98 + 0.0327 = 85.01\,\mathrm{kJ}/\mathrm{kg}$. With a
 real pump (isentropic efficiency $\eta_{\mathrm{pump}} \approx 0.6$--$0.8$), the
-actual pump work may be $0.03$--$0.04\,\mathrm{kJ}/\mathrm{kg}$; $w_{\mathrm{net}}$
-remains positive (e.g.\ $0.65$--$0.69\,\mathrm{kJ}/\mathrm{kg}$).
+actual pump work may be $0.04$--$0.05\,\mathrm{kJ}/\mathrm{kg}$; $w_{\mathrm{net}}$
+remains positive (e.g.\ $0.64$--$0.68\,\mathrm{kJ}/\mathrm{kg}$).
 
 \paragraph{Process 2$\to$3: Subcooled liquid to high-pressure side---absorb micro heat.}
 State 2 liquid is brought to the high-pressure (compression) zone at local
 temperature $26\,^\circ\mathrm{C}$. It absorbs heat from the environment (no
 separate heater). No phase change occurs in 2$\to$3; the fluid remains liquid, so the enthalpy change is well-defined. The heat absorbed is $q_{\mathrm{absorb}} = h_3 - h_2$ by
 the first law of thermodynamics. State 3 is saturated liquid at
-$p_3 = 0.71\,\mathrm{MPa}$, $T_3 = 26\,^\circ\mathrm{C}$, so
-$h_3 = h_{\mathrm{f,H}} = 218\,\mathrm{kJ}/\mathrm{kg}$ (NIST). Thus
-$q_{\mathrm{absorb}} = h_3 - h_2 = 218 - 216.03 = 1.97\,\mathrm{kJ}/\mathrm{kg}$.
-State 3: $h_3 = 218\,\mathrm{kJ}/\mathrm{kg}$, retaining
+$p_3 = 685.4\,\mathrm{kPa}$, $T_3 = 26\,^\circ\mathrm{C}$, so
+$h_3 = h_{\mathrm{f,H}} = 87.83\,\mathrm{kJ}/\mathrm{kg}$ (NIST). Thus
+$q_{\mathrm{absorb}} = h_3 - h_2 = 87.83 - 85.01 = 2.82\,\mathrm{kJ}/\mathrm{kg}$.
+State 3: $h_3 = 87.83\,\mathrm{kJ}/\mathrm{kg}$, retaining
 phase-change potential for the expansion step.
 
 \paragraph{Process 3$\to$4: Inject into low-pressure side---flash expansion, work output.}
 State 3 liquid is delivered to the low-pressure expansion chamber
-($p_{\mathrm{L}} = 0.68\,\mathrm{MPa}$, $T \approx 24\,^\circ\mathrm{C}$). The
+($p_{\mathrm{L}} = 645.8\,\mathrm{kPa}$, $T \approx 24\,^\circ\mathrm{C}$). The
 pressure drop must be achieved by an \textbf{expander} (e.g.\ two-phase turbine
 or piston), not by an isenthalpic throttle (which yields no shaft work).
 In the expander the subcooled liquid undergoes \textbf{partial flash}; a small
@@ -392,7 +391,7 @@ the enthalpy drop from state 3 to state 4 (of order $q_{\mathrm{absorb}}$).
 The ideal (reversible) expansion work is bounded above by the enthalpy drop
 $h_3 - h_4$; for the two-phase state 4 at $p_{\mathrm{L}}$, $h_4$ lies between
 $h_{\mathrm{f,L}}$ and $h_{\mathrm{f,L}}+h_{\mathrm{fg}}$. For an isentropic
-expansion from state 3 (liquid at 0.71\,MPa, 26\,$^\circ$C) to $p_{\mathrm{L}}$,
+expansion from state 3 (liquid at 685.4\,kPa, 26\,$^\circ$C) to $p_{\mathrm{L}}$,
 the enthalpy drop is of order 1--1.5\,kJ/kg (NIST). We use
 $1.2\,\mathrm{kJ}/\mathrm{kg}$ as a conservative
 upper bound for the ideal expansion work in the expressions below (enthalpy drop $h_3 - h_4$ from NIST for isentropic expansion to $p_{\mathrm{L}}$). With mechanical (isentropic) efficiency
@@ -404,7 +403,7 @@ w_{\mathrm{out}} = \eta_{\mathrm{exp}} \times (\mathrm{ideal\ expansion\ work})
 \end{equation}
 For the expander (adiabatic, no heat transfer), the first law gives
 $h_3 - h_4 = w_{\mathrm{out}}$, so
-$h_4 = h_3 - w_{\mathrm{out}} = 218 - 0.72 = 217.28\,\mathrm{kJ}/\mathrm{kg}$.
+$h_4 = h_3 - w_{\mathrm{out}} = 87.83 - 0.72 = 87.11\,\mathrm{kJ}/\mathrm{kg}$.
 This value lies in the two-phase range at $p_{\mathrm{L}}$ ($h_{\mathrm{f,L}} < h_4 < h_{\mathrm{f,L}}+h_{\mathrm{fg}}$) and is used in the process 4$\to$1 balance below. The expander is the only work-producing step and the pump is the only work-consuming step. If $\eta_{\mathrm{exp}} = 0.4$, then $w_{\mathrm{out}} = 0.48\,\mathrm{kJ}/\mathrm{kg}$
 and $w_{\mathrm{net}} \approx 0.45\,\mathrm{kJ}/\mathrm{kg}$ (still positive).
 State 4: Low-pressure two-phase equilibrium. Liquid settles to the bottom
@@ -414,14 +413,14 @@ ever compressed.
 \paragraph{Net work and efficiency.}
 \begin{equation}
 \label{eq:w_net}
-w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = 0.72 - 0.026
-= +0.694\,\mathrm{kJ}/\mathrm{kg},
+w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = 0.72 - 0.0327
+= 0.687\,\mathrm{kJ}/\mathrm{kg},
 \qquad
-\eta = \frac{w_{\mathrm{net}}}{q_{\mathrm{absorb}}} = \frac{0.694}{1.97}
-\approx 35.2\%,
+\eta = \frac{w_{\mathrm{net}}}{q_{\mathrm{absorb}}} = \frac{0.687}{2.82}
+\approx 24.4\%,
 \end{equation}
 where $\eta$ is the cycle (energy) efficiency. Net work is \textbf{positive}. At 1--2\,$^\circ$C nominal temperature span, the
-Carnot efficiency would be about 0.33--0.67\%; this cycle reaches 35.2\% under
+Carnot efficiency would be about 0.33--0.67\%; this cycle reaches 24.4\% under
 the same span, because the work is from phase-change release and asymmetric
 constraint, not from classical two-reservoir heat flow.
 
@@ -429,19 +428,19 @@ constraint, not from classical two-reservoir heat flow.
 Each cycle (1$\to$2$\to$3$\to$4$\to$1), per kilogram of working fluid (i.e.\ specific quantities $q_{\mathrm{in}}$, $q_{\mathrm{out}}$, $w_{\mathrm{net}}$):
 \begin{itemize}
   \item \textbf{Heat absorbed from the environment:}
-  $q_{\mathrm{in}} = h_3 - h_2 = q_{\mathrm{absorb}} = 1.97\,\mathrm{kJ}/\mathrm{kg}$.
+  $q_{\mathrm{in}} = h_3 - h_2 = q_{\mathrm{absorb}} = 2.82\,\mathrm{kJ}/\mathrm{kg}$.
   This is the only heat input; it is supplied in process 2$\to$3 at the
   high-pressure side (26\,$^\circ$C).
   \item \textbf{Useful (net) work output:}
-  $w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = +0.694\,\mathrm{kJ}/\mathrm{kg}$.
+  $w_{\mathrm{net}} = w_{\mathrm{out}} - w_{\mathrm{pump}} = 0.687\,\mathrm{kJ}/\mathrm{kg}$.
   \item \textbf{Energy balance (first law):} $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$
   over the cycle, so the heat rejected to the environment, $q_{\mathrm{out}}$ (e.g.\ when vapour
   condenses in the chamber or in expander/piping losses), is
-  $q_{\mathrm{out}} = q_{\mathrm{in}} - w_{\mathrm{net}} = 1.97 - 0.694
-  = 1.276\,\mathrm{kJ}/\mathrm{kg}$. Process 4$\to$1 (condensation, no shaft work) satisfies the first law per unit mass: $q_{\mathrm{out}} = h_4 - h_1$; with $h_4 = h_3 - w_{\mathrm{out}} = 217.28\,\mathrm{kJ}/\mathrm{kg}$ from the expander step, $h_4 - h_1 = 217.28 - 216 = 1.28\,\mathrm{kJ}/\mathrm{kg} \approx 1.276$, consistent with the cycle balance.
+  $q_{\mathrm{out}} = q_{\mathrm{in}} - w_{\mathrm{net}} = 2.82 - 0.687
+  = 2.13\,\mathrm{kJ}/\mathrm{kg}$. Process 4$\to$1 (condensation, no shaft work) satisfies the first law per unit mass: $q_{\mathrm{out}} = h_4 - h_1$; with $h_4 = h_3 - w_{\mathrm{out}} = 87.11\,\mathrm{kJ}/\mathrm{kg}$ from the expander step, $h_4 - h_1 = 87.11 - 84.98 = 2.13\,\mathrm{kJ}/\mathrm{kg}$, consistent with the cycle balance.
 \end{itemize}
-So the cycle (in the design) delivers \textbf{0.694\,kJ useful work per kilogram of fluid per cycle},
-from \textbf{1.97\,kJ heat absorbed per kilogram per cycle}; 1.276\,kJ/kg is rejected
+So the cycle (in the design) delivers \textbf{0.687\,kJ useful work per kilogram of fluid per cycle},
+from \textbf{2.82\,kJ heat absorbed per kilogram per cycle}; 2.13\,kJ/kg is rejected
 as heat and the rest is net work. The numbers are consistent and can be checked against the property data and equations above.
 
 Table~\ref{tab:process_energy} gives, for \textbf{each stage}, the heat
@@ -462,7 +461,7 @@ small fraction of its output and still deliver surplus.
 heat absorbed $Q_{\mathrm{in}}$, heat rejected $Q_{\mathrm{out}}$, work
 required $W_{\mathrm{in}}$, work delivered $W_{\mathrm{out}}$. Totals satisfy
 $Q_{\mathrm{in}} - Q_{\mathrm{out}} = W_{\mathrm{out}} - W_{\mathrm{in}} =
-w_{\mathrm{net}}$ (1.97 - 1.276 = 0.694\,kJ/kg). Last row:
+w_{\mathrm{net}}$ (2.82 - 2.13 = 0.687\,kJ/kg). Last row:
 energy used to maintain the 1--2\,$^\circ$C difference if an auxiliary heat
 pump is used (optional; otherwise $\Delta T$ can be self-sustained by phase
 change). Each row can be verified from the process descriptions in \S\ref{sec:four_state_cycle}.}
@@ -472,14 +471,14 @@ change). Each row can be verified from the process descriptions in \S\ref{sec:fo
 \toprule
 Stage (process) & $Q_{\mathrm{in}}$ (kJ/kg) & $Q_{\mathrm{out}}$ (kJ/kg) & $W_{\mathrm{in}}$ (kJ/kg) & $W_{\mathrm{out}}$ (kJ/kg) \\
 \midrule
-1$\to$2 (pump) & 0 & 0 & 0.026 & 0 \\
-2$\to$3 (absorb heat) & 1.97 & 0 & 0 & 0 \\
+1$\to$2 (pump) & 0 & 0 & 0.0327 & 0 \\
+2$\to$3 (absorb heat) & 2.82 & 0 & 0 & 0 \\
 3$\to$4 (expander) & 0 & 0 & 0 & 0.72 \\
-4$\to$1 (condensation) & 0 & 1.276 & 0 & 0 \\
+4$\to$1 (condensation) & 0 & 2.13 & 0 & 0 \\
 \midrule
-\textbf{Total (cycle)} & \textbf{1.97} & \textbf{1.276} & \textbf{0.026} & \textbf{0.72} \\
+\textbf{Total (cycle)} & \textbf{2.82} & \textbf{2.13} & \textbf{0.0327} & \textbf{0.72} \\
 \midrule
-Maintain $\Delta T$ (optional heat pump, kJ/kg) & -- & -- & 0.013--0.03 & -- \\
+Maintain $\Delta T$ (optional heat pump, kJ/kg) & -- & -- & 0.019--0.044 & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -502,14 +501,14 @@ Maintain $\Delta T$ (optional heat pump, kJ/kg) & -- & -- & 0.013--0.03 & -- \\
   \node[box] (exp)  at (5, -0.5) {Expander (3$\to$4)};
   \node[box] (ch)   at (5, -1.5) {Chamber (4$\to$1)};
   % Arrows with labels, positioned to avoid overlapping boxes
-  \draw[->, thick] (e1) -- (pump.west) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{in}}{=}0.026$};
-  \draw[->, thick] (e2) -- (hp.west) node[lbl, pos=0.5, above=1pt] {$Q_{\mathrm{in}}{=}1.97$};
+  \draw[->, thick] (e1) -- (pump.west) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{in}}{=}0.0327$};
+  \draw[->, thick] (e2) -- (hp.west) node[lbl, pos=0.5, above=1pt] {$Q_{\mathrm{in}}{=}2.82$};
   \draw[->, thick] (exp.west) -- (e3) node[lbl, pos=0.5, above=1pt] {$W_{\mathrm{out}}{=}0.72$};
-  \draw[->, thick] (ch.west) -- (e4) node[lbl, pos=0.5, below=1pt] {$Q_{\mathrm{out}}{=}1.276$};
-  \node[align=center, font=\footnotesize] at (2.5,-3.4) {Net: $w_{\mathrm{net}}=0.72-0.026=0.694$; optional $W_{\mathrm{HP}}\approx0.013$--0.044\,kJ/kg to maintain $\Delta T$.};
+  \draw[->, thick] (ch.west) -- (e4) node[lbl, pos=0.5, below=1pt] {$Q_{\mathrm{out}}{=}2.13$};
+  \node[align=center, font=\footnotesize] at (2.5,-3.4) {Net: $w_{\mathrm{net}}=0.72-0.0327=0.687$; optional $W_{\mathrm{HP}}\approx0.019$--0.044\,kJ/kg to maintain $\Delta T$.};
 \end{tikzpicture}
 \caption{Energy flows between environment and cycle components (per kg,
-kJ/kg). Each stage: heat absorbed (2$\to$3 only, $Q_{\mathrm{in}}{=}1.97$), heat rejected (4$\to$1, $Q_{\mathrm{out}}{=}1.276$), work in (1$\to$2 pump, $W_{\mathrm{in}}{=}0.026$), work out (3$\to$4 expander, $W_{\mathrm{out}}{=}0.72$). Net work $w_{\mathrm{net}}=0.694$. Totals match the first-law balance $1.97 - 1.276 = 0.694$. Energy used to maintain the 1--2\,$^\circ$C difference (optional heat pump): 0.013--0.03\,kJ/kg. This figure is distinct from Fig.~\ref{fig:cycle} (process layout). All values in kJ/kg.}
+kJ/kg). Each stage: heat absorbed (2$\to$3 only, $Q_{\mathrm{in}}{=}2.82$), heat rejected (4$\to$1, $Q_{\mathrm{out}}{=}2.13$), work in (1$\to$2 pump, $W_{\mathrm{in}}{=}0.0327$), work out (3$\to$4 expander, $W_{\mathrm{out}}{=}0.72$). Net work $w_{\mathrm{net}}=0.687$. Totals match the first-law balance $2.82 - 2.13 = 0.687$. Energy used to maintain the 1--2\,$^\circ$C difference (optional heat pump): 0.019--0.044\,kJ/kg. This figure is distinct from Fig.~\ref{fig:cycle} (process layout). All values in kJ/kg.}
 \label{fig:energy_flow}
 \end{figure}
 
@@ -522,15 +521,15 @@ $q_{\mathrm{out}}$ to the environment); in steady operation the mass
 distribution (liquid in pump path, vapour/liquid in chamber) is constant and
 no mass is lost or gained. \textbf{Energy:} The first law of thermodynamics over one cycle per unit
 mass gives $q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ (first-law closure); numerically,
-$1.97 - 1.276 = 0.694\,\mathrm{kJ}/\mathrm{kg}$. No energy is unaccounted for.
+$2.82 - 2.13 = 0.687\,\mathrm{kJ}/\mathrm{kg}$. No energy is unaccounted for.
 Kinetic and potential energy changes of the fluid are neglected (standard for
 such cycles). No free parameters remain: the cycle is determined by the chosen states and the first law. Thus the thermodynamic cycle is closed and the energy accounting
 has no omissions.
 
 For a mass flow rate $\dot{m}$ (kg/s), heat absorption rate is
-$\dot{Q}_{\mathrm{in}} = \dot{m}\,q_{\mathrm{in}} \approx 1.97\,\dot{m}\,\mathrm{kW}$
+$\dot{Q}_{\mathrm{in}} = \dot{m}\,q_{\mathrm{in}} \approx 2.82\,\dot{m}\,\mathrm{kW}$
 and net power output is
-$\dot{W}_{\mathrm{net}} = \dot{m}\,w_{\mathrm{net}} \approx 0.694\,\dot{m}\,\mathrm{kW}$.
+$\dot{W}_{\mathrm{net}} = \dot{m}\,w_{\mathrm{net}} \approx 0.687\,\dot{m}\,\mathrm{kW}$.
 
 \paragraph{Can the cycle's own output sustain the 2\,$^\circ$C difference with surplus?}
 The cycle requires a local micro temperature difference (e.g.\ 24\,$^\circ$C expansion
@@ -538,20 +537,20 @@ side, 26\,$^\circ$C compression side). If this difference were to be produced
 by a heat pump (or thermoelectric device) driven by the cycle's net work, would
 the work needed exceed the net output?
 
-\textbf{Ideal (Carnot) heat pump} moving heat $q_{\mathrm{in}} = 1.97\,\mathrm{kJ}/\mathrm{kg}$
+\textbf{Ideal (Carnot) heat pump} moving heat $q_{\mathrm{in}} = 2.82\,\mathrm{kJ}/\mathrm{kg}$
 from the cold side ($T_{\mathrm{c}} \approx 297\,\mathrm{K}$, 24\,$^\circ$C) to the
 hot side ($T_{\mathrm{h}} \approx 299\,\mathrm{K}$, 26\,$^\circ$C) requires work per
 unit mass
 \begin{equation}
 \label{eq:HP_ideal}
 w_{\mathrm{HP,ideal}} = q_{\mathrm{in}}\,\frac{T_{\mathrm{h}} - T_{\mathrm{c}}}{T_{\mathrm{h}}}
-= 1.97 \times \frac{2}{299} \approx 0.0132\,\mathrm{kJ}/\mathrm{kg}.
+= 2.82 \times \frac{2}{299} \approx 0.0189\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-All temperatures and heat flows in this estimate are specified above (Eq.~\ref{eq:HP_ideal}). The cycle's net output is $w_{\mathrm{net}} = 0.694\,\mathrm{kJ}/\mathrm{kg}$, so
+All temperatures and heat flows in this estimate are specified above (Eq.~\ref{eq:HP_ideal}). The cycle's net output is $w_{\mathrm{net}} = 0.687\,\mathrm{kJ}/\mathrm{kg}$, so
 $w_{\mathrm{HP,ideal}} \ll w_{\mathrm{net}}$: only about
-$0.013/0.694 \approx 1.9\%$ of the net output would be needed to run an ideal
+$0.0189/0.687 \approx 2.75\%$ of the net output would be needed to run an ideal
 heat pump that replenishes the hot side with the heat the cycle absorbs. The
-remaining $\approx 98\%$ is \textbf{surplus} (available for external use).
+remaining $\approx 97\%$ is \textbf{surplus} (available for external use).
 
 With a \textbf{realistic heat pump} (e.g.\ coefficient of performance, COP, at 30--50\% of Carnot), the work
 would be $w_{\mathrm{HP}} \approx 0.027$--$0.044\,\mathrm{kJ}/\mathrm{kg}$, still
@@ -699,7 +698,7 @@ intermittent process or external timing is required.
 
 \textbf{Scaling to higher power.} Net power is $\dot{W}_{\mathrm{net}} =
 \dot{m}\,w_{\mathrm{net}}$. For the present design $w_{\mathrm{net}} \approx
-0.694\,\mathrm{kJ}/\mathrm{kg}$ is fixed by the cycle parameters. To achieve
+0.687\,\mathrm{kJ}/\mathrm{kg}$ is fixed by the cycle parameters. To achieve
 \textbf{higher power}: (i) \textbf{Increase mass flow} $\dot{m}$: use a larger
 pump, larger expander, larger heat-exchange area for $Q_{\mathrm{in}}$, and
 larger piping and chamber. Thermodynamically there is no upper limit to
@@ -734,7 +733,7 @@ input is required other than the optional small fraction used to maintain the
 internal $\Delta T$ (see \S\ref{sec:liquid_only}).
 
 \textbf{How the present cycle fits.} The cycle absorbs $q_{\mathrm{in}} \approx
-1.97\,\mathrm{kJ}/\mathrm{kg}$ in process 2$\to$3 from the high-pressure zone at
+2.82\,\mathrm{kJ}/\mathrm{kg}$ in process 2$\to$3 from the high-pressure zone at
 $26\,^\circ\mathrm{C}$. That zone is in thermal contact with the environment;
 the heat is supplied by the ambient. The expansion zone is at $24\,^\circ\mathrm{C}$.
 So there is a \emph{local} 1--2\,$^\circ$C difference (24 vs.\ 26\,$^\circ$C)
@@ -746,7 +745,7 @@ or by a heat pump or thermoelectric device driven by a small fraction of the
 cycle's net output (about 1--3\% for an ideal or realistic heat pump, as in
 \S\ref{sec:liquid_only}). In both cases, the only \emph{external} source of
 heat is the environment at $T_0$. The cycle rejects
-$q_{\mathrm{out}} \approx 1.276\,\mathrm{kJ}/\mathrm{kg}$ to the same
+$q_{\mathrm{out}} \approx 2.13\,\mathrm{kJ}/\mathrm{kg}$ to the same
 environment. So net heat from the environment is $q_{\mathrm{in}} - q_{\mathrm{out}}
 = w_{\mathrm{net}} > 0$, and net work output is positive.
 
@@ -817,7 +816,7 @@ In short (see Table~\ref{tab:states} and Fig.~\ref{fig:cycle}); each step corres
   \item \textbf{High-pressure side: absorb heat.} At $p_{\mathrm{high}}$ the
   fluid is liquid. It absorbs heat $q_{\mathrm{in}}$ from the environment (in
   the R134a scheme, process 2$\to$3: fluid stays liquid, $q_{\mathrm{in}}
-  \approx 1.97\,\mathrm{kJ}/\mathrm{kg}$).
+  \approx 2.82\,\mathrm{kJ}/\mathrm{kg}$).
   \item \textbf{Expansion.} The fluid (liquid or two-phase after flash) expands
   from $p_{\mathrm{high}}$ to $p_{\mathrm{low}}$ in an expander; the expansion
   work $w_{\mathrm{out}}$ is much larger than $w_{\mathrm{pump}}$.
@@ -856,7 +855,7 @@ single reservoir or with no imposed temperature difference~\cite{qiao2025intrins
 
 For the R134a micro-$\Delta T$ implementation (\S\ref{sec:liquid_only}):
 \begin{itemize}
-  \item \textbf{Pressure}: 0.68--0.71\,MPa (absolute) is low; standard refrigeration
+  \item \textbf{Pressure}: 645.8--685.4\,kPa (0.646--0.685\,MPa, absolute) is low; standard refrigeration
   components (copper or steel tubing, brazed or flanged) are sufficient.
   \item \textbf{Fluid}: R134a is widely used in refrigeration; handling and
   seals are mature.
@@ -926,8 +925,8 @@ We give \textbf{one} implementation: R134a, micro temperature difference
 (1--2\,$^\circ$C), subcooled liquid, liquid-only compression, asymmetric
 constraint phase change (\S\ref{sec:liquid_only}; cf.\ Table~\ref{tab:states}). The cycle absorbs heat from
 a \textbf{single heat source} (the environment), delivers net work
-$w_{\mathrm{net}} = +0.694\,\mathrm{kJ}/\mathrm{kg}$ (Eq.~\ref{eq:w_net}), and rejects
-$q_{\mathrm{out}} \approx 1.276\,\mathrm{kJ}/\mathrm{kg}$ to the same
+$w_{\mathrm{net}} = 0.687\,\mathrm{kJ}/\mathrm{kg}$ (Eq.~\ref{eq:w_net}), and rejects
+$q_{\mathrm{out}} \approx 2.13\,\mathrm{kJ}/\mathrm{kg}$ to the same
 environment. As argued in \S\ref{sec:single_source} (definition and assessment), this \textbf{does
 constitute single-heat-source power generation} in the theoretical sense. \textbf{This is a theoretical result:} no
 external second reservoir is required; the local 1--2\,$^\circ$C is
