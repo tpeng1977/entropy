@@ -120,6 +120,22 @@ constraints and the dynamics, and the conventional second-law analysis does not
 apply. The appropriate theory for such regimes is that of
 constraint-reshaped entropy distributions (Ref.~\cite{peng2026entropydirectionmirrorstateparadox}).
 
+Statistical thermodynamics states that, in the absence of targeted design, a
+``miracle'' outcome (e.g.\ net entropy decrease of the environment, or net
+work from a single reservoir) has vanishing probability when viewed over all
+possible trajectories. That conclusion applies to situations where no
+deliberate, stepwise choice of parameters and constraints is made. In the
+present approach, every step and every component is a deliberate choice: working
+fluid, pressures, temperatures, geometry, liquid-only compression path,
+heat-exchange locations, and so on. We are not sampling at random; we are
+making a long sequence of targeted choices. Out of an astronomical number of
+possibilities, that sequence selects the trajectory that would otherwise be
+extremely unlikely---we fix the path by design rather than waiting for it to
+occur by chance. So ``the miracle is almost impossible'' refers to the regime
+without such design; with repeated careful choice, the same outcome is
+selected. The conventional laws were formulated for the former regime and do not
+represent the latter.
+
 \subsection{Constraint-reshaped cycles}
 
 In the framework of Ref.~\cite{peng2026entropydirectionmirrorstateparadox}, the long-time behaviour of a system is
@@ -294,14 +310,13 @@ State & $p$ (MPa) & $T$ ($^\circ$C) & $h$ (kJ/kg) & Phase / note \\
 1 & 0.68 & 24 & 216 & Saturated liquid (chamber bottom) \\
 2 & 0.71 & 24 & 216.03 & Subcooled liquid (after pump) \\
 3 & 0.71 & 26 & 218 & Saturated liquid at $p_{\mathrm{H}}$ (after $q_{\mathrm{in}}$) \\
-4 & 0.68 & 24 & --- & Liquid + vapour (chamber; liquid $\to$ 1) \\
+4 & 0.68 & 24 & 217.28 & Liquid + vapour (chamber; $h_4 = h_3 - w_{\mathrm{out}}$) \\
 \bottomrule
 \end{tabular}
 \end{table}
 State 4 is two-phase; $h_4$ lies between $h_{\mathrm{f,L}}$ and
-$h_{\mathrm{f,L}}+h_{\mathrm{fg}}$ and is determined by the flash fraction.
-Cycle closure does not require a single numerical $h_4$; the balance
-$q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ holds regardless. The state-to-state path is unambiguous.
+$h_{\mathrm{f,L}}+h_{\mathrm{fg}}$ and is fixed by the first law in process 3$\to$4 (adiabatic expander): $h_4 = h_3 - w_{\mathrm{out}} \approx 217.28\,\mathrm{kJ}/\mathrm{kg}$ (process 3$\to$4 above). The balance
+$q_{\mathrm{in}} - q_{\mathrm{out}} = w_{\mathrm{net}}$ holds and is consistent with $q_{\mathrm{out}} = h_4 - h_1$ in process 4$\to$1. The state-to-state path is unambiguous.
 
 On a pressure--enthalpy ($p$--$h$) diagram, states 1 and 2 lie in the liquid
 region, state 3 is liquid near the saturated-liquid curve at $p_{\mathrm{H}}$,
@@ -387,7 +402,10 @@ $\eta_{\mathrm{exp}} = 0.6$ (conservative for two-phase expansion):
 w_{\mathrm{out}} = \eta_{\mathrm{exp}} \times (\mathrm{ideal\ expansion\ work})
 \approx 0.6 \times 1.2 = 0.72\,\mathrm{kJ}/\mathrm{kg}.
 \end{equation}
-This value is used in the energy balance below; the expander is the only work-producing step and the pump is the only work-consuming step. If $\eta_{\mathrm{exp}} = 0.4$, then $w_{\mathrm{out}} = 0.48\,\mathrm{kJ}/\mathrm{kg}$
+For the expander (adiabatic, no heat transfer), the first law gives
+$h_3 - h_4 = w_{\mathrm{out}}$, so
+$h_4 = h_3 - w_{\mathrm{out}} = 218 - 0.72 = 217.28\,\mathrm{kJ}/\mathrm{kg}$.
+This value lies in the two-phase range at $p_{\mathrm{L}}$ ($h_{\mathrm{f,L}} < h_4 < h_{\mathrm{f,L}}+h_{\mathrm{fg}}$) and is used in the process 4$\to$1 balance below. The expander is the only work-producing step and the pump is the only work-consuming step. If $\eta_{\mathrm{exp}} = 0.4$, then $w_{\mathrm{out}} = 0.48\,\mathrm{kJ}/\mathrm{kg}$
 and $w_{\mathrm{net}} \approx 0.45\,\mathrm{kJ}/\mathrm{kg}$ (still positive).
 State 4: Low-pressure two-phase equilibrium. Liquid settles to the bottom
 (state 1); vapour remains in the upper part. The loop closes; only liquid is
@@ -420,7 +438,7 @@ Each cycle (1$\to$2$\to$3$\to$4$\to$1), per kilogram of working fluid (i.e.\ spe
   over the cycle, so the heat rejected to the environment, $q_{\mathrm{out}}$ (e.g.\ when vapour
   condenses in the chamber or in expander/piping losses), is
   $q_{\mathrm{out}} = q_{\mathrm{in}} - w_{\mathrm{net}} = 1.97 - 0.694
-  = 1.276\,\mathrm{kJ}/\mathrm{kg}$.
+  = 1.276\,\mathrm{kJ}/\mathrm{kg}$. Process 4$\to$1 (condensation, no shaft work) satisfies the first law per unit mass: $q_{\mathrm{out}} = h_4 - h_1$; with $h_4 = h_3 - w_{\mathrm{out}} = 217.28\,\mathrm{kJ}/\mathrm{kg}$ from the expander step, $h_4 - h_1 = 217.28 - 216 = 1.28\,\mathrm{kJ}/\mathrm{kg} \approx 1.276$, consistent with the cycle balance.
 \end{itemize}
 So the cycle (in the design) delivers \textbf{0.694\,kJ useful work per kilogram of fluid per cycle},
 from \textbf{1.97\,kJ heat absorbed per kilogram per cycle}; 1.276\,kJ/kg is rejected
