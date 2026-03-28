@@ -1,0 +1,427 @@
+% iononshpere/main.tex
+% English arXiv-style manuscript.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\setlength{\emergencystretch}{5em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,
+  pdftitle={Dual Asymmetric Constraints and Stratified Cascade in Ionospheres},
+  pdfauthor={Ting Peng},
+  pdfkeywords={ionosphere; plasma; non-symmetric constraints; gravity; magnetic field; cascade; electrostatic closure}
+}
+
+\title{Dual Asymmetric Constraints and Stratified Cascade in Planetary Ionospheres}
+
+\author{Ting Peng\\
+Key Laboratory for Special Area Highway Engineering of Ministry of Education,\\
+Chang'an University, Xi'an 710064, China\\
+\url{t.peng@ieee.org}\\
+ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}\raggedright\sloppy
+Asymmetric constraints can bias steady occupation away from a Boltzmann form and enable directed transport without macroscopic temperature or chemical-potential gradients and without a time-periodic drive. We propose a planetary ionospheric realization: gravity supplies speed-space filtering of thermal carriers, while the magnetic field anisotropically rectifies seed charge separation into a directed current. A stratified D/E/F model implements layer-to-layer electrostatic cascade amplification of the seed field. We present an order-of-magnitude closure with an illustrative terminal amplitude $\sim 10^2\ \mathrm{V\,m^{-1}}$; this figure is a scalable dimensional choice for the algebra and is not identified with typical large-scale ambient ionospheric DC fields (usually discussed at $\mathrm{mV\,m^{-1}}$--$\mathrm{V\,km^{-1}}$ scales). The idealized core omits explicit solar heating and photoionization; observational mapping requires restoring those sources. Qualitative implications for temperature structure, charge separation, currents, and corona-like settings are sketched.
+\end{abstract}
+
+\noindent\textbf{Keywords:} non-equilibrium steady state; non-symmetric constraints; ionospheric electrodynamics; gravity--magnetic rectification; stratified cascade; electrostatic closure.
+
+\section{Introduction}
+Classical atmospheric and ionospheric theories are typically built on the assumption of \emph{external energy input}: solar UV/X-ray ionization provides the charge carriers, solar heating provides the thermal energy, and temperature gradients drive large-scale circulation. Yet a set of observational features remains difficult to reconcile within a single traditional picture:
+\begin{enumerate}
+  \item ionospheric temperatures increase with altitude, contrary to the expected thermal stratification;
+  \item even during local night when solar radiation is absent, the ionosphere can remain active, maintaining stable electron density and elevated temperatures;
+  \item electron temperatures can significantly exceed ion temperatures, accompanied by persistent charge separation;
+  \item large-scale current systems (e.g., equatorial and auroral current systems) can persist without an obvious, continuous external electrical power source;
+  \item in plasmas, electron and ion motions can exhibit strong directional asymmetry, with velocity--altitude decoupling.
+\end{enumerate}
+These features, including electron--ion temperature decoupling and structural stratification in conductivity and current systems, are standard topics summarized in ionospheric textbooks and reviews \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}.
+
+Recent statistical physics studies of constraints \cite{peng2026entropydirectionmirrorstateparadox} provide a new principle: \emph{non-symmetric constraints can alter the occupation distribution so that it deviates from the Boltzmann form; directed transport can arise even without temperature differences or chemical-potential gradients}.
+
+We apply this principle to planetary atmospheres. We argue that \textbf{gravity plus magnetic field} yields a natural dual asymmetry: under no temperature difference conditions, these constraints directly rectify thermal motion into an initial, weak directed charge flow and seed electric field. The multi-layer structure of the ionosphere then performs a \emph{cascade amplification} of that seed signature; connecting the resulting electrostatic amplitude to specific observables requires fixing the physical interpretation of $E$ and, typically, rescaling amplitudes to reported ionospheric field magnitudes (Sec.~\ref{sec:efield-scales}) \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}.
+
+Here ``no external driving'' refers to the absence of continuous non-thermal energy injection; the static constraints act as filters/rectifiers that reorganize carriers' thermal energy into electrostatic signatures.
+
+\subsection*{Contributions of this work}
+\begin{enumerate}
+  \item We formulate a dual-asymmetry ionospheric mechanism in which gravity acts in speed space and magnetic geometry rectifies momentum direction.
+  \item We provide a stratified cascade narrative (D/E/F1/F2) that links seed charge separation to macroscopic electrostatic signatures through layer coupling.
+  \item We construct an explicit electrostatic closure with transparent effective parameters $(\eta,\xi,\zeta)$ and a multiplicative recursion in layer gains.
+  \item We state clear scope conditions: amplitudes are illustrative within the closure, and observational mapping requires restoring external source terms and transport details.
+\end{enumerate}
+
+\section{Core conceptual challenges in existing theories}
+Traditional modeling faces internal contradictions:
+\begin{enumerate}
+  \item \textbf{Altitude temperature anomaly:} standard thermodynamic stratification suggests temperature should decrease with altitude, yet ionospheric temperature often rises.
+  \item \textbf{Charge separation without an obvious external driver:} photoionization vanishes in the night, while ionospheric signatures do not disappear.
+  \item \textbf{Strong electron--ion asymmetry:} due to mass disparity, stable velocity ratios can be far from what naive thermal equilibrium would suggest.
+  \item \textbf{Directed transport without strong temperature gradients:} persistent current loops can exist without a dominant temperature-gradient drive.
+  \item \textbf{Field-amplitude mismatch:} it is unclear how a microscopic seed charge separation can be reconciled with macroscopic electrostatic signatures without an intermediate amplification mechanism (Sec.~\ref{sec:efield-scales} clarifies how we treat amplitudes in this manuscript).
+ \end{enumerate}
+Together, these point to an intrinsic, constraint-driven ordering mechanism that must include \emph{micro-to-macro amplification}, naturally realized by multi-layer cascade effects.
+
+\section{Theory core: unbiased directed transport and cascade amplification under dual asymmetry}
+
+\subsection{Statistical-physics foundation of non-symmetric constraints}
+The key conclusions of \cite{peng2026entropydirectionmirrorstateparadox} can be summarized as:
+\begin{enumerate}
+  \item constraint asymmetry breaks detailed balance and drives the steady state away from the Boltzmann distribution;
+  \item directed particle flow can be generated directly by constraint structure without requiring temperature difference or chemical-potential gradients;
+  \item spatial anisotropy of constraints itself acts as a drive for directed transport;
+  \item weak directed transport can be hierarchically amplified through structural coupling, producing macroscopic observable effects.
+\end{enumerate}
+In our ionospheric implementation, cascade amplification is not imposed as an external energy input. Instead, it follows the multi-layer nature of the ionosphere acting as a hierarchy of coupled response channels. Translating the abstract statistical-mechanics constraints of \cite{peng2026entropydirectionmirrorstateparadox} into a fluid/kinetic plasma model involves additional assumptions (collision operators, boundary conditions, and magnetization); we treat the ionospheric block as a physically motivated realization rather than a derived corollary.
+
+\subsection{Gravity as a speed-space asymmetry (seed charge separation)}
+Let $\phi(r)$ denote gravitational potential. In the vertical direction, gravity introduces an energy asymmetry:
+\begin{itemize}
+  \item upward motion requires overcoming the gravitational potential increment, effectively filtering the thermal kinetic energy that can reach higher altitudes;
+  \item downward motion releases mechanical energy as potential decreases, without requiring any external energy input.
+\end{itemize}
+
+\subsubsection{Model object and assumptions}
+We study ionospheric thermal carriers (electrons and dominant ions) and adopt a gravity--thermal motion reduced model with minimal assumptions:
+\begin{enumerate}
+  \item altitude domain: from $\sim \SI{60}{km}$ (bottom D layer) to $\gtrsim \SI{1000}{km}$ (top F2 region), with gravity approximated as a radially uniform field $g\approx \SI{9.8}{m/s^2}$ (high-altitude corrections can be implemented);
+  \item particle species: electrons and representative ions (e.g., protons and oxygen ions), neglecting neutral-collision energy losses at the dominant scale (with appropriate corrections at lower altitudes);
+  \item dynamics: carriers feel gravity and thermal motion only; initial thermal velocities follow an isotropic Maxwellian distribution;
+  \item filtering criterion: only carriers whose thermal kinetic energy exceeds the gravitational potential increment can reach the upper regions and become effective seeds for charge separation and cascade amplification.
+\end{enumerate}
+
+\subsubsection{A quantitative estimate of high-altitude speed}
+By energy conservation, for a carrier moving from $h_1$ to $h_2$:
+\begin{equation}
+\frac{1}{2}mv_1^2+mgh_1=\frac{1}{2}mv_2^2+mgh_2,
+\end{equation}
+so that
+\begin{equation}
+v_2=\sqrt{v_1^2-2g\Delta h},
+\qquad \Delta h=h_2-h_1.
+\end{equation}
+Using representative ionospheric altitudes $h_1=\SI{60}{km}$ and $h_2=\SI{300}{km}$, $\Delta h=\SI{240}{km}=\SI{2.4e5}{m}$. For electrons we use a representative thermal scale $v_{1e}\approx \sqrt{2kT_e/m_e}$ with an elevated F-region electron temperature $T_e\sim 10^4~\mathrm{K}$, which yields $v_{1e}\sim 5\times 10^5~\mathrm{m/s}$ (consistent with $T_e\gg T_i$ in ionospheric physics \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}); we adopt $v_{1e}\approx 5.5\times 10^5~\mathrm{m/s}$ as a concrete estimate. For ions we take a proton scale $v_{1i}\approx 1.3\times 10^4~\mathrm{m/s}$ (near-thermal at $\sim 300~\mathrm{K}$). Then $v_{2e}\approx v_{1e}$ (negligible reduction) and $v_{2i}\approx 1.28\times 10^4~\mathrm{m/s}$ (small reduction).
+
+\subsubsection{Why the carriers remain ``fast'' after filtering}
+The primary reasons are:
+\begin{enumerate}
+  \item the thermal speed scale is far larger than the speed loss $\sqrt{2g\Delta h}$ required to climb $\Delta h$;
+  \item filtering is \emph{selective} rather than directly \emph{accelerating}: only fast carriers survive the threshold condition, so the surviving population remains high-energy;
+  \item at sufficiently high altitude, collision losses are weak enough that the remaining kinetic-energy content is not strongly dissipated.
+\end{enumerate}
+Indirect processes (e.g., collision-mediated redistribution and electrostatic field-driven directed acceleration during cascade) can further enhance directional motion while preserving energy bookkeeping.
+
+\subsubsection{Supplement: does gravity filtering directly accelerate carriers?}
+From the above energy-conservation picture, gravity filtering is a \emph{filter}, not an \emph{accelerator}. The mapping from low-altitude kinetic energy to high-altitude kinetic energy only involves conversion between kinetic and potential energies under a conservative force. Therefore, it does not provide a mechanism for increasing the carriers' total mechanical energy beyond its initial thermal value.
+
+Nevertheless, two \emph{indirect} routes can produce an apparent ``speed-up'' in the subsequent macroscopic evolution:
+\begin{enumerate}
+  \item \emph{Collision-mediated redistribution (mainly for electrons).} Fast electrons colliding with residual neutrals/atoms can redistribute part of the kinetic energy to the collision partners, generating transient increases in some particles' instantaneous speeds. This is an energy \emph{re-allocation} process rather than an external injection, and it remains bounded by the initial thermal kinetic-energy budget.
+  \item \emph{Electrostatic field-driven directed acceleration (coupled to cascade amplification).} After gravity filtering seeds a weak charge separation, a weak seed electric field is established. As cascade amplification proceeds, the macroscopic electric field strengthens stepwise (from the seed scale toward the target scale). Carriers then experience directed acceleration along the field, where the drive is provided by the \emph{amplified electrostatic field} rather than by gravity filtering itself. Hence, the ``acceleration'' is conditional on the cascade-developed field.
+\end{enumerate}
+In short: gravity filtering does not directly push carriers' speeds beyond their initial thermal scales; however, the combination of (i) a high-energy tail selected by filtering and (ii) later electrostatic field growth can generate indirect acceleration signatures, with electrons typically more pronounced than ions.
+
+\subsubsection{Energy transfer and a stable ``energy supply'' loop}
+Within the ionospheric physical environment, it is possible to build an observationally compatible dynamical loop that stabilizes the high-altitude kinetic-energy content without invoking continuous external driving.
+
+Consider the following self-contained sequence, consistent with energy conservation:
+\begin{enumerate}
+  \item \emph{Filtering and high-altitude kinetic energy enrichment.} Gravity filtering continuously transports a small fraction of ``effective'' fast carriers to higher-altitude regions. In the intermediate collision regimes (e.g., E-layer and adjacent regions), fast carriers undergo primarily elastic collisions that can transfer kinetic energy to initially slower carriers, raising their speeds and moving them into a new effective ``fast'' subset.
+  \item \emph{Loss of energy and gravitational settling.} Carriers that lose sufficient kinetic energy fall below the filtering threshold and cannot remain effectively supported at high altitudes. Under gravity, they settle downward.
+  \item \emph{Energy recovery during settling.} During settling, the lost potential energy converts back into kinetic energy. Upon reaching lower altitudes, these carriers regain speeds that can again satisfy the filtering condition, closing the cycle.
+\end{enumerate}
+Because this loop relies only on energy conversion between potential and kinetic forms, the absence of external radiative input does not break the structural possibility of the cycle. In an idealized regime where collisional dissipation is not dominant over the relevant timescales, the loop can maintain an effective high-energy carrier supply that sustains cascade amplification and thereby contributes to temperature anomalies and day--night persistence.
+
+\subsection{Magnetic field as directional asymmetry (seed current formation)}
+The Lorentz force,
+\begin{equation}
+\vec F = q\vec v\times \vec B,
+\end{equation}
+introduces directional asymmetry:
+\begin{itemize}
+  \item along $\vec B$ (parallel direction) the Lorentz force vanishes and motion is ``open'';
+  \item perpendicular to $\vec B$ the Lorentz force enforces gyromotion and suppresses long-range diffusion, acting as a ``block''.
+\end{itemize}
+Because charge signs experience forces in opposite directions, electrons and ions are redirected with opposite preferred directions. Under no temperature difference, the magnetic asymmetry converts the seed charge separation into a directed current, which then becomes the driver for cascade amplification.
+
+\subsection{Cascade amplification in the stratified ionosphere}
+The ionosphere is effectively partitioned by altitude into D, E, F1, and F2 regions. Each region features distinct conductivity and different collision regimes. The cascade amplification is then a hierarchy of coupled steps:
+\begin{enumerate}
+  \item D layer seeds weak charge separation and initiates a seed current;
+  \item E layer increases effective current transmission and yields enhanced electric-field superposition;
+  \item F1 and F2 layers provide the terminal amplification through strong conductivity and weak collision losses, allowing charge accumulation and macroscopic field formation.
+\end{enumerate}
+
+\subsubsection{A detailed three-step cascade mechanism}
+The core cascade is a stepwise, bottom-to-top, positive-feedback process. For the order-of-magnitude \emph{closed} estimate, it can be summarized in three layer-to-layer steps (a qualitative mechanism consistent with the electrostatic parameterization):
+
+\paragraph{Step 1: D layer (seed excitation layer) --- weak charge separation and current initiation}
+D is the lowest ionospheric region, where neutral species dominate and collisions are frequent, while constraints are relatively weaker. Still, it can act as a startup layer:
+\begin{enumerate}
+  \item \emph{Gravity filtering:} a small fraction of fast electrons reaches D, and collisions with neutrals produce a weak ionization input (even without solar radiation in the ideal limit, fast-carrier collision can provide carriers at the seed stage).
+  \item \emph{Charge separation:} constrained electron motion and relative ion retention produce an initial weak electric field $E_1\approx E_0\sim 8\times10^{-5}\ \mathrm{V/m}$.
+  \item \emph{Seed current:} the magnetic constraint converts the separation into a seed current $J_1\approx J_0\sim 8\times10^{-10}\ \mathrm{A/m^2}$.
+  \item \emph{Key role:} the weak current and electric field act as the seed signal transmitted upward; because D-layer conductivity is low, the current does not strongly accumulate locally and instead couples into the E layer.
+\end{enumerate}
+
+\paragraph{Step 2: E layer --- current enhancement and field superposition}
+E has higher conductivity than D, lower collision frequency, and a stronger magnetic constraint, enabling the first significant amplification:
+\begin{enumerate}
+  \item \emph{Charge injection:} the directed electron flow from D injects carriers into E, and additional collisions increase the number of charged particles.
+  \item \emph{Current amplification:} effective constraint duration increases and ionization generation improves, enhancing the directed current density by about an order of magnitude, i.e. an effective factor $\mathcal{A}_{\mathrm{E}}\approx 10$ in the electrostatic closed sense.
+  \item \emph{Electric-field superposition:} enhanced charge separation leads to a superposition of fields. At the level of the target order-of-magnitude estimate, $E_2+E_1\sim 8\times10^{-4}\ \mathrm{V/m}$, i.e. roughly another factor $\sim 10$ relative to $E_1$.
+  \item \emph{Positive feedback:} the strengthened field drives further directed motion, increasing the current and sustaining the feedback loop.
+\end{enumerate}
+
+\paragraph{Step 3: F1 + F2 layers --- charge accumulation and macroscopic field formation}
+F1 and F2 are the terminal regions, where carrier density and conductivity are largest and collisions are least frequent (F2 is nearly collisionless):
+\begin{enumerate}
+  \item \emph{Sustained current injection:} the amplified transport from E injects into F1, and in the electrostatic closed model this coupling corresponds to a large effective field gain $\mathcal{A}_{\mathrm{F1}}\approx 1000$.
+  \item \emph{Charge accumulation:} in F2, electrons accumulate with minimal collisional dissipation; meanwhile positive charge can pile up near the interface with F1 due to inertia/response delay of ions.
+  \item \emph{Final field build-up:} superposition of layer fields, combined with very high F2 conductivity, strengthens charge separation and yields the macroscopic field $E_{\mathrm{total}}\sim 80\ \mathrm{V/m}$.
+  \item \emph{Stability:} with minimal collisional energy dissipation, the charge separation and field can be maintained; in the ideal limit, thermal replenishment continues to sustain the amplification chain.
+\end{enumerate}
+
+\subsubsection{Layer structure used for the order-of-magnitude cascade}
+The representative stratification adopted for the quantitative closed estimate is:
+\begin{table}[ht]
+\centering
+\caption{Representative order-of-magnitude stratification used for the cascade narrative (not a substitute for measured profiles). ``Constr.'' abbreviates combined constraint strength from gravity and magnetic field in the text.}
+\label{tab:iono-strata}
+\renewcommand{\arraystretch}{1.2}
+\scriptsize
+\begin{tabular}{L{1.0cm} L{2.3cm} L{2.0cm} L{1.6cm} L{3.1cm} L{2.3cm}}
+\hline
+Region & Altitude range & $n$ ($\mathrm{m^{-3}}$) & $\sigma$ ($\mathrm{S/m}$) & Dominant carriers & \shortstack{\scriptsize Constr.} \\
+\hline
+D  & $60$--$90~\mathrm{km}$ & $10^8$--$10^9$ & $10^{-8}$--$10^{-7}$ & neutrals with small ion fraction & weak \\
+E  & $90$--$150~\mathrm{km}$ & $10^9$--$10^{10}$ & $10^{-7}$--$10^{-6}$ & electrons/ions increasing & medium \\
+F1 & $150$--$250~\mathrm{km}$ & $10^{10}$--$10^{11}$ & $10^{-6}$--$10^{-5}$ & electron/ion dominated & strong \\
+F2 & $250$--$1000+$~km & $10^{11}$--$10^{12}$ & $10^{-5}$--$10^{-4}$ & fully ionized & very strong \\
+\hline
+\end{tabular}
+\normalsize
+\end{table}
+These are standard order-of-magnitude expectations in ionospheric physics \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}.
+
+\subsubsection{Dual asymmetry unification}
+Gravity filtering selects high-energy carriers and seeds an initial weak charge separation (seed electric field). The magnetic constraint enforces directional motion and converts this separation into a directed drive current. The stratified ionosphere then amplifies both the field and current through multi-layer coupling. Electron--ion mass disparity further stabilizes the charge separation. Finally, constraint-induced statistical asymmetry supports a self-sustaining regime without continuous external power in the ideal limit.
+
+\section{Quantitative electrostatic estimate (seed field to macroscopic field)}
+\subsection{Electric-field amplitudes: closure scale versus typical ionospheric reports}
+\label{sec:efield-scales}
+Large-scale electric fields in the terrestrial ionosphere are routinely discussed at $\mathrm{mV\,m^{-1}}$ to $\mathrm{V\,km^{-1}}$ scales in textbooks and monographs \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}. The algebraic closure in this section therefore uses an \emph{illustrative} target amplitude $E_{\mathrm{total}}\sim 10^2\ \mathrm{V\,m^{-1}}$ as a dimensionally consistent way to exhibit a $10^6$ multiplicative stacking of a seed field $E_0\sim 10^{-4}\ \mathrm{V\,m^{-1}}$. The same recursion relations apply if all electric fields are scaled uniformly by a common factor $\alpha$ (e.g., choosing $\alpha\sim 10^{-3}$ would map the narrative onto $\sim 10^{-1}\ \mathrm{V\,m^{-1}}$ while preserving the dimensionless factors $\mathcal{A}_i$). The physical identification of $E$ with a specific observable (volume-averaged DC field, effective field along a flux tube, or a localized structure) must be fixed when comparing to data.
+
+\subsection{Basic parameters (reference scales)}
+We use representative Earth-ionosphere scales and fundamental constants:
+\begin{itemize}
+  \item reference closure temperature: $T_{\mathrm{ref}}\approx \SI{300}{K}$;
+  \item thermal voltage (closure scale): $V_T = kT_{\mathrm{ref}}/e \approx \SI{0.026}{V}$;
+  \item electron number density in F2: $n\approx 10^{11}~\mathrm{m^{-3}}$;
+  \item gravity scale: $g\approx \SI{9.8}{m/s^2}$;
+  \item elementary charge $e$ and Boltzmann constant $k$ taken from CODATA \cite{Tiesinga2021CODATA};
+  \item vacuum permittivity $\varepsilon_0$ taken from CODATA \cite{Tiesinga2021CODATA};
+  \item electron and representative ion masses (mass ratio used as a scale) from CODATA \cite{Tiesinga2021CODATA};
+  \item representative region conductivities: $\sigma_D\sim 10^{-8}$, $\sigma_E\sim 10^{-7}$, $\sigma_{F1}\sim 10^{-6}$, $\sigma_{F2}\sim 10^{-5}~\mathrm{S/m}$.
+\end{itemize}
+The numerical closure also introduces effective, electrostatic parameters $\eta$, $\xi$, and $\zeta$ for the mapping between micro-level constraint bias and macroscopic fields. Their values are constrained by consistency with the target field magnitude and Gauss-law order estimates. Unless explicitly stated otherwise, numbers in this section are order-of-magnitude illustrative values. Here $T_{\mathrm{ref}}$ is a closure reference temperature used in the electrostatic seed estimate; it is not identical to the elevated electron temperature used in the suprathermal-tail discussion.
+
+\subsection{Seed field from Debye screening and constraint-to-electrostatics mapping}
+In an isothermal plasma approximation, the Debye length is
+\begin{equation}
+\lambda_{\mathrm{D}}=\sqrt{\frac{\varepsilon_0 kT_{\mathrm{ref}}}{n e^2}}\ ,
+\end{equation}
+with the Debye-length form standard in plasma physics \cite{ChenPlasmaPhysics1984} and the constants taken from CODATA \cite{Tiesinga2021CODATA}. Using $T_{\mathrm{ref}}\approx \SI{300}{K}$ and $n\approx 10^{11}~\mathrm{m^{-3}}$ gives $\lambda_D\approx 3.78\times 10^{-3}~\mathrm{m}$.
+
+We define an effective separation length
+\begin{equation}
+\ell_0=\xi \lambda_D,
+\end{equation}
+with $\xi\approx 8$.
+We map the constraint-induced statistical bias to an electrostatic potential difference
+\begin{equation}
+\Delta\phi_0=\eta\,V_T,\qquad V_T=\frac{kT_{\mathrm{ref}}}{e},
+\end{equation}
+with $\eta=10^{-4}$.
+Then the seed electric field is
+\begin{equation}
+E_0=\frac{\Delta\phi_0}{\ell_0}=\frac{\eta V_T}{\xi\lambda_D}\approx 8.5\times10^{-5}~\mathrm{V/m}.
+\end{equation}
+
+\subsubsection{Uncertainty propagation at closure level}
+From $E_0\propto \eta\,T_{\mathrm{ref}}^{1/2}\,\xi^{-1}\,n^{1/2}$ (via $\lambda_D\propto\sqrt{T_{\mathrm{ref}}/n}$), first-order relative uncertainty gives
+\begin{equation}
+\frac{\delta E_0}{E_0}\approx
+\frac{\delta\eta}{\eta}
++\frac{1}{2}\frac{\delta T_{\mathrm{ref}}}{T_{\mathrm{ref}}}
++\frac{1}{2}\frac{\delta n}{n}
+-\frac{\delta\xi}{\xi}.
+\end{equation}
+This relation identifies which measurements or priors most strongly control the inferred seed-field uncertainty.
+
+\subsection{Seed current density from an effective Ohm closure}
+In the magnetic rectification stage, the directed current density is estimated via an effective scalar Ohm relation (a pedagogical reduction of tensor conductivity and Hall/Pedersen structure at finite collision frequency \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}):
+\begin{equation}
+J_0\approx \sigma_{\mathrm{eff}}E_0,
+\end{equation}
+where we identify $\sigma_{\mathrm{eff}}$ with the F2-scale conductivity $\sigma_{F2}$ adopted in the parameter list. With $\sigma_{F2}\approx 10^{-5}~\mathrm{S/m}$ one obtains
+\begin{equation}
+J_0\approx 8.5\times10^{-10}~\mathrm{A/m^2}.
+\end{equation}
+
+\subsection{Cascade amplification and macroscopic field}
+Cascade amplification is modeled as a multiplicative layer-to-layer enhancement:
+\begin{equation}
+E_i=\mathcal{A}_i\,E_{i-1},
+\end{equation}
+with $i\in\{\mathrm{E},\mathrm{F1},\mathrm{F2}\}$.
+To match the target macroscopic field scale, we adopt effective multipliers
+\begin{equation}
+\mathcal{A}_{\mathrm{E}}\approx 10,\qquad
+\mathcal{A}_{\mathrm{F1}}\approx 1000,\qquad
+\mathcal{A}_{\mathrm{F2}}\approx 100,
+\end{equation}
+so that the effective total amplification is
+\begin{equation}
+\mathcal{A}_{\mathrm{tot}}\approx 10\times 1000\times 100 = 10^6.
+\end{equation}
+Here $\mathcal{A}_{\mathrm{E}},\mathcal{A}_{\mathrm{F1}},\mathcal{A}_{\mathrm{F2}}$ are order-of-magnitude effective gains consistent with a layer-to-layer recursion picture; residual non-ideal loss/projection effects are compressed into $\zeta$. With $\zeta\approx 0.94$, the resulting macroscopic field becomes
+\begin{equation}
+E_{\mathrm{total}}\approx \zeta\,E_{\mathrm{F2}}\approx \SI{80}{V/m},
+\end{equation}
+which matches the illustrative closure scale adopted above; rescaling $\eta,\xi,\zeta$ (or an overall factor $\alpha$) maps the same recursion onto smaller amplitudes consistent with typical reported ionospheric fields \cite{Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}.
+
+\subsection{Gauss-law self-consistency check}
+To verify that the required charge imbalance is not unphysically larger than the typical carrier density, we estimate in an effective planar geometry:
+\begin{equation}
+\Sigma_q\sim c\,\varepsilon_0 E_{\mathrm{total}},\qquad
+\Delta n \sim \frac{\Sigma_q}{e\,\ell_0}\approx \frac{c\,\varepsilon_0 E_{\mathrm{total}}}{e\,\ell_0},
+\end{equation}
+where $c=O(1)$ accounts for geometric factors omitted in this order-of-magnitude planar estimate. Using $c\approx 1$, $\ell_0=\xi\lambda_D\approx 8\times 3.78\times 10^{-3}~\mathrm{m}\approx 3.0\times 10^{-2}~\mathrm{m}$ and $E_{\mathrm{total}}\approx \SI{80}{V/m}$ yields $\Delta n\approx 1.5\times 10^{11}~\mathrm{m^{-3}}$, comparable to the assumed $n\approx 10^{11}~\mathrm{m^{-3}}$.
+This supports overall electrostatic self-consistency at the order-of-magnitude level.
+
+\section{Discussion}
+\subsection{Closed electrostatic parameterization and limitations}
+The framework is intentionally constructed as a closed electrostatic package. The effective parameters $\eta,\xi,\zeta$ serve as the mapping from constraint-induced micro-bias to macroscopic electrostatics, and from idealized layer recursion to net non-ideal field formation.
+
+The limitations are equally important: $\eta,\xi,\zeta$ should ultimately emerge from constrained transport dynamics (kinetic or fluid-kinetic models) that explicitly include collision physics, boundary conditions, and coupling geometry. Here, the manuscript establishes \emph{existence and order-of-magnitude feasibility} under a minimal, testable closure.
+
+\paragraph{Thermodynamic consistency.}
+Directed currents dissipate energy in resistive media; sustaining a steady state in a resistive plasma generally requires a power balance with sources and/or boundary fluxes. Our ``no external driving'' idealization is therefore a \emph{limiting statement about absent macroscopic thermal/chemical-potential gradients and absent continuous non-thermal injection} (Sec.~Introduction), not a claim that the terrestrial ionosphere is a closed equilibrium isolated from the Sun. In applications, residual photoionization, winds, and magnetospheric coupling should appear as explicit source terms when comparing to observations.
+
+\paragraph{Quasineutrality and the Debye closure.}
+Plasmas are quasineutral at scales $\gg \lambda_D$; the use of $\lambda_D$ here fixes the transverse scale of charge-separation fluctuations that can seed an electrostatic potential, not a macroscopic net charge density comparable to $n$ over the entire layer volume.
+
+\subsection{Relation to traditional ionospheric mechanisms}
+The proposed mechanism does not claim that external drivers always vanish in real ionospheres. Rather, it identifies an intrinsic, constraint-driven pathway that remains active in the ideal limit of no temperature difference and no external driving. A robust comparison with observations requires adding residual external sources and quantifying how they perturb the effective closure parameters.
+
+\subsection{Correspondence with statistical physics: constraint reshapes occupation distributions}
+The statistical physics result \cite{peng2026entropydirectionmirrorstateparadox} says that constraints can reshape the long-time occupation distribution under which directed transport can emerge without thermal gradients. Gravity selection and magnetic rectification provide a concrete planetary mechanism to realize this constraint-to-transport mapping. The cascade amplification in a stratified ionosphere then bridges seed micro-bias to macroscopic fields.
+
+\subsection{Testable trends}
+Even in parameterized form, the model gives directional expectations:
+\begin{enumerate}
+  \item $E_0=\eta V_T/(\xi\lambda_D)$, with $\lambda_D\propto \sqrt{T_{\mathrm{ref}}/n}$, yields explicit dependence of the seed field on $T_{\mathrm{ref}}$ and $n$;
+  \item $E_{\mathrm{total}}$ depends on the effective layer multipliers, which in turn reflect conductivity stratification and coupling efficiency;
+  \item electron--ion mass disparity influences the stability of charge separation and hence the persistence of directed currents;
+  \item the suprathermal light-ion fraction follows $f_{\mathrm{hot}}\sim p^N$ in the coarse-grained lucky-particle picture, providing a direct bridge between collision statistics and upper-tail observables.
+\end{enumerate}
+
+\subsection{Core mechanism for high-temperature maintenance in ionospheres (and corona-like environments)}
+Traditional heating explanations typically involve external energy input and radiation--collision balance, thus addressing ionospheric/coronal temperature maintenance under constraints of composition and cooling rates. Within our constraint framework, high temperatures can be interpreted as dynamic energy enrichment maintained by \emph{speed filtering} and \emph{multi-element collision-mediated acceleration}.
+
+In a multi-element atmosphere, light and heavy ions coexist. If a single species dominated, collisions mainly redistribute momentum and would be less effective at producing a sustained multi-stage enrichment channel. When light and heavy species coexist, elastic collisions can act as a recurrent ``keep-alive'' mechanism for energy-rich light ions: following gravity filtering, a small fraction of ``lucky'' carriers can repeatedly access higher-energy portions of the distribution through elastic rebounds involving heavy-ion ``buffers''. This yields a high-energy tail dominated by light ions (especially protons or hydrogen-like species).
+
+\subsubsection{Light-ion gain in collisions with heavy ions: a minimal estimate}
+To make the above picture explicit, consider a 1D elastic collision between a light ion ($m_\ell$, e.g., H$^+$) and a heavy ion ($m_h\gg m_\ell$) with pre-collision velocities $u_\ell,u_h$. The post-collision light-ion velocity is
+\begin{equation}
+v_\ell'=\frac{m_\ell-m_h}{m_\ell+m_h}u_\ell+\frac{2m_h}{m_\ell+m_h}u_h.
+\end{equation}
+For $m_h\gg m_\ell$, this reduces to
+\begin{equation}
+v_\ell'\approx -u_\ell+2u_h.
+\end{equation}
+Hence the light ion gains kinetic energy whenever $|v_\ell'|>|u_\ell|$, i.e.
+\begin{equation}
+|{-}u_\ell+2u_h|>|u_\ell|.
+\end{equation}
+In head-on geometry with $u_h<0<u_\ell$, the gain condition is naturally satisfied and the heavy ion acts as an effective moving reflector. This is a standard elastic-collision consequence of mass asymmetry, not an external energy source \cite{ChenPlasmaPhysics1984}.
+
+In reality, collision angles and velocity signs are distributed, so only a fraction of events is energy-gaining for H$^+$. A simple coarse-grained model is to represent one ``effective'' gain step by
+\begin{equation}
+E_{k+1}=g\,E_k,\qquad g>1
+\end{equation}
+for favorable collisions, while unfavorable events return ions to the bulk.
+
+\subsubsection{Multi-step acceleration and ``lucky'' ions: an order-of-magnitude example}
+Let an H$^+$ ion start with kinetic energy $E_0$ and require $N$ favorable collisions to exceed an upper-layer threshold $E_{\mathrm{th}}$:
+\begin{equation}
+E_0\,g^N\ge E_{\mathrm{th}}
+\quad\Rightarrow\quad
+N\ge \frac{\ln(E_{\mathrm{th}}/E_0)}{\ln g}.
+\end{equation}
+Using illustrative values $E_0=1\,\mathrm{eV}$, $E_{\mathrm{th}}=30\,\mathrm{eV}$, and $g=1.5$, one gets
+\begin{equation}
+N\approx \frac{\ln 30}{\ln 1.5}\approx 8.4,
+\end{equation}
+so roughly $9$ favorable steps are needed.
+
+If the probability of a favorable step is $p$, the probability of an uninterrupted favorable chain of length $N$ is approximately
+\begin{equation}
+P_N\sim p^N.
+\end{equation}
+For $p=0.3$ and $N=9$, $P_N\sim 2\times10^{-5}$. This small value quantitatively explains why only a tiny ``lucky'' subset of H$^+$ can reach upper ionospheric layers with the highest effective temperatures, while the majority remains in lower-energy populations.
+
+The corresponding one-particle equivalent temperature scale can be expressed as
+\begin{equation}
+T_{\mathrm{eq}}=\frac{2E}{3k}.
+\end{equation}
+For $E_{\mathrm{th}}=30\,\mathrm{eV}$, this gives $T_{\mathrm{eq}}\approx 2.3\times 10^5\,\mathrm{K}$, showing that the mechanism naturally produces a high-energy \emph{tail} rather than a uniformly heated Maxwellian bulk.
+
+If $N_{\ell}$ denotes the number of candidate light ions entering the cascade region over a characteristic residence time, the expected number of high-tail ions is
+\begin{equation}
+N_{\mathrm{hot}}\sim N_{\ell}P_N.
+\end{equation}
+For example, $N_{\ell}\sim 10^{10}$ with $P_N\sim 2\times10^{-5}$ yields $N_{\mathrm{hot}}\sim 2\times10^5$, i.e. a small but non-negligible suprathermal population that can dominate upper-tail diagnostics.
+
+\paragraph{Modeling caveat.}
+The estimate $P_N\sim p^N$ assumes approximately independent effective gain events and a coarse-grained single-step gain factor $g$. Real ionospheric Coulomb transport is dominated by many small-angle interactions and pitch-angle scattering; therefore $(g,p)$ should be interpreted as effective parameters to be calibrated by kinetic/Fokker--Planck simulations rather than fixed constants \cite{ChenPlasmaPhysics1984,Kelley2009EarthIonosphere,SchunkNagy2009IonospherePhysics}.
+In correlated collision environments, one expects an effective reduction of independent step number (or an effective $p_{\mathrm{eff}}$), so $P_N$ should be treated as a bounded surrogate rather than an exact closed-form probability.
+
+Electrons can have thermal speeds far exceeding escape scales, yet they may not continuously escape because the system builds an electrostatic constraint: the positive-ion reservoir (hard to escape) provides the Coulomb potential that suppresses further electron loss. Magnetic locking and the resulting circulating dynamics reinforce a stable dynamical balance between constrained confinement and replenishment.
+
+This composition dependence suggests \emph{hypothesis-level} trends across objects: a heavier-ion reservoir plausibly strengthens multi-species collision pathways that help sustain high-energy light-ion tails, whereas a nearly pure hydrogen--helium ionosphere may offer fewer heavy-ion collision partners. Any planetary or coronal application requires explicit composition data, collision models, and radiative cooling; we therefore state these cross-object comparisons as qualitative expectations to be tested, not established facts.
+
+\subsection{Outlook on quantitative validation}
+The above discussion is qualitative. A decisive next step is to introduce radiation cooling and realistic collision cross sections into constrained transport equations, turning $\eta,\xi,\zeta$ from effective closure parameters into quantities derived (or at least bounded) from first principles or numerical kinetic simulations.
+
+\section{Conclusion and outlook}
+We proposed a gravity--magnetic, dual-asymmetry mechanism for unbiased rectification and cascade amplification in planetary ionospheres. Under the statistical-physics principle that non-symmetric constraints reshape steady occupation distributions, gravity provides speed-space filtering and magnetic fields convert seed charge separation into directed currents. The stratified ionosphere then performs cascade amplification in a closed electrostatic recursion; we exhibited an illustrative amplitude $E\sim 10^2\ \mathrm{V\,m^{-1}}$ while noting that typical reported large-scale ionospheric fields are much smaller unless one rescales the closure (Sec.~\ref{sec:efield-scales}).
+
+In addition, the discussion highlighted how multi-element, collision-mediated acceleration combined with gravity filtering can offer a qualitative path for high-temperature maintenance in ionospheres and corona-like environments, subject to explicit radiative and transport modeling.
+
+Future work should (i) derive the effective parameters $\eta,\xi,\zeta$ within a constrained transport dynamics model, (ii) replace effective recursion factors by explicit expressions from conservation laws and boundary constraints, and (iii) confront the framework with observational datasets by performing systematic scaling and uncertainty analyses across regions, seasons, and solar activity states.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
+
